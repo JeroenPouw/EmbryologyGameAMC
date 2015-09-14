@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: d129ce4a49ad43c4a95327765a96b1c9
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Mesencephalon
+    100002: N_IX_Glossopharyngeal
+    100004: N_V_Trigeminal
+    100006: N_VII_Facial
+    100008: N_VIII_Auditory
+    100010: N_X_Vagus
+    100012: N_XI_Accessory
+    100014: N_XII_Hypoglossal
+    100016: Neural_canal
+    100018: //RootNode
+    100020: Prosencaphalon
+    100022: Rhombencephalon
+    100024: Roots_of_facial_and_auditory_nerve
+    100026: Spinal_cord
+    100028: Spinal_ganglia
+    400000: Mesencephalon
+    400002: N_IX_Glossopharyngeal
+    400004: N_V_Trigeminal
+    400006: N_VII_Facial
+    400008: N_VIII_Auditory
+    400010: N_X_Vagus
+    400012: N_XI_Accessory
+    400014: N_XII_Hypoglossal
+    400016: Neural_canal
+    400018: //RootNode
+    400020: Prosencaphalon
+    400022: Rhombencephalon
+    400024: Roots_of_facial_and_auditory_nerve
+    400026: Spinal_cord
+    400028: Spinal_ganglia
+    2300000: Mesencephalon
+    2300002: N_IX_Glossopharyngeal
+    2300004: N_V_Trigeminal
+    2300006: N_VII_Facial
+    2300008: N_VIII_Auditory
+    2300010: N_X_Vagus
+    2300012: N_XI_Accessory
+    2300014: N_XII_Hypoglossal
+    2300016: Neural_canal
+    2300018: Prosencaphalon
+    2300020: Rhombencephalon
+    2300022: Roots_of_facial_and_auditory_nerve
+    2300024: Spinal_cord
+    2300026: Spinal_ganglia
+    3300000: Mesencephalon
+    3300002: N_IX_Glossopharyngeal
+    3300004: N_V_Trigeminal
+    3300006: N_VII_Facial
+    3300008: N_VIII_Auditory
+    3300010: N_X_Vagus
+    3300012: N_XI_Accessory
+    3300014: N_XII_Hypoglossal
+    3300016: Neural_canal
+    3300018: Prosencaphalon
+    3300020: Rhombencephalon
+    3300022: Roots_of_facial_and_auditory_nerve
+    3300024: Spinal_cord
+    3300026: Spinal_ganglia
+    4300000: Spinal_cord
+    4300002: Rhombencephalon
+    4300004: Mesencephalon
+    4300006: Prosencaphalon
+    4300008: Neural_canal
+    4300010: N_IX_Glossopharyngeal
+    4300012: N_V_Trigeminal
+    4300014: N_VII_Facial
+    4300016: Roots_of_facial_and_auditory_nerve
+    4300018: N_VIII_Auditory
+    4300020: N_X_Vagus
+    4300022: N_XII_Hypoglossal
+    4300024: N_XI_Accessory
+    4300026: Spinal_ganglia
+    6400000: Mesencephalon
+    6400002: N_IX_Glossopharyngeal
+    6400004: N_V_Trigeminal
+    6400006: N_VII_Facial
+    6400008: N_VIII_Auditory
+    6400010: N_X_Vagus
+    6400012: N_XI_Accessory
+    6400014: N_XII_Hypoglossal
+    6400016: Neural_canal
+    6400018: Prosencaphalon
+    6400020: Rhombencephalon
+    6400022: Roots_of_facial_and_auditory_nerve
+    6400024: Spinal_cord
+    6400026: Spinal_ganglia
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

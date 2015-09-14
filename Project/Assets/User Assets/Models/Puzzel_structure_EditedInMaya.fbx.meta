@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 5bc96d5decfbc3b43b85a350d00aff5c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Allantois
+    100002: Cloaca
+    100004: Duodenum_foregut_part
+    100006: Hindgut_intraperitoneal_part
+    100008: Mesentery
+    100010: Midgut
+    100012: Notochord
+    100014: Oesophagus
+    100016: Oral_cavity_and_pharynx
+    100018: //RootNode
+    100020: Rectum
+    100022: Stomach
+    100024: Urogenital_sinus
+    400000: Allantois
+    400002: Cloaca
+    400004: Duodenum_foregut_part
+    400006: Hindgut_intraperitoneal_part
+    400008: Mesentery
+    400010: Midgut
+    400012: Notochord
+    400014: Oesophagus
+    400016: Oral_cavity_and_pharynx
+    400018: //RootNode
+    400020: Rectum
+    400022: Stomach
+    400024: Urogenital_sinus
+    2300000: Allantois
+    2300002: Cloaca
+    2300004: Duodenum_foregut_part
+    2300006: Hindgut_intraperitoneal_part
+    2300008: Mesentery
+    2300010: Midgut
+    2300012: Notochord
+    2300014: Oesophagus
+    2300016: Oral_cavity_and_pharynx
+    2300018: Rectum
+    2300020: Stomach
+    2300022: Urogenital_sinus
+    3300000: Allantois
+    3300002: Cloaca
+    3300004: Duodenum_foregut_part
+    3300006: Hindgut_intraperitoneal_part
+    3300008: Mesentery
+    3300010: Midgut
+    3300012: Notochord
+    3300014: Oesophagus
+    3300016: Oral_cavity_and_pharynx
+    3300018: Rectum
+    3300020: Stomach
+    3300022: Urogenital_sinus
+    4300000: Notochord
+    4300002: Cloaca
+    4300004: Allantois
+    4300006: Urogenital_sinus
+    4300008: Hindgut_intraperitoneal_part
+    4300010: Rectum
+    4300012: Oesophagus
+    4300014: Duodenum_foregut_part
+    4300016: Stomach
+    4300018: Oral_cavity_and_pharynx
+    4300020: Midgut
+    4300022: Mesentery
+    6400000: Allantois
+    6400002: Cloaca
+    6400004: Duodenum_foregut_part
+    6400006: Hindgut_intraperitoneal_part
+    6400008: Mesentery
+    6400010: Midgut
+    6400012: Notochord
+    6400014: Oesophagus
+    6400016: Oral_cavity_and_pharynx
+    6400018: Rectum
+    6400020: Stomach
+    6400022: Urogenital_sinus
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

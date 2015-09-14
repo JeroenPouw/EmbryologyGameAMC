@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: 4958f5bcb326e06419558c8dcd9f7459
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Common_cardinal_veins
+    100002: Inferior_cardinal_veins
+    100004: Intrahepatic_vessels
+    100006: Superior_cardinal_veins
+    100008: Umbilical_veins
+    100010: //RootNode
+    100012: Vitelline_veins
+    100014: Aortic_sac
+    100016: Fused_dorsal_aorta
+    100018: Paired_dorsal_aortae
+    100020: Pharyngeal_arch_arteries
+    100022: Umbilical_arteries
+    400000: Common_cardinal_veins
+    400002: Inferior_cardinal_veins
+    400004: Intrahepatic_vessels
+    400006: Superior_cardinal_veins
+    400008: Umbilical_veins
+    400010: //RootNode
+    400012: Vitelline_veins
+    400014: Aortic_sac
+    400016: Fused_dorsal_aorta
+    400018: Paired_dorsal_aortae
+    400020: Pharyngeal_arch_arteries
+    400022: Umbilical_arteries
+    2300000: Common_cardinal_veins
+    2300002: Inferior_cardinal_veins
+    2300004: Intrahepatic_vessels
+    2300006: Superior_cardinal_veins
+    2300008: Umbilical_veins
+    2300010: Vitelline_veins
+    2300012: Aortic_sac
+    2300014: Fused_dorsal_aorta
+    2300016: Paired_dorsal_aortae
+    2300018: Pharyngeal_arch_arteries
+    2300020: Umbilical_arteries
+    3300000: Common_cardinal_veins
+    3300002: Inferior_cardinal_veins
+    3300004: Intrahepatic_vessels
+    3300006: Superior_cardinal_veins
+    3300008: Umbilical_veins
+    3300010: Vitelline_veins
+    3300012: Aortic_sac
+    3300014: Fused_dorsal_aorta
+    3300016: Paired_dorsal_aortae
+    3300018: Pharyngeal_arch_arteries
+    3300020: Umbilical_arteries
+    4300000: Vitelline_veins
+    4300002: Umbilical_veins
+    4300004: Superior_cardinal_veins
+    4300006: Inferior_cardinal_veins
+    4300008: Common_cardinal_veins
+    4300010: Intrahepatic_vessels
+    4300012: Paired_dorsal_aortae
+    4300014: Fused_dorsal_aorta
+    4300016: Aortic_sac
+    4300018: Umbilical_arteries
+    4300020: Pharyngeal_arch_arteries
+    6400000: Aortic_sac
+    6400002: Common_cardinal_veins
+    6400004: Fused_dorsal_aorta
+    6400006: Inferior_cardinal_veins
+    6400008: Intrahepatic_vessels
+    6400010: Paired_dorsal_aortae
+    6400012: Pharyngeal_arch_arteries
+    6400014: Superior_cardinal_veins
+    6400016: Umbilical_arteries
+    6400018: Umbilical_veins
+    6400020: Vitelline_veins
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .200000003
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c8a445f2680c65f4e9bd871587a1eeee
+timeCreated: 1441964253
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - missileExpObject: {fileID: 100000, guid: 96589069c37bac74cb7ca7b52b3c005f, type: 2}
+  - enemyHurt: {fileID: 8300000, guid: 94862532e6d49e0478d803bf6f27e705, type: 3}
+  - hitParticle: {fileID: 100008, guid: 1ba262e82a61ce24dbe03dca4e02c697, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

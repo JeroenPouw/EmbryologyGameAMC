@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 1f6ab7be35762d945b959ee923e964c5
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Cardiac_jelly
+    100002: Cardiac_lumen
+    100004: Dorsal_mesocardium
+    100006: //RootNode
+    100008: Left_atrium
+    100010: Left_ventricle
+    100012: Outflow_tract
+    100014: Outflow_tract_lumen
+    100016: Right_atrium
+    100018: Right_ventricle
+    100020: Sinus_venosus
+    400000: Cardiac_jelly
+    400002: Cardiac_lumen
+    400004: Dorsal_mesocardium
+    400006: //RootNode
+    400008: Left_atrium
+    400010: Left_ventricle
+    400012: Outflow_tract
+    400014: Outflow_tract_lumen
+    400016: Right_atrium
+    400018: Right_ventricle
+    400020: Sinus_venosus
+    2300000: Cardiac_jelly
+    2300002: Cardiac_lumen
+    2300004: Dorsal_mesocardium
+    2300006: Left_atrium
+    2300008: Left_ventricle
+    2300010: Outflow_tract
+    2300012: Outflow_tract_lumen
+    2300014: Right_atrium
+    2300016: Right_ventricle
+    2300018: Sinus_venosus
+    3300000: Cardiac_jelly
+    3300002: Cardiac_lumen
+    3300004: Dorsal_mesocardium
+    3300006: Left_atrium
+    3300008: Left_ventricle
+    3300010: Outflow_tract
+    3300012: Outflow_tract_lumen
+    3300014: Right_atrium
+    3300016: Right_ventricle
+    3300018: Sinus_venosus
+    4300000: Outflow_tract
+    4300002: Right_ventricle
+    4300004: Right_atrium
+    4300006: Left_atrium
+    4300008: Left_ventricle
+    4300010: Sinus_venosus
+    4300012: Cardiac_lumen
+    4300014: Cardiac_jelly
+    4300016: Outflow_tract_lumen
+    4300018: Dorsal_mesocardium
+    6400000: Cardiac_jelly
+    6400002: Cardiac_lumen
+    6400004: Dorsal_mesocardium
+    6400006: Left_atrium
+    6400008: Left_ventricle
+    6400010: Outflow_tract
+    6400012: Outflow_tract_lumen
+    6400014: Right_atrium
+    6400016: Right_ventricle
+    6400018: Sinus_venosus
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .300000012
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
