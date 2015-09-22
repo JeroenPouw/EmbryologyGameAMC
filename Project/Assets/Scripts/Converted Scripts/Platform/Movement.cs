@@ -12,11 +12,11 @@ public class Movement : MonoBehaviour {
 	Winds wind;
 	public bool  inCameraZone = false;
 	bool  singlePress = false;
-	LevelInfo levelinfoScript;
+	//LevelInfo levelinfoScript;
 
 	void Awake(){
-		wind = gameObject.GetComponent<Winds>();
-		levelinfoScript = gameObject.GetComponent<LevelInfo>();
+		//wind = gameObject.GetComponent<Winds>();
+		//levelinfoScript = gameObject.GetComponent<LevelInfo>();
 	}
 	public void IsMoving (){
 
@@ -31,50 +31,50 @@ public class Movement : MonoBehaviour {
 		if(Input.GetKey("left")||Input.GetKey(KeyCode.A))
 		{
 			singlePress = true;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 0, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		if(Input.GetKey("right")||Input.GetKey(KeyCode.D))
 		{	
 			singlePress = true;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 180, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		if(Input.GetKey("up")||Input.GetKey(KeyCode.W))
 		{
 			singlePress = true;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 90, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		if(Input.GetKey("down")||Input.GetKey(KeyCode.S))
 		{
 			singlePress = true;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 270, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		
 		if(Input.GetKey("left") && Input.GetKey("up") || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W)){
 			singlePress = false;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 45, 0);
 		}
 		if(Input.GetKey("left") && Input.GetKey("down") || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)){
 			singlePress = false;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 315, 0);
 		}
 		if(Input.GetKey("right") && Input.GetKey("down") || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S)){
 			singlePress = false;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 225, 0);
 		}
 		if(Input.GetKey("right") && Input.GetKey("up") || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W)){
 			singlePress = false;
-			levelinfoScript.infoClicked = false;
+			//levelinfoScript.infoClicked = false;
 			this.transform.rotation = Quaternion.Euler(0, 135, 0);
 		}
 	}

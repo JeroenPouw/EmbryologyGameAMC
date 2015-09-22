@@ -70,7 +70,7 @@ public class SelectObject : MonoBehaviour {
 			RaycastHit hitAgain;
 			int layerMaskAgain= 1 << 18;
 			if(Physics.Raycast(rayAgain, out hitAgain, 100, layerMaskAgain)){
-				int rangeOfRendersAgain= hitAgain.transform.GetComponent<Renderer>().materials.Length;
+				int rangeOfRendersAgain = hitAgain.transform.GetComponent<Renderer>().materials.Length;
 				hitAgain.transform.gameObject.layer = 19;
 				shaderCount = 0;
 				for(int r= 0; r < rangeOfRendersAgain; r++){ 
@@ -147,7 +147,7 @@ public class SelectObject : MonoBehaviour {
 		if(GUI.Button (new Rect(Screen.width - 400, 20, 180, 50), "Transparent") && currentObject != null){
 			for(int e= shaderCount; e > 0; e--){
 				currentObject.transform.GetComponent<Renderer>().materials[e-1].shader = Shader.Find("Transparent/Diffuse");
-				//currentObject.transform.GetComponent<Renderer>().materials[e-1].color.a = 0.5f;
+				currentObject.transform.GetComponent<Renderer>().materials[e-1].color -= new Color(0,0,0,.50f);
 			}
 			currentObject.layer = 20;
 			shaderCount = 0;
@@ -161,6 +161,7 @@ public class SelectObject : MonoBehaviour {
 					arrayObjects.layer = 18;
 					while(layerRenderCount < mats){
 						arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].shader = Shader.Find("Diffuse");
+						arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].color += new Color(0,0,0,.50f);
 						layerRenderCount++;
 					}
 					if(layerRenderCount == mats){
