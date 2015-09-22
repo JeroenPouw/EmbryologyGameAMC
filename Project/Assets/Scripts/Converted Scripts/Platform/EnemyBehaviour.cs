@@ -29,14 +29,12 @@ public class EnemyBehaviour : MonoBehaviour {
 		spawn = gameObject.GetComponent<EnemySpawner>();
 		scorePlus = gameObject.GetComponent<QuestionScript> ();
 		Vector3 randomDirection = new Vector3(Random.Range(0, 0),Random.Range(-359, 359),Random.Range(0, 0));
-		transform.Rotate(randomDirection);
+		//transform.Rotate(randomDirection);
 		timing = 0;
 	}
 	
 	void  Update (){
-		if(Time.timeScale != 0){
-			//model.Rotate(new Vector3(0, 10, 0)* Time.deltaTime);
-		}
+
 	}
 	void  FixedUpdate (){
 		timing+=Time.deltaTime;
@@ -61,25 +59,25 @@ public class EnemyBehaviour : MonoBehaviour {
 		}
 		if(hit.gameObject.tag == "Level1_wall"){
 			Vector3 randomDirection = new Vector3(Random.Range(0, 0),Random.Range(-180, -180),Random.Range(0, 0));
-			transform.Rotate(randomDirection);	
+			//transform.Rotate(randomDirection);	
 		}
 		if(hit.gameObject.name == "level2_new" || hit.gameObject.name == "level2_new_minimap" ){
 			Vector3 randomDirectionlvl2 = new Vector3(Random.Range(0, 0),Random.Range(-180, -180),Random.Range(0, 0));
-			transform.Rotate(randomDirectionlvl2);	
+			//transform.Rotate(randomDirectionlvl2);	
 		}
 		if(hit.gameObject.tag == "Level3_wall" || hit.gameObject.name == "level3" || hit.gameObject.name == "level3_minimap" ){
 			Vector3 randomDirectionlvl3 = new Vector3(Random.Range(0, 0),Random.Range(-180, -180),Random.Range(0, 0));
-			transform.Rotate(randomDirectionlvl3);	
+			//transform.Rotate(randomDirectionlvl3);	
 		}
 	}	
 	void  OnTriggerEnter ( Collider hit  ){
 		if(hit.gameObject.name == "TutorialWalls"){
 			Vector3 randomDirection1 = new Vector3(Random.Range(0, 0),Random.Range(-180, -180),Random.Range(0, 0));
-			transform.Rotate(randomDirection1);
+			//transform.Rotate(randomDirection1);
 		}
 		if(hit.gameObject.name == "QuestionRoomWall"){
 			Vector3 randomDirection2 = new Vector3(Random.Range(0, 0),Random.Range(-180, -180),Random.Range(0, 0));
-			transform.Rotate(randomDirection2);
+			//transform.Rotate(randomDirection2);
 		}
 	}
 	
