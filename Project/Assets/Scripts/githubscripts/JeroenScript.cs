@@ -5,7 +5,7 @@ public class JeroenScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	//Dit is geschreven door Jeroen
+	//weshniomjk
 	}
 
 	// Update is called once per frame
