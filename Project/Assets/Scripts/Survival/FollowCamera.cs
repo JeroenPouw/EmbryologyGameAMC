@@ -22,7 +22,7 @@ public class FollowCamera : MonoBehaviour
 		this.transform.position = Vector3.Lerp(this.transform.position, desiredPosition, Time.deltaTime * this._damping);
 		
 		// Calculate and set camera rotation
-		Quaternion desiredRotation = Quaternion.LookRotation(this._target.position - this.transform.position, this._target.up);
+		Quaternion desiredRotation = Quaternion.LookRotation(this._target.position - this.transform.position, this._target.forward);
 		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, desiredRotation, Time.deltaTime * this._rotationDamping);
 	}
 }

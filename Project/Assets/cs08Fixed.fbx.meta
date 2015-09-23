@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: c8b33a6912513c44c99dad713cc1c060
+timeCreated: 1442932913
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Allantois
+    100002: Amnion
+    100004: Amnion wall
+    100006: Amniotic cavity
+    100008: Connecting stalk
+    100010: //RootNode
+    100012: Ectoderm
+    100014: Exocoelomic cyst
+    100016: Exocoelomic_cyst
+    100018: Extra-embryonic structures
+    100020: Intra-embryonic endoderm
+    100022: Intra-embryonic mesoderm
+    100024: Intra-embryonic structures
+    100026: Notochordal process
+    100028: Primitive streak
+    100030: Yolk sac
+    100032: Yolk sac cavity
+    100034: Yolk sac wall
+    400000: Allantois
+    400002: Amnion
+    400004: Amnion wall
+    400006: Amniotic cavity
+    400008: Connecting stalk
+    400010: //RootNode
+    400012: Ectoderm
+    400014: Exocoelomic cyst
+    400016: Exocoelomic_cyst
+    400018: Extra-embryonic structures
+    400020: Intra-embryonic endoderm
+    400022: Intra-embryonic mesoderm
+    400024: Intra-embryonic structures
+    400026: Notochordal process
+    400028: Primitive streak
+    400030: Yolk sac
+    400032: Yolk sac cavity
+    400034: Yolk sac wall
+    2300000: Allantois
+    2300002: Amnion wall
+    2300004: Amniotic cavity
+    2300006: Connecting stalk
+    2300008: Ectoderm
+    2300010: Exocoelomic_cyst
+    2300012: Intra-embryonic endoderm
+    2300014: Intra-embryonic mesoderm
+    2300016: Notochordal process
+    2300018: Primitive streak
+    2300020: Yolk sac cavity
+    2300022: Yolk sac wall
+    3300000: Allantois
+    3300002: Amnion wall
+    3300004: Amniotic cavity
+    3300006: Connecting stalk
+    3300008: Ectoderm
+    3300010: Exocoelomic_cyst
+    3300012: Intra-embryonic endoderm
+    3300014: Intra-embryonic mesoderm
+    3300016: Notochordal process
+    3300018: Primitive streak
+    3300020: Yolk sac cavity
+    3300022: Yolk sac wall
+    4300000: Intra-embryonic endoderm
+    4300002: Intra-embryonic mesoderm
+    4300004: Ectoderm
+    4300006: Notochordal process
+    4300008: Primitive streak
+    4300010: Amniotic cavity
+    4300012: Amnion wall
+    4300014: Connecting stalk
+    4300016: Allantois
+    4300018: Yolk sac cavity
+    4300020: Yolk sac wall
+    4300022: Exocoelomic_cyst
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
