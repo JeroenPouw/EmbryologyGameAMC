@@ -12,6 +12,13 @@ TagManager:
   - Player
   - YouAreHere
   - Highlightable
+  - ChildTag
+  - Mesoderm
+  - Endoderm
+  - Ectoderm
+  - Yolk Sac
+  - Amnion Wall
+  - Connecting Stalk
   layers:
   - Default
   - TransparentFX
@@ -36,7 +43,7 @@ TagManager:
   - PuzzleTransparant
   - PuzzleWrong
   - Textfield
-  - 
+  - DefaultGui
   - 
   - 
   - 
