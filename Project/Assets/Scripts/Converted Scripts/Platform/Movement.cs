@@ -46,36 +46,36 @@ public class Movement : MonoBehaviour {
 		{
 			singlePress = true;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 90, 0);
+			this.transform.rotation = Quaternion.Euler(0, -90, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		if(Input.GetKey("down")||Input.GetKey(KeyCode.S))
 		{
 			singlePress = true;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 270, 0);
+			this.transform.rotation = Quaternion.Euler(0, 90, 0);
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		
 		if(Input.GetKey("left") && Input.GetKey("up") || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W)){
 			singlePress = false;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 45, 0);
+			this.transform.rotation = Quaternion.Euler(0, -45, 0);
 		}
 		if(Input.GetKey("left") && Input.GetKey("down") || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)){
 			singlePress = false;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 315, 0);
+			this.transform.rotation = Quaternion.Euler(0, -315, 0);
 		}
 		if(Input.GetKey("right") && Input.GetKey("down") || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S)){
 			singlePress = false;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 225, 0);
+			this.transform.rotation = Quaternion.Euler(0, -225, 0);
 		}
 		if(Input.GetKey("right") && Input.GetKey("up") || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W)){
 			singlePress = false;
 			//levelinfoScript.infoClicked = false;
-			this.transform.rotation = Quaternion.Euler(0, 135, 0);
+			this.transform.rotation = Quaternion.Euler(0, -135, 0);
 		}
 	}
 	void  OnTriggerEnter ( Collider hit  ){

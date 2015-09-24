@@ -40,7 +40,7 @@ public class GravityScript : MonoBehaviour {
 		}
 		else if (distBack < distForward && distBack < distDown)
 		{
-			transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hitBack.normal), hitBack.normal), Time.deltaTime * 5.0f);
+			//transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hitBack.normal), hitBack.normal), Time.deltaTime * 5.0f);
 		}
 		
 		GetComponent<Rigidbody>().AddForce(-transform.up * gravity);

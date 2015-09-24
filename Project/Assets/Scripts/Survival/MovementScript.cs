@@ -2,23 +2,20 @@
 using System.Collections;
 
 public class MovementScript : MonoBehaviour {
-	public float speed = 7.0f;
-	float maxSpeed = 6.0f;
-	float disttoGround;
-	public bool isGrounded;
+	public float speed = 35.0f;
+	float maxSpeed = 30.0f;
 	// Use this for initialization
 	void Start () {
-		disttoGround = GetComponent<Collider> ().bounds.extents.y;
 
 	}
 
 	void Update(){
-	RaycastHit hitForward = new RaycastHit();
-		if (Physics.Raycast (transform.position, -transform.up, disttoGround + 0.1f)) {
-			isGrounded = true;
-		} else {
-			isGrounded = false;
-		}
+//	RaycastHit hitForward = new RaycastHit();
+//		if (Physics.Raycast (transform.position, -transform.up,out hitForward, 1.0f)) {
+//			if (Vector3.Dot(Vector3.up,hitForward.normal)>0.7f) {
+//				Vector3 newDir = Vector3.RotateTowards(transform.forward,Vector3.Dot(Vector3.up,hitForward.normal),speed,0.0f);
+//			}
+		//}
 //		if (Input.GetKey(KeyCode.W) && isGrounded == true) {
 //			//GetComponent<Rigidbody>().AddForce(transform.forward * speed);
 //			transform.Translate(transform.forward * 3 * Time.deltaTime);
@@ -36,7 +33,7 @@ public class MovementScript : MonoBehaviour {
 //			transform.Translate(-transform.right * 3	 * Time.deltaTime);
 //		}
 
-		Debug.Log (GetComponent<Rigidbody>().velocity.magnitude);
+		//Debug.Log (GetComponent<Rigidbody>().velocity.magnitude);
 	}
 	// Update is called once per frame
 	void FixedUpdate() {
@@ -48,18 +45,22 @@ public class MovementScript : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(-brakeVelocity);
 		}
 
-		if (Input.GetKey(KeyCode.W) && isGrounded == true) {
-			GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+		if (Input.GetKey(KeyCode.W)) {
+			GetComponent<Rigidbody>().AddForce(transform.forward* speed);
 		}
-		if (Input.GetKey(KeyCode.S) && isGrounded == true) {
+		if (Input.GetKey(KeyCode.S)) {
 			GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
 		}
-		if (Input.GetKey(KeyCode.D) && isGrounded == true ) {
-			GetComponent<Rigidbody>().AddForce(transform.right * speed);
+		if (Input.GetKey(KeyCode.D)) {
+			//GetComponent<Rigidbody>().AddForce(transform.right * speed);
+			//GetComponent<Rigidbody>().AddTorque(transform.up * 50);
 		}
-		if (Input.GetKey(KeyCode.A)&& isGrounded == true) {
-			GetComponent<Rigidbody>().AddForce(-transform.right * speed);
+		if (Input.GetKey(KeyCode.A)) {
+			//GetComponent<Rigidbody>().AddForce(-transform.right * speed);
+			//GetComponent<Rigidbody>().AddTorque(-transform.up * 50);
 		}
+		//GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(horRotSpeed * Input.GetAxis("Mouse X"), vertRotSpeed * Input.GetAxis("Mouse Y"), 0f));
+		//GetComponent<Rigidbody> ().rotation.SetLookRotation (transform.forward);
 
 	}
 }
