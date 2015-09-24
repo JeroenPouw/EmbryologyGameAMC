@@ -1,0 +1,484 @@
+fileFormatVersion: 2
+guid: 809bb352b3364c24aa555925d57b3399
+timeCreated: 1442918947
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Alimentary canal
+    100002: Alimentary system
+    100004: Allantois
+    100006: Aortic sac
+    100008: Arteries
+    100010: Atria
+    100012: Cardiac jelly
+    100014: Cardinal veins
+    100016: Cardiovascular system
+    100018: Central Nervous System
+    100020: Cloaca
+    100022: Coelom
+    100024: Common cardinal veins
+    100026: Cranial nerves
+    100028: //RootNode
+    100030: Dorsal aortae
+    100032: Dorsal aortae cranial part
+    100034: Dorsal mesocardium
+    100036: Dorsal pancreas
+    100038: Duodenum foregut part
+    100040: Ear
+    100042: Endocardium
+    100044: Endocrine system
+    100046: Epicardium
+    100048: Eye
+    100050: First pharyngeal arch arteries
+    100052: Foregut
+    100054: Fused dorsal aorta
+    100056: Genital component
+    100058: Gonadal ridge
+    100060: Heart
+    100062: Heart lumen
+    100064: Hindgut
+    100066: Hindgut intraperitoneal part
+    100068: Inferior cardinal veins
+    100070: Integumentary system
+    100072: Intra-embryonic coelom
+    100074: Intrahepatic vessels
+    100076: Left atrium
+    100078: Left ventricle
+    100080: Lens placode
+    100082: Liver
+    100084: Mesencephalon
+    100086: Mesonephric duct
+    100088: Mesonephros
+    100090: Midgut
+    100092: Myocardium
+    100094: N IX Glossopharyngeal
+    100096: N V Trigeminal
+    100098: N VII Facial
+    100100: N VIII Auditory
+    100102: N X Vagus
+    100104: N XI Accessory
+    100106: N XII Hypoglossal
+    100108: Nervous system
+    100110: Neural canal
+    100112: Neural tube
+    100114: Notochord
+    100116: Oesophagus
+    100118: Optic vesicle
+    100120: Oral cavity and pharynx
+    100122: Otic vesicle
+    100124: Outflow tract
+    100126: Outflow tract lumen
+    100128: Paired dorsal aortae
+    100130: Pancreas
+    100132: Pericardial cavity
+    100134: Pericardioperitoneal canal
+    100136: Peripheral Nervous system
+    100138: Peritoneal cavity
+    100140: Pharyngeal arch arteries
+    100142: Pituitary gland
+    100144: Pneumato-enteric recess
+    100146: Prosencephalon
+    100148: Rathke's pouch
+    100150: Rectum
+    100152: Respiratory bud
+    100154: Respiratory system
+    100156: Rhombencephalon
+    100158: Right atrium
+    100160: Right ventricle
+    100162: Roots of facial and auditory nerve
+    100164: Second pharyngeal arch arteries
+    100166: Sense organs
+    100168: Sinus venosus
+    100170: Skeletal and muscular system
+    100172: Skin
+    100174: Somites
+    100176: Spinal cord
+    100178: Spinal ganglia
+    100180: Stomach
+    100182: Superior cardinals veins
+    100184: Surrounding mesenchyme and mesentery
+    100186: Thyroid gland
+    100188: Umbilical arteries
+    100190: Umbilical veins
+    100192: Urinary component
+    100194: Urogenital ridge
+    100196: Urogenital sinus
+    100198: Urogenital system
+    100200: Veins
+    100202: Ventral pancreas
+    100204: Ventricles
+    100206: Vitelline arteries
+    100208: Vitelline duct
+    100210: Vitelline veins
+    400000: Alimentary canal
+    400002: Alimentary system
+    400004: Allantois
+    400006: Aortic sac
+    400008: Arteries
+    400010: Atria
+    400012: Cardiac jelly
+    400014: Cardinal veins
+    400016: Cardiovascular system
+    400018: Central Nervous System
+    400020: Cloaca
+    400022: Coelom
+    400024: Common cardinal veins
+    400026: Cranial nerves
+    400028: //RootNode
+    400030: Dorsal aortae
+    400032: Dorsal aortae cranial part
+    400034: Dorsal mesocardium
+    400036: Dorsal pancreas
+    400038: Duodenum foregut part
+    400040: Ear
+    400042: Endocardium
+    400044: Endocrine system
+    400046: Epicardium
+    400048: Eye
+    400050: First pharyngeal arch arteries
+    400052: Foregut
+    400054: Fused dorsal aorta
+    400056: Genital component
+    400058: Gonadal ridge
+    400060: Heart
+    400062: Heart lumen
+    400064: Hindgut
+    400066: Hindgut intraperitoneal part
+    400068: Inferior cardinal veins
+    400070: Integumentary system
+    400072: Intra-embryonic coelom
+    400074: Intrahepatic vessels
+    400076: Left atrium
+    400078: Left ventricle
+    400080: Lens placode
+    400082: Liver
+    400084: Mesencephalon
+    400086: Mesonephric duct
+    400088: Mesonephros
+    400090: Midgut
+    400092: Myocardium
+    400094: N IX Glossopharyngeal
+    400096: N V Trigeminal
+    400098: N VII Facial
+    400100: N VIII Auditory
+    400102: N X Vagus
+    400104: N XI Accessory
+    400106: N XII Hypoglossal
+    400108: Nervous system
+    400110: Neural canal
+    400112: Neural tube
+    400114: Notochord
+    400116: Oesophagus
+    400118: Optic vesicle
+    400120: Oral cavity and pharynx
+    400122: Otic vesicle
+    400124: Outflow tract
+    400126: Outflow tract lumen
+    400128: Paired dorsal aortae
+    400130: Pancreas
+    400132: Pericardial cavity
+    400134: Pericardioperitoneal canal
+    400136: Peripheral Nervous system
+    400138: Peritoneal cavity
+    400140: Pharyngeal arch arteries
+    400142: Pituitary gland
+    400144: Pneumato-enteric recess
+    400146: Prosencephalon
+    400148: Rathke's pouch
+    400150: Rectum
+    400152: Respiratory bud
+    400154: Respiratory system
+    400156: Rhombencephalon
+    400158: Right atrium
+    400160: Right ventricle
+    400162: Roots of facial and auditory nerve
+    400164: Second pharyngeal arch arteries
+    400166: Sense organs
+    400168: Sinus venosus
+    400170: Skeletal and muscular system
+    400172: Skin
+    400174: Somites
+    400176: Spinal cord
+    400178: Spinal ganglia
+    400180: Stomach
+    400182: Superior cardinals veins
+    400184: Surrounding mesenchyme and mesentery
+    400186: Thyroid gland
+    400188: Umbilical arteries
+    400190: Umbilical veins
+    400192: Urinary component
+    400194: Urogenital ridge
+    400196: Urogenital sinus
+    400198: Urogenital system
+    400200: Veins
+    400202: Ventral pancreas
+    400204: Ventricles
+    400206: Vitelline arteries
+    400208: Vitelline duct
+    400210: Vitelline veins
+    2300000: Allantois
+    2300002: Aortic sac
+    2300004: Cardiac jelly
+    2300006: Cloaca
+    2300008: Common cardinal veins
+    2300010: Dorsal aortae cranial part
+    2300012: Dorsal mesocardium
+    2300014: Dorsal pancreas
+    2300016: Duodenum foregut part
+    2300018: First pharyngeal arch arteries
+    2300020: Fused dorsal aorta
+    2300022: Gonadal ridge
+    2300024: Heart lumen
+    2300026: Hindgut intraperitoneal part
+    2300028: Inferior cardinal veins
+    2300030: Intrahepatic vessels
+    2300032: Left atrium
+    2300034: Left ventricle
+    2300036: Lens placode
+    2300038: Liver
+    2300040: Mesencephalon
+    2300042: Mesonephric duct
+    2300044: Mesonephros
+    2300046: Midgut
+    2300048: N IX Glossopharyngeal
+    2300050: N V Trigeminal
+    2300052: N VII Facial
+    2300054: N VIII Auditory
+    2300056: N X Vagus
+    2300058: N XI Accessory
+    2300060: N XII Hypoglossal
+    2300062: Neural canal
+    2300064: Notochord
+    2300066: Oesophagus
+    2300068: Optic vesicle
+    2300070: Oral cavity and pharynx
+    2300072: Otic vesicle
+    2300074: Outflow tract
+    2300076: Outflow tract lumen
+    2300078: Paired dorsal aortae
+    2300080: Pericardial cavity
+    2300082: Pericardioperitoneal canal
+    2300084: Peritoneal cavity
+    2300086: Pneumato-enteric recess
+    2300088: Prosencephalon
+    2300090: Rathke's pouch
+    2300092: Rectum
+    2300094: Respiratory bud
+    2300096: Rhombencephalon
+    2300098: Right atrium
+    2300100: Right ventricle
+    2300102: Roots of facial and auditory nerve
+    2300104: Second pharyngeal arch arteries
+    2300106: Sinus venosus
+    2300108: Skin
+    2300110: Somites
+    2300112: Spinal cord
+    2300114: Spinal ganglia
+    2300116: Stomach
+    2300118: Superior cardinals veins
+    2300120: Surrounding mesenchyme and mesentery
+    2300122: Thyroid gland
+    2300124: Umbilical arteries
+    2300126: Umbilical veins
+    2300128: Urogenital sinus
+    2300130: Ventral pancreas
+    2300132: Vitelline arteries
+    2300134: Vitelline duct
+    2300136: Vitelline veins
+    3300000: Allantois
+    3300002: Aortic sac
+    3300004: Cardiac jelly
+    3300006: Cloaca
+    3300008: Common cardinal veins
+    3300010: Dorsal aortae cranial part
+    3300012: Dorsal mesocardium
+    3300014: Dorsal pancreas
+    3300016: Duodenum foregut part
+    3300018: First pharyngeal arch arteries
+    3300020: Fused dorsal aorta
+    3300022: Gonadal ridge
+    3300024: Heart lumen
+    3300026: Hindgut intraperitoneal part
+    3300028: Inferior cardinal veins
+    3300030: Intrahepatic vessels
+    3300032: Left atrium
+    3300034: Left ventricle
+    3300036: Lens placode
+    3300038: Liver
+    3300040: Mesencephalon
+    3300042: Mesonephric duct
+    3300044: Mesonephros
+    3300046: Midgut
+    3300048: N IX Glossopharyngeal
+    3300050: N V Trigeminal
+    3300052: N VII Facial
+    3300054: N VIII Auditory
+    3300056: N X Vagus
+    3300058: N XI Accessory
+    3300060: N XII Hypoglossal
+    3300062: Neural canal
+    3300064: Notochord
+    3300066: Oesophagus
+    3300068: Optic vesicle
+    3300070: Oral cavity and pharynx
+    3300072: Otic vesicle
+    3300074: Outflow tract
+    3300076: Outflow tract lumen
+    3300078: Paired dorsal aortae
+    3300080: Pericardial cavity
+    3300082: Pericardioperitoneal canal
+    3300084: Peritoneal cavity
+    3300086: Pneumato-enteric recess
+    3300088: Prosencephalon
+    3300090: Rathke's pouch
+    3300092: Rectum
+    3300094: Respiratory bud
+    3300096: Rhombencephalon
+    3300098: Right atrium
+    3300100: Right ventricle
+    3300102: Roots of facial and auditory nerve
+    3300104: Second pharyngeal arch arteries
+    3300106: Sinus venosus
+    3300108: Skin
+    3300110: Somites
+    3300112: Spinal cord
+    3300114: Spinal ganglia
+    3300116: Stomach
+    3300118: Superior cardinals veins
+    3300120: Surrounding mesenchyme and mesentery
+    3300122: Thyroid gland
+    3300124: Umbilical arteries
+    3300126: Umbilical veins
+    3300128: Urogenital sinus
+    3300130: Ventral pancreas
+    3300132: Vitelline arteries
+    3300134: Vitelline duct
+    3300136: Vitelline veins
+    4300000: Somites
+    4300002: Notochord
+    4300004: Otic vesicle
+    4300006: Lens placode
+    4300008: Optic vesicle
+    4300010: Cloaca
+    4300012: Mesonephric duct
+    4300014: Mesonephros
+    4300016: Gonadal ridge
+    4300018: Urogenital sinus
+    4300020: Allantois
+    4300022: Respiratory bud
+    4300024: Prosencephalon
+    4300026: Mesencephalon
+    4300028: Rhombencephalon
+    4300030: Spinal cord
+    4300032: Neural canal
+    4300034: N XII Hypoglossal
+    4300036: Roots of facial and auditory nerve
+    4300038: N VII Facial
+    4300040: N VIII Auditory
+    4300042: N IX Glossopharyngeal
+    4300044: N V Trigeminal
+    4300046: N X Vagus
+    4300048: N XI Accessory
+    4300050: Spinal ganglia
+    4300052: Skin
+    4300054: Pericardial cavity
+    4300056: Pericardioperitoneal canal
+    4300058: Peritoneal cavity
+    4300060: Pneumato-enteric recess
+    4300062: Intrahepatic vessels
+    4300064: Superior cardinals veins
+    4300066: Inferior cardinal veins
+    4300068: Common cardinal veins
+    4300070: Vitelline veins
+    4300072: Umbilical veins
+    4300074: First pharyngeal arch arteries
+    4300076: Second pharyngeal arch arteries
+    4300078: Vitelline arteries
+    4300080: Fused dorsal aorta
+    4300082: Paired dorsal aortae
+    4300084: Dorsal aortae cranial part
+    4300086: Aortic sac
+    4300088: Umbilical arteries
+    4300090: Outflow tract lumen
+    4300092: Right atrium
+    4300094: Left atrium
+    4300096: Sinus venosus
+    4300098: Left ventricle
+    4300100: Right ventricle
+    4300102: Outflow tract
+    4300104: Dorsal mesocardium
+    4300106: Heart lumen
+    4300108: Cardiac jelly
+    4300110: Surrounding mesenchyme and mesentery
+    4300112: Vitelline duct
+    4300114: Rectum
+    4300116: Hindgut intraperitoneal part
+    4300118: Stomach
+    4300120: Duodenum foregut part
+    4300122: Oesophagus
+    4300124: Oral cavity and pharynx
+    4300126: Midgut
+    4300128: Ventral pancreas
+    4300130: Dorsal pancreas
+    4300132: Liver
+    4300134: Rathke's pouch
+    4300136: Thyroid gland
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
