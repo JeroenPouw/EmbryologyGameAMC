@@ -31,7 +31,6 @@ public class MouseTorque : MonoBehaviour {
 	/** Controls how strongly the camera tries to keep itself upright. */
 	public float correctiveStrength = 20;
 	void Start(){
-		Cursor.visible = false;
 	}
 	void FixedUpdate () {
 		GetComponent<Rigidbody>().AddTorque(0, Input.GetAxis("Mouse X") * horizontalSensitivity, 0);
