@@ -6,25 +6,43 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class CameraSwitch : MonoBehaviour {
 	public Camera Cam1;
 	public Camera Cam2;
-	public Component FPSscript;
-	Movement Script2D;
+	MovementScript Script2D;
 	bool FPSView = true;
-	FirstPersonController Script3D;
-	public Collider Collider2D;
-	CharacterController cc;
+	OpagueScript transSwitch;
+	GameObject YouAreHere;
+	MouseTorque mouseScript;
+	GameObject[] highlights;
 	// Use this for initialization
 	void Start () {
-		Script2D = gameObject.GetComponent<Movement>();
-		Script3D = gameObject.GetComponent<FirstPersonController> ();
-		cc = gameObject.GetComponent(typeof(CharacterController)) as CharacterController;
+		Script2D = gameObject.GetComponent<MovementScript>();
+		transSwitch = gameObject.GetComponent<OpagueScript> ();
+		mouseScript = gameObject.GetComponent<MouseTorque> ();
+		YouAreHere = GameObject.FindGameObjectWithTag ("YouAreHere");
+		highlights = GameObject.FindGameObjectsWithTag ("Highlightable");
+		YouAreHere.gameObject.SetActive (false);
+		foreach (GameObject script in highlights) {
+			script.gameObject.layer = 2;
+		}
 	}
 	void SwitchCameras(){
-		Script3D.enabled = !Script3D.enabled; // turn on/off FPS movement
-		Cam1.enabled = !Cam1.enabled; // turn on/off FPS Camera
-		Script2D.enabled = !Script2D.enabled; // turn on/off TopView movement
+		Cam1.enabled = !Cam1.enabled; // turn on/off third person Camera
+		Script2D.enabled = !Script2D.enabled; // turn on/off movement
 		Cam2.enabled = !Cam2.enabled; // turn on/off TopView Camera
-		Collider2D.enabled = !Collider2D.enabled;
-		cc.enabled = !cc.enabled;
+		mouseScript.enabled = !mouseScript.enabled; // turn on/off mouserotation
+	
+		if (FPSView) {
+			transSwitch.MakeTransparent();
+			YouAreHere.SetActive (true);
+			foreach (GameObject script in highlights) {
+				script.gameObject.layer = 0;
+			}
+		}else if (!FPSView) {
+			transSwitch.MakerOpague();
+			YouAreHere.SetActive (false);
+			foreach (GameObject script in highlights) {
+				script.gameObject.layer = 2;
+			}
+		}
 
 
 	}
@@ -32,6 +50,7 @@ public class CameraSwitch : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			SwitchCameras();
+			FPSView = !FPSView;
 				}
 	}
 }
