@@ -87,6 +87,33 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &77578808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 77578809}
+  m_Layer: 23
+  m_Name: YolkSacTag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77578809
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 77578808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1171501126}
+  m_RootOrder: 0
 --- !u!1 &139361947
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,9 +126,9 @@ GameObject:
   - 23: {fileID: 139361949}
   - 64: {fileID: 139361951}
   - 114: {fileID: 139361952}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Intra-embryonic mesoderm
-  m_TagString: Highlightable
+  m_TagString: Mesoderm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,12 +139,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400022, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139361947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.9000001, z: -.0500000007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1353336247}
-  m_RootOrder: 2
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: -1.74995983, z: 336.350006}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children:
+  - {fileID: 1041148452}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!23 &139361949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -174,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
 --- !u!1 &342687306
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,9 +290,9 @@ GameObject:
   - 23: {fileID: 417877667}
   - 64: {fileID: 417877670}
   - 114: {fileID: 417877669}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Connecting stalk
-  m_TagString: Highlightable
+  m_TagString: Connecting Stalk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,13 +303,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400008, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417877665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.97000027, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 4.1598083e-05, z: 348.949982}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
-  - {fileID: 754950691}
-  m_Father: {fileID: 1519961043}
-  m_RootOrder: 2
+  - {fileID: 963607940}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!23 &417877667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -325,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
 --- !u!64 &417877670
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -362,10 +392,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 11.4399996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1171501126}
   - {fileID: 1158930773}
   m_Father: {fileID: 1519961043}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &661196113
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,9 +407,9 @@ GameObject:
   - 23: {fileID: 661196115}
   - 64: {fileID: 661196117}
   - 114: {fileID: 661196118}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Intra-embryonic endoderm
-  m_TagString: Highlightable
+  m_TagString: Endoderm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,11 +420,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400020, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 661196113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.17999983, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1353336247}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 3.8927792e-05, z: 326.549957}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children:
+  - {fileID: 1326130761}
+  m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!23 &661196115
 MeshRenderer:
@@ -453,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
 --- !u!1 &754950688
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,9 +496,9 @@ GameObject:
   - 23: {fileID: 754950689}
   - 64: {fileID: 754950692}
   - 114: {fileID: 754950693}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Amnion wall
-  m_TagString: Highlightable
+  m_TagString: Amnion Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,12 +542,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754950688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.0299978256, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 417877666}
-  m_RootOrder: 0
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 4.17649753e-05, z: 350.349976}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children:
+  - {fileID: 1180578894}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!64 &754950692
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -540,6 +572,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
+--- !u!1 &963607939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 963607940}
+  m_Layer: 23
+  m_Name: Connecting Stalk Tag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963607940
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963607939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417877666}
+  m_RootOrder: 0
+--- !u!1 &1041148451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1041148452}
+  m_Layer: 23
+  m_Name: Mesoderm tag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041148452
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041148451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 139361948}
+  m_RootOrder: 0
 --- !u!1 &1110323445
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +686,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 9
 --- !u!1 &1125331307
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,9 +699,9 @@ GameObject:
   - 23: {fileID: 1125331309}
   - 64: {fileID: 1125331311}
   - 114: {fileID: 1125331312}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Ectoderm
-  m_TagString: Highlightable
+  m_TagString: Ectoderm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,12 +712,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1125331307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.69999981, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1353336247}
-  m_RootOrder: 0
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 4.09305103e-05, z: 343.349976}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children:
+  - {fileID: 1772304252}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!23 &1125331309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -687,6 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
 --- !u!1 &1158930772
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,11 +801,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1158930772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 27, z: 0}
+  m_LocalPosition: {x: 0, y: 836.950012, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 637953000}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &1158930774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -775,9 +864,9 @@ GameObject:
   - 64: {fileID: 1171501129}
   - 64: {fileID: 1171501130}
   - 114: {fileID: 1171501131}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Yolk sac cavity
-  m_TagString: Highlightable
+  m_TagString: Yolk Sac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,12 +877,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400032, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171501125}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20.5499992, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 637953000}
-  m_RootOrder: 0
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 3.80098791e-05, z: 318.849945}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children:
+  - {fileID: 77578809}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!23 &1171501127
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -862,6 +952,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31d5eae446579f4a890f7deaae8a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowThisGUI: 0
+--- !u!1 &1180578893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1180578894}
+  m_Layer: 23
+  m_Name: AmnionWallTag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1180578894
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180578893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 754950691}
+  m_RootOrder: 0
 --- !u!1 &1209848789
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +1042,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1209848789}
   m_Mesh: {fileID: 4300022, guid: 6fae14ea18777dc488ffea925330e1f8, type: 3}
+--- !u!1 &1326130760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1326130761}
+  m_Layer: 23
+  m_Name: Endoderm tag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1326130761
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326130760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 661196114}
+  m_RootOrder: 0
 --- !u!1 &1353336246
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,9 +1094,6 @@ Transform:
   m_LocalPosition: {x: 0, y: -16.5100002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1125331308}
-  - {fileID: 661196114}
-  - {fileID: 139361948}
   - {fileID: 2142361491}
   - {fileID: 1567451891}
   m_Father: {fileID: 2093294699}
@@ -1040,7 +1182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
 --- !u!114 &1359844256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1247,7 @@ Transform:
   m_Children:
   - {fileID: 1209848790}
   m_Father: {fileID: 1519961043}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1519961042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1275,6 @@ Transform:
   m_Children:
   - {fileID: 1949574395}
   - {fileID: 1680213005}
-  - {fileID: 417877666}
   - {fileID: 1502167013}
   - {fileID: 637953000}
   m_Father: {fileID: 2093294699}
@@ -1222,7 +1363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
 --- !u!114 &1550564318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,7 +1407,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1353336247}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!64 &1567451892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1350,6 +1491,7 @@ GameObject:
   - 4: {fileID: 1704965162}
   - 33: {fileID: 1704965161}
   - 23: {fileID: 1704965160}
+  - 114: {fileID: 1704965163}
   m_Layer: 0
   m_Name: YouAreHere
   m_TagString: YouAreHere
@@ -1394,12 +1536,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704965159}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 1.77001953, y: -6.31999969, z: .0199890137}
-  m_LocalScale: {x: 32.1403084, y: 0, z: 32.1402931}
+  m_LocalScale: {x: 32.1403084, y: 32, z: 0}
   m_Children: []
   m_Father: {fileID: 1403798471}
   m_RootOrder: 1
+--- !u!114 &1704965163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704965159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052cde58e4d5bf94d8eaa5818d944e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1550564317}
 --- !u!1001 &1752486617
 Prefab:
   m_ObjectHideFlags: 0
@@ -1451,6 +1605,33 @@ Prefab:
     - {fileID: 11490028, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1772304251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1772304252}
+  m_Layer: 23
+  m_Name: Ectoderm tag
+  m_TagString: Highlightable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772304252
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772304251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1125331308}
+  m_RootOrder: 0
 --- !u!1 &1949574394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1735,7 @@ Transform:
   - {fileID: 1519961043}
   - {fileID: 1353336247}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
 --- !u!1 &2142361490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1765,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1353336247}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!64 &2142361492
 MeshCollider:
   m_ObjectHideFlags: 0
