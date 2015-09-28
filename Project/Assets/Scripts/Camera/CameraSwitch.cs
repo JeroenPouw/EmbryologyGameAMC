@@ -12,6 +12,7 @@ public class CameraSwitch : MonoBehaviour {
 	GameObject YouAreHere;
 	MouseTorque mouseScript;
 	GameObject[] highlights;
+
 	// Use this for initialization
 	void Start () {
 		Script2D = gameObject.GetComponent<MovementScript>();
@@ -20,10 +21,12 @@ public class CameraSwitch : MonoBehaviour {
 		YouAreHere = GameObject.FindGameObjectWithTag ("YouAreHere");
 		highlights = GameObject.FindGameObjectsWithTag ("Highlightable");
 		YouAreHere.gameObject.SetActive (false);
-		foreach (GameObject script in highlights) {
+		foreach (GameObject go in highlights) {
+			GameObject script = go.transform.parent.gameObject;
 			script.gameObject.layer = 2;
 		}
 	}
+
 	void SwitchCameras(){
 		Cam1.enabled = !Cam1.enabled; // turn on/off third person Camera
 		Script2D.enabled = !Script2D.enabled; // turn on/off movement
@@ -33,19 +36,22 @@ public class CameraSwitch : MonoBehaviour {
 		if (FPSView) {
 			transSwitch.MakeTransparent();
 			YouAreHere.SetActive (true);
-			foreach (GameObject script in highlights) {
-				script.gameObject.layer = 0;
+			foreach (GameObject go in highlights) {
+				GameObject script = go.transform.parent.gameObject;
+				script.gameObject.layer = 23;
 			}
 		}else if (!FPSView) {
 			transSwitch.MakerOpague();
 			YouAreHere.SetActive (false);
-			foreach (GameObject script in highlights) {
+			foreach (GameObject go in highlights) {
+				GameObject script = go.transform.parent.gameObject;
 				script.gameObject.layer = 2;
 			}
 		}
 
 
 	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Tab)) {
