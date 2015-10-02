@@ -16,7 +16,7 @@ public class RadiusCheck : MonoBehaviour {
 		Debug.Log (Ectocollider.Length);
 		if (Ectocollider.Length >= 300) {
 			score += 10;
-		}else if (Ectocollider.Length < 300) {
+		}else if (Ectocollider.Length < 300 || Ectocollider.Length > 450) {
 			score -= 10;
 		}
 
