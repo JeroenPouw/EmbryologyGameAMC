@@ -6,16 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_Menu.unity
+    path: Assets/Scenes/Level 1/Overworld  lvl 1.unity
   - enabled: 1
-    path: Assets/Scenes/Obsolete/level1.unity
+    path: Assets/Scenes/Level 1/Ectoderm Level.unity
   - enabled: 1
-    path: Assets/Scenes/Obsolete/level2.unity
+    path: Assets/Scenes/Level 1/Endoderm Level.unity
   - enabled: 1
-    path: Assets/Scenes/Obsolete/level3.unity
-  - enabled: 1
-    path: Assets/Scenes/Puzzel.unity
-  - enabled: 1
-    path: Assets/Scenes/Obsolete/HighScore.unity
-  - enabled: 1
-    path: Assets/Scenes/Obsolete/Credits.unity
+    path: Assets/Scenes/Level 1/Mesoderm Level.unity

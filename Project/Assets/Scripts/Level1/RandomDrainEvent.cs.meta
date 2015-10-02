@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 8b35b3a1375a5fa47a537dd406b60ec4
+timeCreated: 1443607111
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - wDrain: {fileID: 11468890, guid: 90f1b4e45553b904bb8e8f8b3dea85ae, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

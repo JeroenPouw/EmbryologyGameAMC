@@ -19,6 +19,7 @@ TagManager:
   - Yolk Sac
   - Amnion Wall
   - Connecting Stalk
+  - water
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - PuzzleWrong
   - Textfield
   - DefaultGui
-  - 
+  - Scorable
   - 
   - 
   - 
