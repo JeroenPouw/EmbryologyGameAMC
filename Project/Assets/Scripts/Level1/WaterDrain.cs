@@ -79,16 +79,16 @@ public class WaterDrain : MonoBehaviour {
 
 	void RandomTimer(){
 		if (ectoEvent == true) {
-			Ectotimer = .4f;
-		}else Ectotimer = 5.0f;
+			Ectotimer = 0.75f;
+		}else Ectotimer = 4f;
 
 		if (endoEvent == true) {
-			Endotimer = 0.4f	;
-		}else Endotimer = 5.0f;
+			Endotimer = 0.75f	;
+		}else Endotimer = 4f;
 
 		if (mesoEvent == true) {
-			Mesotimer = 0.4f;
-		}else Mesotimer = 5.0f;
+			Mesotimer = 0.75f;
+		}else Mesotimer = 4f;
 	}
 
 	public void ClearList(){
