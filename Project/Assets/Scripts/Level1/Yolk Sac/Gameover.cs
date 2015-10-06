@@ -14,7 +14,7 @@ public class Gameover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (timer > 4f) {
+		if (timer > 90f) {
 			//end game
 			GameOver();
 		}
