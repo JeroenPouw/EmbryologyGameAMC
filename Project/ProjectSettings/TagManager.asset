@@ -9,7 +9,6 @@ TagManager:
   - DNArepair
   - Rotate
   - nonTrans
-  - Player
   - YouAreHere
   - Highlightable
   - ChildTag
@@ -20,6 +19,8 @@ TagManager:
   - Amnion Wall
   - Connecting Stalk
   - water
+  - GoodLine
+  - Lava
   layers:
   - Default
   - TransparentFX
