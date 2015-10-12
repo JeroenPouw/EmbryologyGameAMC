@@ -17,20 +17,20 @@ public class RandomDrainEvent : MonoBehaviour {
 	IEnumerator randomWait(float timer){
 		yield return new WaitForSeconds(timer);
 		float duration = 5.0f;
-		randomNumb = Random.Range (1, 4);
+		randomNumb = Random.Range (1, 4); // choose a number which corresponds with either the Ectoderm, Mesoderm or Endoderm in Waterdrain.cs
 		for (int i = 0; i < wDrainObj.Length; i++) {
 			wDrain[i] = wDrainObj[i].GetComponent<WaterDrain>();
 			wDrain[i].RandomEventStart(randomNumb);
 			//wDrain[i].ClearList();
 		}
 		yield return new WaitForSeconds (duration);
-		for (int i = 0; i < wDrainObj.Length; i++) {
+		for (int i = 0; i < wDrainObj.Length; i++) { // Go back to normal drain speed.
 			if (wDrainObj[i] != null){
 				wDrain[i] = wDrainObj[i].GetComponent<WaterDrain>();
 				wDrain[i].RandomEventStart(randomNumb);
 			}
 		}
-		StartCoroutine (randomWait (randomTimer));
+		StartCoroutine (randomWait (randomTimer)); // let randomWait repeat itself.
 	}
 	// Update is called once per frame
 	void Update () {

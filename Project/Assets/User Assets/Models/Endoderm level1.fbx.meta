@@ -17,6 +17,8 @@ ModelImporter:
     3300002: NurbsPath
     4300000: BezierCircle
     4300002: NurbsPath
+    9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,9 +70,9 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: NurbsPath
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

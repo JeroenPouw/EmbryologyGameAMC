@@ -20,7 +20,7 @@ public class FlipperReset : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { // reset the flippers to their starting rotations.
 		if (rot1.transform.eulerAngles.z > maxRot) {
 			rot1.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot1.rotation.eulerAngles.z ,maxRot,maxRot));
 			rot2.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot2.rotation.eulerAngles.z ,-maxRot,-maxRot));

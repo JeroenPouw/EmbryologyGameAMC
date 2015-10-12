@@ -25,7 +25,7 @@ public class WaterDrain : MonoBehaviour {
 		switch (other.gameObject.tag) {
 		case "Endoderm":
 			StartCoroutine(WaitandDestroy(Endotimer));
-			if (endoEvent == true) {
+			if (endoEvent == true) { // change color to red, for player feedback.
 				other.gameObject.GetComponent<Renderer>().material.color = Color.red;
 			}else{
 				other.gameObject.GetComponent<Renderer>().material.color = Color.white;
@@ -33,7 +33,7 @@ public class WaterDrain : MonoBehaviour {
 			break;
 		case "Ectoderm":
 			StartCoroutine(WaitandDestroy(Ectotimer));
-			if (ectoEvent == true) {
+			if (ectoEvent == true) {// change color to red, for player feedback.
 				other.gameObject.GetComponent<Renderer>().material.color = Color.red;
 			}else{
 				other.gameObject.GetComponent<Renderer>().material.color = Color.white;
@@ -41,7 +41,7 @@ public class WaterDrain : MonoBehaviour {
 			break;
 		case "Mesoderm":
 			StartCoroutine(WaitandDestroy(Mesotimer));
-			if (mesoEvent == true) {
+			if (mesoEvent == true) {// change color to red, for player feedback.
 				other.gameObject.GetComponent<Renderer>().material.color = Color.red;
 			}else{
 				other.gameObject.GetComponent<Renderer>().material.color = Color.white;
@@ -52,7 +52,7 @@ public class WaterDrain : MonoBehaviour {
 	}
 
 	public void RandomEventStart(int eventNum){
-		switch (eventNum) {
+		switch (eventNum) {//Depending on the number from RandomDrainEvent.cs, start the random event for either the Meso, Ecto or Endoderm.
 		case 1:
 			if (endoEvent == true) {
 				oldendoEvent = false;
@@ -78,7 +78,7 @@ public class WaterDrain : MonoBehaviour {
 	}
 
 	void RandomTimer(){
-		if (ectoEvent == true) {
+		if (ectoEvent == true) { // Determine draining speed. Lower speeds are for random events.
 			Ectotimer = 0.75f;
 		}else Ectotimer = 4f;
 
@@ -91,7 +91,7 @@ public class WaterDrain : MonoBehaviour {
 		}else Mesotimer = 4f;
 	}
 
-	public void ClearList(){
+	public void ClearList(){ // Set gameObjects false, Cannot destroy due to Null error.
 		this.gameObject.SetActive (false);
 	}
 

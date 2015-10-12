@@ -16,7 +16,7 @@ public class HighlightScript : MonoBehaviour {
 
 	void OnMouseOver()
 	{
-		switch (gameObject.tag) {
+		switch (gameObject.tag) { // if mouseOver == true, show infotext.
 			// ----------------------------- Level 1 ------------------------------------------------------------
 		case "Endoderm":
 			GUIString = "Endoderm";
