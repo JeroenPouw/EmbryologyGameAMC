@@ -14,9 +14,9 @@ public class RadiusCheck : MonoBehaviour {
 		yield return new WaitForSeconds (1.0f);
 		Collider[] Ectocollider = Physics.OverlapSphere(gameObject.transform.position,30.0f, 1<<24);
 		Debug.Log (Ectocollider.Length);
-		if (Ectocollider.Length >= 300) {
+		if (Ectocollider.Length >= 300) { // if there is enough nutrition being let trough, give points.
 			score += 10;
-		}else if (Ectocollider.Length < 300 || Ectocollider.Length > 450) {
+		}else if (Ectocollider.Length < 300 || Ectocollider.Length > 450) {// if there is too little, or too much nutrition being let through, lose points.
 			score -= 10;
 		}
 

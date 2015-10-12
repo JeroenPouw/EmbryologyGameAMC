@@ -29,7 +29,7 @@ public class LineDraw : MonoBehaviour {
 				Debug.Log(hit.transform.tag);
 				currentString = hit.transform.tag;
 			}
-			if (startString == "GoodLine") {
+			if (startString == "GoodLine") { // if target hit with raycast is part of the level, draw the line
 				numberofpoints++;	
 				linerender.SetVertexCount (numberofpoints);
 				Vector3 mousePos = new Vector3 (0, 0, 0);
@@ -40,16 +40,15 @@ public class LineDraw : MonoBehaviour {
 				linerender.SetPosition (numberofpoints - 1, worldPos);
 			}
 			if (hit.transform != null) {
-				if (hit.transform.tag == "Lava") {
+				if (hit.transform.tag == "Lava") { // if target hit with raycast is not part of the level, discard the line and start over.
 					numberofpoints = 0;
 					linerender.SetVertexCount(numberofpoints);
 				}
 			}
 		} else {
-			numberofpoints = 0;
+			numberofpoints = 0; // if the mouse input is lost, discard the line and start over
 			linerender.SetVertexCount(numberofpoints);
 		}
-		//Debug.Log (startString);
 		if (Input.GetKeyDown(KeyCode.Mouse0)) {
 			ray = camera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray,out hit)) {

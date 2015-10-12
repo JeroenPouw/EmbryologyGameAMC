@@ -47,19 +47,14 @@ public class FlipperRotate : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.S)) {
 			isOpen = false;
 		}
-		if (rot1.transform.eulerAngles.z > maxRot) {
+		if (rot1.transform.eulerAngles.z > maxRot) { // reset the flipper back to starting rotation
 			rot1.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot1.rotation.eulerAngles.z ,maxRot,maxRot));
 			rot2.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot2.rotation.eulerAngles.z ,-maxRot,-maxRot));
 		}
-		if (rot1.transform.eulerAngles.z < minRot) {
+		if (rot1.transform.eulerAngles.z < minRot) { // reset the flipper back to starting rotation
 			rot1.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot1.rotation.eulerAngles.z, minRot,minRot));
 			rot2.transform.eulerAngles = new Vector3(0,0,ClampAngle(rot2.rotation.eulerAngles.z, -minRot,-minRot));
 		}
-//		if (rot1 != null) {
-//			rot1.transform.Rotate(0, 0, -2);
-//			rot2.transform.Rotate(0, 0, 2);
-//		}
-		
 		
 	}
 }
