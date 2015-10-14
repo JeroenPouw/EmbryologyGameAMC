@@ -23,6 +23,16 @@ TagManager:
   - Lava
   - PuzzelTile
   - PuzzelSlot
+  - Tile
+  - MenuText
+  - PuzzleBlock
+  - InfoText
+  - South West Pipe
+  - North South Pipe
+  - North South East Pipe
+  - North South West Pipe
+  - North South East West Pipe
+  - East West Pipe
   layers:
   - Default
   - TransparentFX
@@ -37,8 +47,8 @@ TagManager:
   - Player
   - Enemies
   - Pickups
-  - Level2_Minimap
-  - Level3_Minimap
+  - Pipe
+  - Tile
   - PuzzleObjects
   - PuzzleGUIBackground
   - PuzzleRaycast

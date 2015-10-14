@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MYCLASSNAME : MonoBehaviour {
+public class ResetScript : MonoBehaviour {
 	void  OnGUI (){
 		if (GUI.Button ( new Rect(190,10,100,30), "RESET")) {
 			Application.LoadLevel (Application.loadedLevel);

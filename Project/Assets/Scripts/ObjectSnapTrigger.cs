@@ -16,7 +16,7 @@ public class ObjectSnapTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.name == "PipeL")
 		{
-			Debug.Log (gameObject.transform.name);
+			//Debug.Log (gameObject.transform.name);
 			string partnerName= "Tile";
 			GameObject partnerGO = GameObject.Find(gameObject.transform.name);
 		}
