@@ -33,6 +33,11 @@ TagManager:
   - North South West Pipe
   - North South East West Pipe
   - East West Pipe
+  - North East Pipe
+  - South East Pipe
+  - North West Pipe
+  - North East West Pipe
+  - South East West Pipe
   layers:
   - Default
   - TransparentFX

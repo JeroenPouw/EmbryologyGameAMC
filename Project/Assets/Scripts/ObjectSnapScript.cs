@@ -12,6 +12,8 @@ public class ObjectSnapScript : MonoBehaviour {
 	float closeVPDist= 0.5f;
 	float moveSpeed= 40.0f;
 	float rotateSpeed= 90.0f;
+	public GameObject child;
+	public GameObject child2;
 
 	Ray ray;
 	RaycastHit hit;
@@ -42,6 +44,10 @@ public class ObjectSnapScript : MonoBehaviour {
 	void  OnMouseUp (){
 		if (dist < closeVPDist) {
 			transform.position = partnerGO.transform.position;
+			child.GetComponent<Renderer>().material.color = Color.yellow;
+			if (child2 != null) {
+				child2.GetComponent<Renderer>().material.color = Color.yellow;
+			}
 			//InstallPart();
 		}
 	}
