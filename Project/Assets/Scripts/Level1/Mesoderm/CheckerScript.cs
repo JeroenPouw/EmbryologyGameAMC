@@ -14,18 +14,16 @@ public class CheckerScript : MonoBehaviour {
 	GameObject tempHitObj;
 	float distance = 1.1f;
 
-	public LayerMask pipeMask;
-	public LayerMask tileMask;
+	public static int bonusPoints;
 
-	public int bonusPoints;
-
-	Ray ray;
 	RaycastHit hit;
 
 	bool Nempty;
 	bool Sempty;
 	bool Eempty;
 	bool Wempty;
+
+	bool GameOver;
 	// Use this for initialization
 	void Start () {
 		GameObject[] allList = GameObject.FindObjectsOfType (typeof(GameObject)) as GameObject[];
@@ -57,13 +55,15 @@ public class CheckerScript : MonoBehaviour {
 	}
 
 	void Check(){
-
 		if (Physics.Raycast(transform.position,transform.forward,out hit)) {
-			Debug.Log("Tile:" + hit.transform.gameObject.name);
+		//	Debug.Log("Tile:" + hit.transform.gameObject.name);
 			switch (hit.transform.gameObject.name) {
 			case "EndPipe":
-				if (bonusPoints >= 1) {
-					Application.LoadLevel("Overworld");
+				if (bonusPoints >= 1 && GameOver == false) {
+					OpeningChecker.score += 100;
+					OpeningChecker.score += bonusPoints;
+					GameOver = true;
+					//Application.LoadLevel("Overworld");
 				}
 			break;
 			case "Organ":
@@ -71,7 +71,7 @@ public class CheckerScript : MonoBehaviour {
 				Cross();
 				break;
 			case "StartPipe":
-				Debug.Log("start");
+			//	Debug.Log("start");
 				direction = "S";
 				GoSouth();
 				break;
@@ -219,10 +219,10 @@ public class CheckerScript : MonoBehaviour {
 				}
 				break;
 			case "TWest":
-				if (direction == "S") { // go south and then west
-					GoSouth();
-					if (Sempty = true) {
-						GoWest();
+				if (direction == "S") { // go west and then south
+					GoWest();
+					if (Wempty = true) {
+						GoSouth();
 					}
 					if (Sempty && Wempty) {
 						GoNorth();
@@ -257,19 +257,19 @@ public class CheckerScript : MonoBehaviour {
 						GoNorth();
 					}
 				}
-				if (direction == "N") { //go north and then east
-					GoNorth();
-					if (Nempty = true) {
-						GoEast();
+				if (direction == "N") { //go east and then north
+					GoEast();
+					if (Eempty = true) {
+						GoNorth();
 					}
 					if (Nempty && Eempty) {
 						GoSouth();
 					}
 				}
-				if (direction == "W") { // go south and then north
-					GoSouth();
-					if (Sempty == true) {
-						GoNorth();
+				if (direction == "W") { // go north and then south
+					GoNorth();
+					if (Nempty == true) {
+						GoSouth();
 					}
 					if (Sempty && Nempty) {
 						GoEast();
@@ -347,13 +347,16 @@ public class CheckerScript : MonoBehaviour {
 
 			//	if (Physics.Raycast(transform.position,transform.forward,out hit,200,pipeMask)) {
 				//		tempHitObj = hit.transform.gameObject;
-				tempHitObj.GetComponent<Renderer>().enabled = true;
+				//tempHitObj.GetComponent<Renderer>().enabled = true;
 				//}
 				direction = "N";
+				Debug.Log (direction);
+				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
 				return;
-			}else
+			}else{
 				transform.position -= new Vector3(0,distance,0);
-			Nempty = true;
+				Nempty = true;
+			}
 		}
 	}
 	void GoSouth(){
@@ -363,13 +366,16 @@ public class CheckerScript : MonoBehaviour {
 			if (Southlist.Contains(tempHitObj)) {
 				//if (Physics.Raycast(transform.position,transform.forward,out hit,200,pipeMask)) {
 				//	tempHitObj = hit.transform.gameObject;
-				tempHitObj.GetComponent<Renderer>().enabled = true;
+				//tempHitObj.GetComponent<Renderer>().enabled = true;
 				//}
 				direction = "S";
+				Debug.Log (direction);
+				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
 				return;
-			}else
+			}else{
 				transform.position += new Vector3(0,distance,0);
-			Sempty = true;
+				Sempty = true;
+			}
 		}
 	}
 	void GoWest(){
@@ -379,13 +385,16 @@ public class CheckerScript : MonoBehaviour {
 			if (Westlist.Contains(tempHitObj)) {
 				//if (Physics.Raycast(transform.position,transform.forward,out hit,200,pipeMask)) {
 				//	tempHitObj = hit.transform.gameObject;
-				tempHitObj.GetComponent<Renderer>().enabled = true;
+			//	tempHitObj.GetComponent<Renderer>().enabled = true;
 				//}
 				direction = "W";
+				Debug.Log (direction);
+				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
 				return;
-			}else
+			}else{
 				transform.position += new Vector3(distance,0,0);
-			Wempty = true;
+				Wempty = true;
+			}
 		}
 	}
 	void GoEast(){
@@ -395,23 +404,23 @@ public class CheckerScript : MonoBehaviour {
 			if (Eastlist.Contains(tempHitObj)) {
 				//if (Physics.Raycast(transform.position,transform.forward,out hit,200,pipeMask)) {
 				//	tempHitObj = hit.transform.gameObject;
-				tempHitObj.GetComponent<Renderer>().enabled = true;
+			//	tempHitObj.GetComponent<Renderer>().enabled = true;
 				//}
 				direction = "E";
+				Debug.Log (direction);
+				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
 				return;
-			}else
+			}else{
 				transform.position -= new Vector3(distance,0,0);
-			Eempty = true;
+				Eempty = true;
+			}
 		}
 	}
 
 	IEnumerator Solve(){
 		for (int i = 0; i < (PipeList.Count*2); i++) {
 			Check ();
-			yield return new WaitForSeconds(1);
-			if (tempHitObj != null) {
-				tempHitObj.GetComponentInChildren<Renderer>().enabled = false;
-			}
+			yield return new WaitForSeconds(2f);
 		}
 	
 	}

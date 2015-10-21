@@ -53,7 +53,9 @@ public class LineDraw : MonoBehaviour {
 			ray = camera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray,out hit)) {
 				Debug.Log(hit.transform.tag);
-				startString = hit.transform.tag;
+				if (hit.transform.tag == "GoodLine") {
+					startString = hit.transform.tag;
+				}
 			}
 
 
@@ -63,7 +65,7 @@ public class LineDraw : MonoBehaviour {
 			if (Physics.Raycast(ray,out hit)) {
 				Debug.Log(hit.point);
 				endString = hit.transform.tag;
-				if (startString == endString) {
+				if (startString == "GoodLine" && endString == "EndLine") {
 					Application.LoadLevel("Overworld");
 				}else{
 					Debug.Log("failure");

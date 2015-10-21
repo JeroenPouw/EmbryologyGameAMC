@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3388582}
   - 136: {fileID: 13604220}
   - 23: {fileID: 2354724}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3394790}
   - 136: {fileID: 13640334}
   - 23: {fileID: 2317036}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cylinder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,10 +47,10 @@ GameObject:
   - 33: {fileID: 3330676}
   - 65: {fileID: 6592020}
   - 23: {fileID: 2374418}
-  - 54: {fileID: 5449228}
   - 114: {fileID: 11432538}
   - 114: {fileID: 11455552}
-  m_Layer: 13
+  - 114: {fileID: 11450966}
+  m_Layer: 0
   m_Name: LSouthEast
   m_TagString: North West Pipe
   m_Icon: {fileID: 0}
@@ -188,21 +188,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146316}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5449228
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199510}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6592020
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -230,6 +215,20 @@ MonoBehaviour:
   child: {fileID: 138540}
   child2: {fileID: 146316}
   partnerGO: {fileID: 0}
+--- !u!114 &11450966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  child1: {fileID: 138540}
+  child2: {fileID: 146316}
 --- !u!114 &11455552
 MonoBehaviour:
   m_ObjectHideFlags: 1
