@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2353550}
   - 114: {fileID: 11473428}
   - 114: {fileID: 11497496}
+  - 114: {fileID: 11462266}
   m_Layer: 0
   m_Name: TSouth
   m_TagString: North East West Pipe
@@ -199,6 +200,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11462266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  child1: {fileID: 131770}
+  child2: {fileID: 181378}
 --- !u!114 &11473428
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -31,6 +31,7 @@ GameObject:
   - 23: {fileID: 2344068}
   - 114: {fileID: 11414890}
   - 114: {fileID: 11416552}
+  - 114: {fileID: 11471666}
   m_Layer: 0
   m_Name: StraightHor
   m_TagString: East West Pipe
@@ -163,6 +164,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3375f5969bd81304f9ca6b91ecd2e8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11471666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  child1: {fileID: 174296}
+  child2: {fileID: 0}
 --- !u!136 &13607310
 CapsuleCollider:
   m_ObjectHideFlags: 1

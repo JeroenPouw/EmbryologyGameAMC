@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2305664}
   - 114: {fileID: 11476502}
   - 114: {fileID: 11491384}
+  - 114: {fileID: 11414152}
   m_Layer: 0
   m_Name: TEast
   m_TagString: North South West Pipe
@@ -199,6 +200,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11414152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  child1: {fileID: 198484}
+  child2: {fileID: 123426}
 --- !u!114 &11476502
 MonoBehaviour:
   m_ObjectHideFlags: 1

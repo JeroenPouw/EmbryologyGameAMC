@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3310624}
   - 136: {fileID: 13644974}
   - 23: {fileID: 2317366}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cylinder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,10 +29,10 @@ GameObject:
   - 33: {fileID: 3392962}
   - 65: {fileID: 6588172}
   - 23: {fileID: 2381358}
-  - 54: {fileID: 5454352}
   - 114: {fileID: 11414700}
   - 114: {fileID: 11488526}
-  m_Layer: 13
+  - 114: {fileID: 11494140}
+  m_Layer: 0
   m_Name: LNorthEast
   m_TagString: South West Pipe
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - 33: {fileID: 3353284}
   - 136: {fileID: 13673248}
   - 23: {fileID: 2381478}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,21 +188,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134494}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5454352
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134494}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6588172
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -241,6 +226,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3375f5969bd81304f9ca6b91ecd2e8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11494140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  child1: {fileID: 137918}
+  child2: {fileID: 118104}
 --- !u!136 &13644974
 CapsuleCollider:
   m_ObjectHideFlags: 1

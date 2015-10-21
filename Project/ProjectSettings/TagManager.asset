@@ -38,6 +38,7 @@ TagManager:
   - North West Pipe
   - North East West Pipe
   - South East West Pipe
+  - EndLine
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ public class OpeningChecker : MonoBehaviour {
 	Ray ray;
 	RaycastHit hit;
 
-	public int score;
+	public static int score;
 	public int openings;
 
 	// Use this for initialization
@@ -98,9 +98,9 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (Northlist.Contains(tempHitObj)) {
 				tempHitObj.GetComponent<Renderer>().material.color = Color.green;
-				Debug.Log("correct");
+				//debug.log("correct");
 			}else{
-				Debug.Log("NorthOpening");
+				//debug.log("NorthOpening");
 				score -= 10;
 				openings += 1;
 			}
@@ -113,9 +113,9 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (Southlist.Contains(tempHitObj)) {
 				tempHitObj.GetComponent<Renderer>().material.color = Color.green;
-				Debug.Log("correct");
+				//debug.log("correct");
 			}else{
-				Debug.Log("SouthOpening");
+				//debug.log("SouthOpening");
 				score -= 10;
 				openings += 1;
 			}
@@ -128,9 +128,9 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (Westlist.Contains(tempHitObj)) {	
 				tempHitObj.GetComponent<Renderer>().material.color = Color.green;
-				Debug.Log("correct");
+				//debug.log("correct");
 			}else{
-				Debug.Log("WestOpening");
+				//debug.log("WestOpening");
 				score -= 10;
 				openings += 1;
 			}
@@ -143,9 +143,9 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (Eastlist.Contains(tempHitObj)) {
 				tempHitObj.GetComponent<Renderer>().material.color = Color.green;
-				Debug.Log("correct");
+				//debug.log("correct");
 			}else{
-				Debug.Log("EastOpening");
+				//debug.log("EastOpening");
 				score -= 10;
 				openings += 1;
 			}
