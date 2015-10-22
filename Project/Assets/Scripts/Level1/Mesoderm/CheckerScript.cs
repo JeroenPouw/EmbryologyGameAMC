@@ -63,7 +63,7 @@ public class CheckerScript : MonoBehaviour {
 					OpeningChecker.score += 100;
 					OpeningChecker.score += bonusPoints;
 					GameOver = true;
-					//Application.LoadLevel("Overworld");
+					Application.LoadLevel("Overworld");
 				}
 			break;
 			case "Organ":
@@ -370,7 +370,9 @@ public class CheckerScript : MonoBehaviour {
 				//}
 				direction = "S";
 				Debug.Log (direction);
-				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
+				if (tempHitObj.gameObject.name != "EndPipe") {
+					tempHitObj.GetComponent<ColorChange>().isCorrect = true;
+				}
 				return;
 			}else{
 				transform.position += new Vector3(0,distance,0);
@@ -420,7 +422,7 @@ public class CheckerScript : MonoBehaviour {
 	IEnumerator Solve(){
 		for (int i = 0; i < (PipeList.Count*2); i++) {
 			Check ();
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(.5f);
 		}
 	
 	}
