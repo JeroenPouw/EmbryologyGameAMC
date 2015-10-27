@@ -9,7 +9,6 @@ TagManager:
   - DNArepair
   - Rotate
   - nonTrans
-  - Player
   - YouAreHere
   - Highlightable
   - ChildTag
@@ -19,6 +18,27 @@ TagManager:
   - Yolk Sac
   - Amnion Wall
   - Connecting Stalk
+  - water
+  - GoodLine
+  - Lava
+  - PuzzelTile
+  - PuzzelSlot
+  - Tile
+  - MenuText
+  - PuzzleBlock
+  - InfoText
+  - South West Pipe
+  - North South Pipe
+  - North South East Pipe
+  - North South West Pipe
+  - North South East West Pipe
+  - East West Pipe
+  - North East Pipe
+  - South East Pipe
+  - North West Pipe
+  - North East West Pipe
+  - South East West Pipe
+  - EndLine
   layers:
   - Default
   - TransparentFX
@@ -33,8 +53,8 @@ TagManager:
   - Player
   - Enemies
   - Pickups
-  - Level2_Minimap
-  - Level3_Minimap
+  - Pipe
+  - Tile
   - PuzzleObjects
   - PuzzleGUIBackground
   - PuzzleRaycast
@@ -44,7 +64,7 @@ TagManager:
   - PuzzleWrong
   - Textfield
   - DefaultGui
-  - 
+  - Scorable
   - 
   - 
   - 
