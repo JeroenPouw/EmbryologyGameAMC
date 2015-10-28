@@ -24,15 +24,36 @@ public class CheckerScript : MonoBehaviour {
 		if (Physics.Raycast(transform.position,transform.forward,out hit)) {
 			switch (hit.transform.gameObject.name) {
 			case "EndPipe":
-				if (bonusPoints >= 1 && GameOver == false) {
-					OpeningChecker.score += 100;
-					OpeningChecker.score += bonusPoints;
-					GameOver = true;
-					Application.LoadLevel("Overworld");
+				switch (Application.loadedLevelName) {
+				case "Mesoderm 1":
+					if (bonusPoints >= 1 && GameOver == false) {
+						OpeningChecker.score += 100;
+						OpeningChecker.score += bonusPoints;
+						GameOver = true;
+						Application.LoadLevel("Overworld");
+					}
+					break;
+				case "Mesoderm 2":
+					if (bonusPoints >= 2 && GameOver == false) {
+						OpeningChecker.score += 100;
+						OpeningChecker.score += bonusPoints;
+						GameOver = true;
+						Application.LoadLevel("Overworld");
+					}
+					break;
+				case "Mesoderm 3":
+					if (bonusPoints >= 3 && GameOver == false) {
+						OpeningChecker.score += 100;
+						OpeningChecker.score += bonusPoints;
+						GameOver = true;
+						Application.LoadLevel("Overworld");
+					}
+					break;
 				}
+
 			break;
 			case "Organ":
-				bonusPoints += 10;
+				bonusPoints += 1;
 				pipe.Cross();
 				break;
 			case "StartPipe":
