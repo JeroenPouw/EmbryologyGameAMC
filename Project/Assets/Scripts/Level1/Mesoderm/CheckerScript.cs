@@ -27,24 +27,24 @@ public class CheckerScript : MonoBehaviour {
 				switch (Application.loadedLevelName) {
 				case "Mesoderm 1":
 					if (bonusPoints >= 1 && GameOver == false) {
-						OpeningChecker.score += 100;
-						OpeningChecker.score += bonusPoints;
+						ScoreScript.score += 100;
+						ScoreScript.score += bonusPoints;
 						GameOver = true;
 						Application.LoadLevel("Overworld");
 					}
 					break;
 				case "Mesoderm 2":
 					if (bonusPoints >= 2 && GameOver == false) {
-						OpeningChecker.score += 100;
-						OpeningChecker.score += bonusPoints;
+						ScoreScript.score += 100;
+						ScoreScript.score += bonusPoints;
 						GameOver = true;
 						Application.LoadLevel("Overworld");
 					}
 					break;
 				case "Mesoderm 3":
 					if (bonusPoints >= 3 && GameOver == false) {
-						OpeningChecker.score += 100;
-						OpeningChecker.score += bonusPoints;
+						ScoreScript.score += 100;
+						ScoreScript.score += bonusPoints;
 						GameOver = true;
 						Application.LoadLevel("Overworld");
 					}

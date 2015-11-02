@@ -7,8 +7,7 @@ public class OpeningChecker : MonoBehaviour {
 	float distance = 1.1f;
 	Ray ray;
 	RaycastHit hit;
-
-	public static int score;
+	
 	public int openings;//debug purposes
 
 	// Use this for initialization
@@ -64,7 +63,7 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Northlist.Contains(tempHitObj)) {
 			}else{
-				score -= 10;
+				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -76,7 +75,7 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Southlist.Contains(tempHitObj)) {
 			}else{
-				score -= 10;
+				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -88,7 +87,7 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Westlist.Contains(tempHitObj)) {	
 			}else{
-				score -= 10;
+				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -100,7 +99,7 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Eastlist.Contains(tempHitObj)) {
 			}else{
-				score -= 10;
+				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
