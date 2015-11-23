@@ -39,7 +39,7 @@ public class SceneSwitchScript : MonoBehaviour {
 				Application.LoadLevel("Ectoderm Level");
 				break;
 			case "Mesoderm":
-				Application.LoadLevel("Mesoderm Level");
+				Application.LoadLevel("Mesoderm 1");
 				break;
 			}
 		}

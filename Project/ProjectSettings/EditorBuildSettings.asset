@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 1/Overworld.unity
+    path: Assets/Scenes/OverWorlds/Overworld.unity
   - enabled: 1
-    path: Assets/Scenes/Level 1/Ectoderm Level.unity
+    path: Assets/Scenes/MiniGames/Ectoderm Level.unity
   - enabled: 1
-    path: Assets/Scenes/Level 1/Endoderm Level.unity
+    path: Assets/Scenes/MiniGames/Endoderm Level.unity
   - enabled: 1
-    path: Assets/Scenes/Level 1/Mesoderm Level.unity
+    path: Assets/Scenes/MiniGames/Yolk Sac Level.unity
   - enabled: 1
-    path: Assets/Scenes/Level 1/Yolk Sac Level.unity
+    path: Assets/Scenes/MiniGames/Mesoderm 1.unity
