@@ -2065,6 +2065,14 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1550564317}
+    - target: {fileID: 11482414, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
+      propertyPath: correctiveStrength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482414, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
   m_IsPrefabParent: 0

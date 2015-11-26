@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 7875b0bb3fe7d4a4999128fbb8a44243
+timeCreated: 1448371800
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Alimentary_canal
+    100002: Alimentary_system
+    100004: Amnion_Meso_ex_Yolk_Sac_Wall
+    100006: Arteries
+    100008: Cardiac_jelly
+    100010: Cardiovascular
+    100012: Cardiovascular_system
+    100014: Cavaties
+    100016: Central_nervous_system
+    100018: Coelemic_vesicles
+    100020: Coelom
+    100022: //RootNode
+    100024: Dorsal_aortae
+    100026: Embryogenesis
+    100028: Extra-embryonic_structures
+    100030: First_pharyngeal_arch_arteries
+    100032: Foregut_Midgut_Hindgut_Notochord_and_Allantois
+    100034: Heart
+    100036: Heart_lumen
+    100038: Intergumentary_system
+    100040: Intra-embryonic_coelom
+    100042: Intra-embryonic_mesoderm
+    100044: Intra-embryonic_structures
+    100046: Lumen_gut_and_Yolk_Sac
+    100048: Myocardium
+    100050: Nervous_system
+    100052: Neural_Tube__Plat__Primitive_Steak
+    100054: Paired_dorsal_aortae
+    100056: Pericardioperitoneal_canals
+    100058: Pharyngeal_arch_arteries
+    100060: Skeletal_and_muscular_system
+    100062: Skin
+    100064: Somites
+    100066: Somitocoel
+    100068: Stage_10
+    100070: Urogenital_system
+    100072: Veins
+    400000: Alimentary_canal
+    400002: Alimentary_system
+    400004: Amnion_Meso_ex_Yolk_Sac_Wall
+    400006: Arteries
+    400008: Cardiac_jelly
+    400010: Cardiovascular
+    400012: Cardiovascular_system
+    400014: Cavaties
+    400016: Central_nervous_system
+    400018: Coelemic_vesicles
+    400020: Coelom
+    400022: //RootNode
+    400024: Dorsal_aortae
+    400026: Embryogenesis
+    400028: Extra-embryonic_structures
+    400030: First_pharyngeal_arch_arteries
+    400032: Foregut_Midgut_Hindgut_Notochord_and_Allantois
+    400034: Heart
+    400036: Heart_lumen
+    400038: Intergumentary_system
+    400040: Intra-embryonic_coelom
+    400042: Intra-embryonic_mesoderm
+    400044: Intra-embryonic_structures
+    400046: Lumen_gut_and_Yolk_Sac
+    400048: Myocardium
+    400050: Nervous_system
+    400052: Neural_Tube__Plat__Primitive_Steak
+    400054: Paired_dorsal_aortae
+    400056: Pericardioperitoneal_canals
+    400058: Pharyngeal_arch_arteries
+    400060: Skeletal_and_muscular_system
+    400062: Skin
+    400064: Somites
+    400066: Somitocoel
+    400068: Stage_10
+    400070: Urogenital_system
+    400072: Veins
+    2300000: Amnion_Meso_ex_Yolk_Sac_Wall
+    2300002: Cardiac_jelly
+    2300004: Cardiovascular
+    2300006: Cavaties
+    2300008: Coelemic_vesicles
+    2300010: First_pharyngeal_arch_arteries
+    2300012: Foregut_Midgut_Hindgut_Notochord_and_Allantois
+    2300014: Heart_lumen
+    2300016: Lumen_gut_and_Yolk_Sac
+    2300018: Myocardium
+    2300020: Neural_Tube__Plat__Primitive_Steak
+    2300022: Paired_dorsal_aortae
+    2300024: Pericardioperitoneal_canals
+    2300026: Skin
+    2300028: Somites
+    2300030: Somitocoel
+    3300000: Amnion_Meso_ex_Yolk_Sac_Wall
+    3300002: Cardiac_jelly
+    3300004: Cardiovascular
+    3300006: Cavaties
+    3300008: Coelemic_vesicles
+    3300010: First_pharyngeal_arch_arteries
+    3300012: Foregut_Midgut_Hindgut_Notochord_and_Allantois
+    3300014: Heart_lumen
+    3300016: Lumen_gut_and_Yolk_Sac
+    3300018: Myocardium
+    3300020: Neural_Tube__Plat__Primitive_Steak
+    3300022: Paired_dorsal_aortae
+    3300024: Pericardioperitoneal_canals
+    3300026: Skin
+    3300028: Somites
+    3300030: Somitocoel
+    4300000: Lumen_gut_and_Yolk_Sac
+    4300002: Amnion_Meso_ex_Yolk_Sac_Wall
+    4300004: Cavaties
+    4300006: Cardiovascular
+    4300008: Skin
+    4300010: Somites
+    4300012: Somitocoel
+    4300014: Neural_Tube__Plat__Primitive_Steak
+    4300016: Foregut_Midgut_Hindgut_Notochord_and_Allantois
+    4300018: Coelemic_vesicles
+    4300020: Pericardioperitoneal_canals
+    4300022: Paired_dorsal_aortae
+    4300024: First_pharyngeal_arch_arteries
+    4300026: Heart_lumen
+    4300028: Cardiac_jelly
+    4300030: Myocardium
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
