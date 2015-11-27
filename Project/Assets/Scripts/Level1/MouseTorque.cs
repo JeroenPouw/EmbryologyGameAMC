@@ -34,7 +34,7 @@ public class MouseTorque : MonoBehaviour {
 	}
 	void FixedUpdate () {
 		GetComponent<Rigidbody>().AddTorque(0, Input.GetAxis("Mouse X") * horizontalSensitivity, 0);
-		GetComponent<Rigidbody>().AddRelativeTorque(-Input.GetAxis("Mouse Y") * verticalSensitivity, 0, 0);
+		GetComponent<Rigidbody>().AddTorque(-Input.GetAxis("Mouse Y") * verticalSensitivity, 0, 0);
 		
 		// Adding the two forces above creates some wobble that causes the camera to become
 		// less than perfectly upright.  Set the corrective strength to zero to see what I'm

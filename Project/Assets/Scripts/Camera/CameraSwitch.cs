@@ -7,7 +7,7 @@ public class CameraSwitch : MonoBehaviour {
 	public Camera Cam1;
 	public Camera Cam2;
 	MovementScript Script2D;
-	bool FPSView = true;
+	bool TPSView = true;
 	OpagueScript transSwitch;
 	GameObject YouAreHere;
 	MouseTorque mouseScript;
@@ -33,14 +33,14 @@ public class CameraSwitch : MonoBehaviour {
 		Cam2.enabled = !Cam2.enabled; // turn on/off TopView Camera
 		mouseScript.enabled = !mouseScript.enabled; // turn on/off mouserotation
 	
-		if (FPSView) {
+		if (TPSView) {
 			transSwitch.MakeTransparent();
 			YouAreHere.SetActive (true);
 			foreach (GameObject go in highlights) {
 				GameObject script = go.transform.parent.gameObject;
 				script.gameObject.layer = 23;
 			}
-		}else if (!FPSView) {
+		}else if (!TPSView) {
 			transSwitch.MakerOpague();
 			YouAreHere.SetActive (false);
 			foreach (GameObject go in highlights) {
@@ -56,7 +56,7 @@ public class CameraSwitch : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			SwitchCameras();
-			FPSView = !FPSView;
+			TPSView = !TPSView;
 				}
 	}
 }

@@ -15,8 +15,11 @@ public class ObjectSnapScript : MonoBehaviour {
 	public GameObject child;
 	public GameObject child2;
 
+	ColorChange cChange;
+
 	Ray ray;
 	RaycastHit hit;
+	public bool snap;
 
 	private float dist= Mathf.Infinity;
 	//private Color normalColor;
@@ -30,6 +33,7 @@ public class ObjectSnapScript : MonoBehaviour {
 	
 	void  OnMouseDrag (){
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		transform.position += new Vector3 (0,0,-5);
 		if (Physics.Raycast(transform.position,transform.forward, out hit)) {
 			if (hit.transform.gameObject != null) {
 				partnerGO = hit.transform.gameObject;
@@ -40,18 +44,16 @@ public class ObjectSnapScript : MonoBehaviour {
 		dist = Vector2.Distance(partnerPos, myPos);
 		//renderer.material.color = (dist < closeVPDist) ? closeColor : normalColor;
 	}
-	
+
 	void  OnMouseUp (){
 		if (dist < closeVPDist) {
+			snap = true;
 			transform.position = partnerGO.transform.position;
-			child.GetComponent<Renderer>().material.color = Color.yellow;
-			if (child2 != null) {
-				child2.GetComponent<Renderer>().material.color = Color.yellow;
-			}
 			//InstallPart();
-		}
+		}else
+		snap = false;
 	}
-	
+
 	void  InstallPart (){
 		while (transform.localPosition != Vector3.zero || transform.localRotation != Quaternion.identity) {
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * moveSpeed);
