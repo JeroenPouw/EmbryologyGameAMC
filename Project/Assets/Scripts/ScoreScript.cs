@@ -9,13 +9,6 @@ public class ScoreScript : MonoBehaviour {
 	
 	}
 
-	void OnGUI(){
-		//Debug.Log ("hoi");
-		GUI.Box (new Rect (10,10,150,90), "Score");
-		GUI.Box (new Rect (10, 60, 150, 20), "Current Score:" + score);
-		
-	}
-
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (score);

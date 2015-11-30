@@ -50,6 +50,8 @@ GameObject:
   - 114: {fileID: 11447770}
   - 114: {fileID: 11482414}
   - 114: {fileID: 11466032}
+  - 114: {fileID: 11400200}
+  - 114: {fileID: 11470582}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -88,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -337.380005, y: -29, z: 306}
+  m_LocalPosition: {x: -337, y: -29, z: 293.200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412416}
@@ -196,6 +198,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11400200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191312}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e99daeb1210959468f9fe5b1a0a0bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11409442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,6 +258,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam1: {fileID: 0}
   Cam2: {fileID: 0}
+--- !u!114 &11470582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c56e0c4a425e04b90c3f48deec903b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFuel: 0
+  fuelSlider: {fileID: 11434258, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
 --- !u!114 &11482414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSensitivity: 50
   verticalSensitivity: 50
-  correctiveStrength: 20
+  correctiveStrength: 0
 --- !u!136 &13613228
 CapsuleCollider:
   m_ObjectHideFlags: 1
