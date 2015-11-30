@@ -10,6 +10,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OverWorlds/Overworld.unity
   - enabled: 1
+    path: Assets/Scenes/OverWorlds/Overworld cs 10.unity
+  - enabled: 1
+    path: Assets/Scenes/OverWorlds/Puzzel.unity
+  - enabled: 1
     path: Assets/Scenes/MiniGames/Ectoderm Level.unity
   - enabled: 1
     path: Assets/Scenes/MiniGames/Endoderm Level.unity
