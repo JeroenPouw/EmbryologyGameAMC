@@ -5,7 +5,7 @@ using System;
 
 public class SaveState : MonoBehaviour {
 	
-	public static SaveData loaded_data;
+	public SaveData loaded_data;
 	private System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter ();
 
 	// Use this for initialization

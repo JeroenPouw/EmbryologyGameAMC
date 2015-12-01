@@ -3,11 +3,12 @@ using System.Collections;
 
 public class EncyTextReader : MonoBehaviour {
 
-	// Use this for initialization
-//	var savestate : SaveState;
-	//public SaveState save;
+	private SaveState save;
 
 	void Start () {
+		GameObject go = GameObject.Find("SaveState");
+		save = go.GetComponent<SaveState> ();
+
 		GetSaveState ();
 	}
 	
@@ -17,7 +18,6 @@ public class EncyTextReader : MonoBehaviour {
 	}
 
 	void GetSaveState () {
-
-		Debug.Log(SaveState.loaded_data.puztrack + " Got Save");
+		Debug.Log(save.loaded_data.puztrack + " Got Save");
 	}
 }
