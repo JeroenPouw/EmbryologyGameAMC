@@ -4,22 +4,26 @@ using System.Collections;
 public class CanvasImageMover : MonoBehaviour {
 
 	// Use this for initialization
-	public RectTransform storyimage1;
-	public RectTransform storyimage2;
-	public RectTransform storyimage3;
+
+	public RectTransform[] storyimages = new RectTransform[3];
 	public bool clickspamskip = false;
+	public float speed;
+
+	private Vector3[] originalposition = new Vector3[3];
 
 	private bool movingimage = false;
 	private uint stage = 1;
 
 	void Start () {
-
+		for(int i = 0; i < originalposition.Length; i++) {
+			originalposition[i] = storyimages[i].position;
+		}
 	}
 
 	void Update() 
 	{
 		if (movingimage) {
-			MovingRect();
+		//	MovingRect();
 		}
 	}
 
@@ -28,11 +32,11 @@ public class CanvasImageMover : MonoBehaviour {
 		if(!movingimage || clickspamskip)
 		switch (stage) {
 		default:
-			Debug.Log ("something went wrong");
+
 			break;
 		case 1:
 
-			stage--;
+			//going back to main menu?
 			break;
 		case 2:
 
@@ -51,14 +55,14 @@ public class CanvasImageMover : MonoBehaviour {
 		if(!movingimage || clickspamskip)
 		switch (stage) {
 		default:
-			Debug.Log ("something went wrong");
+			
 			break;
 		case 1:
-
+			movingimage = true;
 			stage++;
 			break;
 		case 2:
-
+			movingimage = true;
 			stage++;
 			break;
 		case 3:
@@ -70,10 +74,14 @@ public class CanvasImageMover : MonoBehaviour {
 
 	void MovingRect(RectTransform _mover, Vector3 _goal)
 	{
-		_mover.Translate((_goal-_mover.transform.position)*0.1f*Time.deltaTime);
-		if (_mover.position == _goal) {
+		if ((_goal-_mover.transform.position).magnitude > speed*Time.deltaTime)
+		{
+			_mover.Translate(_goal);
 			movingimage = false;
-
+		}
+		else
+		{
+			_mover.Translate((_goal-_mover.transform.position).normalized * speed * Time.deltaTime);
 		}
 	}
 }

@@ -447,9 +447,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc63774c54ba5143bce5275e2b91c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyimage1: {fileID: 150794609}
-  storyimage2: {fileID: 723051390}
-  storyimage3: {fileID: 1985767440}
+  storyimages:
+  - {fileID: 150794609}
+  - {fileID: 723051390}
+  - {fileID: 1985767440}
+  clickspamskip: 0
+  speed: .100000001
 --- !u!114 &1140854040
 MonoBehaviour:
   m_ObjectHideFlags: 0
