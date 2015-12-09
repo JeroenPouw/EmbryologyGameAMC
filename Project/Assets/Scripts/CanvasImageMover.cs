@@ -13,6 +13,7 @@ public class CanvasImageMover : MonoBehaviour {
 
 	private bool movingimage = false;
 	private uint stage = 1;
+	private Vector3 goal; // goal of vector 0,0,0 is not taking into account the canvas coordinates
 
 	void Start () {
 		for(int i = 0; i < originalposition.Length; i++) {
@@ -23,7 +24,7 @@ public class CanvasImageMover : MonoBehaviour {
 	void Update() 
 	{
 		if (movingimage) {
-		//	MovingRect();
+			MovingRect(storyimages[stage-1], goal);
 		}
 	}
 
@@ -39,6 +40,7 @@ public class CanvasImageMover : MonoBehaviour {
 			//going back to main menu?
 			break;
 		case 2:
+
 
 			stage--;
 			break;
@@ -58,10 +60,12 @@ public class CanvasImageMover : MonoBehaviour {
 			
 			break;
 		case 1:
+			goal = new Vector3(0f,0f,0f);
 			movingimage = true;
 			stage++;
 			break;
 		case 2:
+			goal = new Vector3(0f,0f,0f);
 			movingimage = true;
 			stage++;
 			break;
@@ -74,14 +78,19 @@ public class CanvasImageMover : MonoBehaviour {
 
 	void MovingRect(RectTransform _mover, Vector3 _goal)
 	{
-		if ((_goal-_mover.transform.position).magnitude > speed*Time.deltaTime)
+		Debug.Log(_mover.position);
+		if ((_goal-_mover.transform.position).magnitude < speed*Time.deltaTime)
 		{
-			_mover.Translate(_goal);
+		//	_mover.rect.position
+			_mover.transform.Translate(_goal);
+			Debug.Log(_mover.position);
+			Debug.Log("got to the goal");
 			movingimage = false;
 		}
 		else
 		{
-			_mover.Translate((_goal-_mover.transform.position).normalized * speed * Time.deltaTime);
+			Debug.Log("moving");
+			_mover.transform.Translate((_goal-_mover.transform.position).normalized * speed * Time.deltaTime);
 		}
 	}
 }
