@@ -9,7 +9,7 @@ public class CanvasImageMover : MonoBehaviour {
 	public bool clickspamskip = false;
 	public float speed;
 
-	private Vector3[] originalposition = new Vector3[3];
+	private Vector3[] originalposition = new Vector3[3]; // this is not necessary if previous slide is not implemented
 
 	private bool movingimage = false;
 	private uint stage = 1;
@@ -17,7 +17,9 @@ public class CanvasImageMover : MonoBehaviour {
 
 	void Start () {
 		for(int i = 0; i < originalposition.Length; i++) {
-			originalposition[i] = storyimages[i].position;
+			originalposition[i] = storyimages[i].position; //delete if previous slide is not implemented
+			storyimages[i].localScale = this.GetComponentInParent<RectTransform>().lossyScale;
+		//	storyimages[i]
 		}
 	}
 
@@ -40,12 +42,13 @@ public class CanvasImageMover : MonoBehaviour {
 			//going back to main menu?
 			break;
 		case 2:
-
-
+			goal = originalposition[stage+1];
+			movingimage = true;
 			stage--;
 			break;
 		case 3:
-
+			goal = originalposition[stage+1];
+			movingimage = true;
 			stage--;
 			break;
 		}
@@ -53,7 +56,6 @@ public class CanvasImageMover : MonoBehaviour {
 
 	public void ProgressStory()
 	{
-		Debug.Log ("Itworks!");
 		if(!movingimage || clickspamskip)
 		switch (stage) {
 		default:
@@ -76,21 +78,22 @@ public class CanvasImageMover : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Moves the image childs of the Canvas to a certain goal.
+	 * This goal is in local position so when the images in unity
+	 * are set at 0,0,0 that's where they will be. If goal is set to
+	 * 0,0,0 they will move to that position. 
+	 */
 	void MovingRect(RectTransform _mover, Vector3 _goal)
 	{
-		Debug.Log(_mover.position);
-		if ((_goal-_mover.transform.position).magnitude < speed*Time.deltaTime)
+		if ((_goal-_mover.transform.localPosition).magnitude < speed * Time.deltaTime)
 		{
-		//	_mover.rect.position
-			_mover.transform.Translate(_goal);
-			Debug.Log(_mover.position);
-			Debug.Log("got to the goal");
+			_mover.transform.Translate(_goal-_mover.transform.localPosition);
 			movingimage = false;
 		}
 		else
 		{
-			Debug.Log("moving");
-			_mover.transform.Translate((_goal-_mover.transform.position).normalized * speed * Time.deltaTime);
+			_mover.transform.Translate((_goal-_mover.transform.localPosition).normalized * speed * Time.deltaTime);
 		}
 	}
 }
