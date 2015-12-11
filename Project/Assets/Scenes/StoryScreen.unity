@@ -634,7 +634,7 @@ MonoBehaviour:
   - {fileID: 150794609}
   - {fileID: 723051390}
   - {fileID: 1985767440}
-  clickspamskip: 0
+  clickspamskip: 1
   speed: 150
 --- !u!114 &1140854040
 MonoBehaviour:
