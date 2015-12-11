@@ -24,7 +24,7 @@ public class Slidingpuzzle : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-	if (Vector3.Distance(transform.position,slot.position)==1) { //Move clicked tile towards empty slot, if possible
+	if (Vector3.Distance(transform.position,slot.position)<=1) { //Move clicked tile towards empty slot, if possible
 			tempX = transform.position.x;
 			tempY = transform.position.y;
 			transform.position = new Vector3( slot.position.x,slot.position.y,0);
