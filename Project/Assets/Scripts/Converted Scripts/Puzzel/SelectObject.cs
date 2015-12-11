@@ -36,6 +36,12 @@ public class SelectObject : MonoBehaviour {
 			GetComponent<AudioSource>().PlayOneShot(AudioCorrect);
 			playCorrectSound = false;
 		}
+		if (Input.GetKeyUp(KeyCode.T)) {
+			Transparent();
+		}
+		if (Input.GetKeyUp(KeyCode.S)) {
+			ShowAll();
+		}
 	}
 	
 	void  MouseInput (){
@@ -91,6 +97,32 @@ public class SelectObject : MonoBehaviour {
 		}
 		
 	}
+	public void ShowAll(){
+		layerObjects = FindGameObjectsWithLayer(20);
+		if(layerObjects != null){
+			for(int l= 0; l < layerObjects.Length; l++){
+				float mats = layerObjects[l].transform.GetComponent<Renderer>().materials.Length;
+				GameObject arrayObjects = layerObjects[l];
+				arrayObjects.layer = 18;
+				while(layerRenderCount < mats){
+					arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].shader = Shader.Find("Diffuse");
+					arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].color += new Color(0,0,0,.50f);
+					layerRenderCount++;
+				}
+				if(layerRenderCount == mats){
+					layerRenderCount = 0;
+				}
+			}
+		}
+	}
+	public void Transparent(){
+		for(int e= shaderCount; e > 0; e--){
+			currentObject.transform.GetComponent<Renderer>().materials[e-1].shader = Shader.Find("Transparent/Diffuse");
+			currentObject.transform.GetComponent<Renderer>().materials[e-1].color -= new Color(0,0,0,.50f);
+		}
+		currentObject.layer = 20;
+		shaderCount = 0;
+	}
 	
 	void  OnGUI (){
 		if(currentObject != null && currentObject.name == "Alimentary_canal" && objectSelected == true){
@@ -144,32 +176,8 @@ public class SelectObject : MonoBehaviour {
 		if(currentObject != null && currentObject.name == "VitellineDuct" && objectSelected == true){
 			GUI.Label (new Rect (Screen.width - 300, 80, 250, 70), "The vitelline duct is currently selected");
 		}
-		if(GUI.Button (new Rect(Screen.width - 400, 20, 180, 50), "Transparent") && currentObject != null){
-			for(int e= shaderCount; e > 0; e--){
-				currentObject.transform.GetComponent<Renderer>().materials[e-1].shader = Shader.Find("Transparent/Diffuse");
-				currentObject.transform.GetComponent<Renderer>().materials[e-1].color -= new Color(0,0,0,.50f);
-			}
-			currentObject.layer = 20;
-			shaderCount = 0;
-		}
-		if(GUI.Button (new Rect(Screen.width - 200, 20, 180, 50), "Show All")){
-			layerObjects = FindGameObjectsWithLayer(20);
-			if(layerObjects != null){
-				for(int l= 0; l < layerObjects.Length; l++){
-					float mats = layerObjects[l].transform.GetComponent<Renderer>().materials.Length;
-					GameObject arrayObjects = layerObjects[l];
-					arrayObjects.layer = 18;
-					while(layerRenderCount < mats){
-						arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].shader = Shader.Find("Diffuse");
-						arrayObjects.transform.GetComponent<Renderer>().materials[layerRenderCount].color += new Color(0,0,0,.50f);
-						layerRenderCount++;
-					}
-					if(layerRenderCount == mats){
-						layerRenderCount = 0;
-					}
-				}
-			}
-		}
+	
+	
 	}
 	GameObject[] FindGameObjectsWithLayer ( int layer  ){
 		GameObject[] goArray = FindObjectsOfType(typeof(GameObject))as GameObject[];

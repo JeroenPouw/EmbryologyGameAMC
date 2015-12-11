@@ -16,6 +16,7 @@ public class DragObjects : MonoBehaviour {
 	Scores scoreScript;
 	public SelectObject selectScript;
 	public CameraShaking shakeScript;
+	Inventory inventory;
 
 
 	bool  dragging = false;
@@ -35,6 +36,7 @@ public class DragObjects : MonoBehaviour {
 		selectScript = FindObjectOfType<SelectObject>();
 		shakeScript = FindObjectOfType<CameraShaking>();
 		scoreScript = FindObjectOfType<Scores> ();
+		inventory = FindObjectOfType<Inventory> ();
 		Debug.Log (startPosition);
 		startPosition = transform.position;
 		Debug.Log (startPosition);
@@ -69,6 +71,7 @@ public class DragObjects : MonoBehaviour {
 				RaycastHit hit;
 				int layerMask = 1 << 17;
 				int layerMaskWrong = 1 << 21;
+				// if the puzzle piece is placed correctly.
 				if (Physics.Raycast(ray, out hit, 200, layerMask) && this.transform.tag == "PuzzleObjectCorrect"){
 					// Turn on renderer
 					// Count up
@@ -87,9 +90,10 @@ public class DragObjects : MonoBehaviour {
 					foreach(GameObject go in gos){
 						Destroy(go);
 					} 
-					PuzzelItem.count++;
-					Scores.Score += 3;
-					spawnerScript.SpawnObjects();
+					spawnerScript.InvSlots.SetActive(true);
+					spawnerScript.infoPanel.SetActive(false);
+					Inventory.PuzzlePiece1 = false;
+					inventory.OnEnable();
 				}
 				else if(Physics.Raycast(ray, out hit, 100, layerMaskWrong) && this.transform.tag == "PuzzleObjectCorrect"){
 					shakeScript.Shake();
@@ -155,7 +159,7 @@ public class DragObjects : MonoBehaviour {
 					Destroy(go);
 				} 
 				PuzzelItem.count++;
-				spawnerScript.SpawnObjects();
+				//spawnerScript.SpawnObjects();
 				count = 5;
 			}
 		}

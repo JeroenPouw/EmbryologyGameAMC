@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Fuel : MonoBehaviour {
 	float maxFuel = 100;
 	float minFuel = 0;
-	public float currentFuel;
+	public static float currentFuel;
 	public Slider fuelSlider;
 	// Use this for initialization
 	void Awake () {

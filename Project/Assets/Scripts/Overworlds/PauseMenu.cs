@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour {
 
 	void Awake(){
 		shipUI = GameObject.Find ("ShipUIFunc");
-		shipUI.SetActive (false);
+		if (shipUI != null) {
+			shipUI.SetActive (false);
+		}
 	}
 	void PauseGame(){
 		if (!gamePaused) {
