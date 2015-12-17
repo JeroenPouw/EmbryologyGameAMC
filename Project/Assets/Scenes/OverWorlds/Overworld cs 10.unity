@@ -223,7 +223,9 @@ MonoBehaviour:
   message: {fileID: 1686247690}
   iconImage: {fileID: 1186609412}
   confirmButton: {fileID: 1956150576}
+  titletext: {fileID: 0}
   modalPanel: {fileID: 882082732}
+  input: {fileID: 0}
 --- !u!1001 &189367333
 Prefab:
   m_ObjectHideFlags: 0
@@ -474,7 +476,106 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
+--- !u!1 &684887907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 684887913}
+  - 20: {fileID: 684887912}
+  - 124: {fileID: 684887911}
+  - 92: {fileID: 684887910}
+  - 81: {fileID: 684887909}
+  - 114: {fileID: 684887908}
+  m_Layer: 0
+  m_Name: Main Camera 1
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684887908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ec9082ee456c24a97d6869117874cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 4
+  panSpeed: 80
+  zoomSpeed: 80
+--- !u!81 &684887909
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_Enabled: 0
+--- !u!92 &684887910
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_Enabled: 1
+--- !u!124 &684887911
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_Enabled: 1
+--- !u!20 &684887912
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 99999
+  field of view: 90
+  orthographic: 0
+  orthographic size: 200
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+--- !u!4 &684887913
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684887907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17, y: 535, z: -5664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &877582680
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &882082732 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 104758, guid: 8fc3de23cea586f44bf29e92ac19250c, type: 2}
@@ -697,7 +798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1502440367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,6 +946,18 @@ Prefab:
       propertyPath: fuelSlider
       value: 
       objectReference: {fileID: 1094945982}
+    - target: {fileID: 11466032, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
+      propertyPath: Cam2
+      value: 
+      objectReference: {fileID: 684887912}
+    - target: {fileID: 11447770, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 191312, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07723a175efda2a43ba1f81e16eba51c, type: 2}
   m_IsPrefabParent: 0
