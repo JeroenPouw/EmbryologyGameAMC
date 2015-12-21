@@ -33,8 +33,8 @@
 //		{
 //			loaded_data = new SaveData{
 //				mistrack = "1o2o3o4o5o6o",
-//				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o"
-//				storytrigger = "1";
+				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o"
+				storytrigger = "1";
 //			};
 //			WriteFile();
 //		}
