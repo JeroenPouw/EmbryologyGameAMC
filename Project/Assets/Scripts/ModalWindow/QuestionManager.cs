@@ -3,29 +3,19 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class PuzzlePickup : MonoBehaviour {
-	TextAsset questionSource;
-	public Text question;
-	public static string answer;
-	private ModalWindow mWindow;
-	private UnityAction myConfirmAction;
+public class QuestionManager : MonoBehaviour {
+	string question;
+	string answer;
 
-	void Awake(){
-		mWindow = ModalWindow.Instance();
-		myConfirmAction = new UnityAction (TestConfirmFunction);
+	// Use this for initialization
+	void Start () {
+	
 	}
 	
-	void OnTriggerEnter(){
-		// This statement handles the parameters for every puzzle piece. This include the boolean for the puzzle, the question and answer.
-		switch (this.gameObject.name) {
+	// Update is called once per frame
+	void OnTriggerEnter () {
+	switch (this.gameObject.name) {
 		case "Piece1":
-			Inventory.PuzzlePiece1 = true;
-			questionSource = Resources.Load("MyTexts/"+this.gameObject.name)as TextAsset;
-			question.text = "" + questionSource;
-			answer = "answer1";
-			mWindow.Question(""+question.text
-			                ,"You've Encountered a Puzzle Piece!"
-			                ,myConfirmAction );
 			break;
 		case "Piece2":
 			Inventory.PuzzlePiece2 = true;
@@ -70,12 +60,5 @@ public class PuzzlePickup : MonoBehaviour {
 			Inventory.PuzzlePiece15 = true;
 			break;
 		}
-		Time.timeScale = 0;
-		Destroy (this.gameObject);
-
-	}
-
-	void TestConfirmFunction(){
-		
 	}
 }

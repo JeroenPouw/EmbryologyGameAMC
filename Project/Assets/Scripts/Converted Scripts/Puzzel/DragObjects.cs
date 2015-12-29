@@ -92,6 +92,7 @@ public class DragObjects : MonoBehaviour {
 					} 
 					spawnerScript.InvSlots.SetActive(true);
 					spawnerScript.infoPanel.SetActive(false);
+					spawnerScript.slotsPanel.SetActive(false);
 					Inventory.PuzzlePiece1 = false;
 					inventory.OnEnable();
 				}

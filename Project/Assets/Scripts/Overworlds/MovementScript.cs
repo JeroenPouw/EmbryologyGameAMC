@@ -9,33 +9,6 @@ public class MovementScript : MonoBehaviour {
 
 	}
 
-	void Update(){
-//	RaycastHit hitForward = new RaycastHit();
-//		if (Physics.Raycast (transform.position, -transform.up,out hitForward, 1.0f)) {
-//			if (Vector3.Dot(Vector3.up,hitForward.normal)>0.7f) {
-//				Vector3 newDir = Vector3.RotateTowards(transform.forward,Vector3.Dot(Vector3.up,hitForward.normal),speed,0.0f);
-//			}
-		//}
-//		if (Input.GetKey(KeyCode.W) && isGrounded == true) {
-//			//GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-//			transform.Translate(transform.forward * 3 * Time.deltaTime);
-//		}
-//		if (Input.GetKey(KeyCode.S) && isGrounded == true) {
-//			//GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
-//			transform.Translate(-transform.forward * 3 * Time.deltaTime);
-//		}
-//		if (Input.GetKey(KeyCode.D) && isGrounded == true ) {
-//			//GetComponent<Rigidbody>().AddForce(transform.right * speed);
-//			transform.Translate(transform.right * 3 * Time.deltaTime);
-//		}
-//		if (Input.GetKey(KeyCode.A)&& isGrounded == true) {
-//			//GetComponent<Rigidbody>().AddForce(-transform.right * speed);
-//			transform.Translate(-transform.right * 3	 * Time.deltaTime);
-//		}
-
-		//Debug.Log (GetComponent<Rigidbody>().velocity.magnitude);
-	}
-	// Update is called once per frame
 	void FixedUpdate() {
 		if (speed>maxSpeed) {
 			float brakeSpeed = speed - maxSpeed;
@@ -52,8 +25,7 @@ public class MovementScript : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
 		}
 		if (Input.GetKey(KeyCode.D)) {
-			//GetComponent<Rigidbody>().AddForce(transform.right * speed);
-			//GetComponent<Rigidbody>().AddTorque(transform.up * 50);
+			GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.rotation.z) * speed);
 		}
 		if (Input.GetKey(KeyCode.A)) {
 			//GetComponent<Rigidbody>().AddForce(-transform.right * speed);

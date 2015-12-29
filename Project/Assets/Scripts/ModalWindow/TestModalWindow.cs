@@ -15,12 +15,11 @@ public class TestModalWindow : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(){
-		modalWindow.Confirm ("" +InfoManager.s, myConfirmAction);
+		modalWindow.Confirm ("" +InfoManager.s,"Objective Update", myConfirmAction);
 		this.gameObject.SetActive (false);
-
 	}
 
 	void TestConfirmFunction(){
-		Debug.Log ("Confirmed");
+
 	}
 }
