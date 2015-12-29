@@ -20,32 +20,32 @@ public class HighlightScript : MonoBehaviour {
 			// ----------------------------- Level 1 ------------------------------------------------------------
 		case "Endoderm":
 			GUIString = "Endoderm";
-			InfoText = Resources.Load ("MyTexts/Endoderm") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece1") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;
 		case "Ectoderm":
 			GUIString = "Ectoderm";
-			InfoText = Resources.Load ("MyTexts/Ectoderm") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece2") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;
 		case "Mesoderm":
 			GUIString = "Mesoderm";
-			InfoText = Resources.Load ("MyTexts/Mesoderm") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece3") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;
 		case "Yolk Sac":
 			GUIString = "Yolk Sac";
-			InfoText = Resources.Load ("MyTexts/Yolk Sac") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece4") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;
 		case "Amnion Wall":
 			GUIString = "Amnion Wall";
-			InfoText = Resources.Load ("MyTexts/Amnion Wall") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece5") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;
 		case "Connecting Stalk":
 			GUIString = "Connecting Stalk";
-			InfoText = Resources.Load ("MyTexts/Connecting Stalk") as TextAsset;
+			InfoText = Resources.Load ("MyTexts/Piece6") as TextAsset;
 			GUIInfoString = InfoText.text;
 			break;	
 			// ----------------------------- Level 1 ------------------------------------------------------------

@@ -9,20 +9,22 @@ public class PuzzelItem : MonoBehaviour {
 	
 	public static int count = 0;
 	public string[] sizeObjects ;
-	public 	Vector3 startPosition;
 	public static bool endGame = false;
 	public RotateObjects rotatePuzzel;
 	public GameObject InvSlots;
 	public GameObject infoPanel;
+	public GameObject slotsPanel;
 	GameObject object1;
 	GameObject object2;
 	GameObject object3;
 	GameObject currentObject;
+	public Button slot1;
+	public Button slot2;
+	public Button slot3;
 
 	void  Start (){
 		//rotatePuzzel = gameObject.GetComponent<RotateObjects>();
 		rotatePuzzel = FindObjectOfType<RotateObjects>();
-		startPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 4, Screen.height / 2, 50));
 	//	SpawnObjects ();
 	}
 	
@@ -30,17 +32,18 @@ public class PuzzelItem : MonoBehaviour {
 		pieceNumber = count;
 		InvSlots.SetActive (false);
 		infoPanel.SetActive (true);
+		slotsPanel.SetActive (true);
 		object1 = Instantiate(Resources.Load("Prefabs/" + sizeObjects[count] + "_size1")) as GameObject;
 		object1.transform.parent = this.transform;
-		object1.transform.localPosition = startPosition + new Vector3(-40, 0, 0);
+		object1.transform.localPosition = new Vector3 (slot1.transform.position.x,slot1.transform.position.y, slot1.transform.position.z);
 		
 		object2 = Instantiate(Resources.Load("Prefabs/" + sizeObjects[count] + "_size2")) as GameObject;
 		object2.transform.parent = this.transform;
-		object2.transform.localPosition = startPosition;
+		object2.transform.localPosition = new Vector3 (slot2.transform.position.x,slot2.transform.position.y, slot2.transform.position.z);
 		
 		object3 = Instantiate(Resources.Load("Prefabs/" + sizeObjects[count] + "_size3")) as GameObject;
 		object3.transform.parent = this.transform;
-		object3.transform.localPosition = startPosition + new Vector3(50, 0, 0);
+		object3.transform.localPosition = new Vector3 (slot3.transform.position.x,slot3.transform.position.y, slot3.transform.position.z);
 		
 		currentObject = GameObject.Find(sizeObjects[count]);
 		currentObject.layer = 17;

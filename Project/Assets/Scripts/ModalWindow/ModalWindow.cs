@@ -60,6 +60,7 @@ public class ModalWindow : MonoBehaviour {
 
 	// This functions gets called when the player presses the 'Okay' button.
 	void ClosePanel(){
+		confirmButton.gameObject.SetActive (false);
 		modalPanel.SetActive (false);
 		if (Time.timeScale != 1) {
 			Time.timeScale = 1;

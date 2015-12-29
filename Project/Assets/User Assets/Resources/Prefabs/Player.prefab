@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3367728}
   - 23: {fileID: 2381148}
   - 114: {fileID: 11409442}
+  - 114: {fileID: 11446066}
   m_Layer: 0
   m_Name: YouAreHere
   m_TagString: YouAreHere
@@ -89,8 +90,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -337, y: -29, z: 293.200012}
+  m_LocalRotation: {x: 0, y: -.913018346, z: 0, w: .407918662}
+  m_LocalPosition: {x: -239.478119, y: -13.3699999, z: 537.064026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412416}
@@ -233,7 +234,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  maxSpeed: 0
+  maxSpeed: 39.2200012
+--- !u!114 &11446066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f02a7af62f9ee46821c5882d2ccf3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11447770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,8 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c56e0c4a425e04b90c3f48deec903b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFuel: 0
-  fuelSlider: {fileID: 11434258, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
+  fuelSlider: {fileID: 0}
 --- !u!114 &11482414
 MonoBehaviour:
   m_ObjectHideFlags: 1
