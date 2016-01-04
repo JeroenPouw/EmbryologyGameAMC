@@ -627,7 +627,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140854034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc63774c54ba5143bce5275e2b91c2d, type: 3}
+  m_Script: {fileID: 11500000, guid: f7ad9598a111f2f41870b30afc7c38be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   storyimages:
@@ -635,7 +635,7 @@ MonoBehaviour:
   - {fileID: 723051390}
   - {fileID: 1985767440}
   clickspamskip: 1
-  speed: 150
+  speed: 200
 --- !u!114 &1140854040
 MonoBehaviour:
   m_ObjectHideFlags: 0
