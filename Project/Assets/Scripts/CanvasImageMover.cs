@@ -49,17 +49,14 @@ public class CanvasImageMover : MonoBehaviour {
 	public void ReverseStory()
 	{
 		if (!movingimage) {
-			switch (stage) {
-			default:
+			if (stage == 1) {
+		//	going back to main menu?
+			}
+			else{
 				moveable = storyimages [stage - 1];
 				goal = originalposition [stage - 1];
 				movingimage = true;
 				stage--;
-				break;
-			case 1:
-
-			//going back to main menu?
-				break;
 			}
 		} else if (clickspamskip) {
 			TeleportRect(moveable, goal);
@@ -72,17 +69,14 @@ public class CanvasImageMover : MonoBehaviour {
 	public void ProgressStory()
 	{
 		if (!movingimage) {
-			switch (stage) {
-			default:
+			if (stage == storyimages.Length) {
+		//	next scene needs to be loaded
+			}
+			else {
 				moveable = storyimages [stage];
 				goal = new Vector3 (0f, 0f, 0f);
 				movingimage = true;
 				stage++;
-				break;
-			case 3:
-
-		//	next scene needs to be loaded
-				break;
 			}
 		}
 		else if (clickspamskip) {
