@@ -27,7 +27,7 @@ public class MouseTorque : MonoBehaviour {
 	
 	/** Controls how sensitive the vertical axis is. */
 	public float verticalSensitivity = 30;
-	
+
 	/** Controls how strongly the camera tries to keep itself upright. */
 	public float correctiveStrength = 20;
 	void Start(){

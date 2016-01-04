@@ -10,9 +10,13 @@ public class Fuel : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		currentFuel = maxFuel;
-
 	}
-	
+
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag == "Fuel") {
+			currentFuel += 25;
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 		fuelSlider.value = currentFuel;

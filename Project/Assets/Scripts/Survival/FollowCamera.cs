@@ -6,10 +6,10 @@ public class FollowCamera : MonoBehaviour
 	 * Class members
 	 */
 	public Transform _target;
-	public float _distance = 10.0f;
-	public float _height = 5.0f;
-	public float _damping = 5.0f;
-	public float _rotationDamping = 10.0f;
+	public float _distance;
+	public float _height;
+	public float _damping;
+	public float _rotationDamping;
 	
 	
 	/*
