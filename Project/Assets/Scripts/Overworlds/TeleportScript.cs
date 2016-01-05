@@ -4,7 +4,7 @@ using System.Collections;
 public class TeleportScript : MonoBehaviour {
 	GameObject dermSelect;
 	GameObject player;
-	public Transform connstalkDestination;
+	public Transform primitiveDestination;
 	public Transform endoDestination;
 	public Transform mesoDestination;
 	public Transform ectoDestination;
@@ -23,20 +23,22 @@ public class TeleportScript : MonoBehaviour {
 	public void DermSelect(int derm){
 	switch (derm) {
 		case 1:
-			//do seomething
+			player.transform.position = primitiveDestination.transform.position;
 			break;
 		case 2:
-			//do seomething
+			player.transform.position = endoDestination.transform.position;
 			break;
 		case 3:
-			//do seomething
+			player.transform.position = mesoDestination.transform.position;
 			break;
 		case 4:
-			//do seomething
+			player.transform.position = ectoDestination.transform.position;
 			break;
 		}
+		dermSelect.SetActive (false);
 	}
-	void OnTriggerenter(Collider other){
+	void OnTriggerEnter(Collider other){
+		Debug.Log ("derm trigger");
 		dermSelect.SetActive (true);
 	}
 	// Update is called once per frame
