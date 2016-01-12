@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour {
 		if (shipUI != null) {
 			shipUI.SetActive (false);
 		}
-	}
+	}	
 	void PauseGame(){
 		if (!gamePaused) {
 			Time.timeScale = 0;
