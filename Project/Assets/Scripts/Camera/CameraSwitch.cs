@@ -22,7 +22,6 @@ public class CameraSwitch : MonoBehaviour {
 		YouAreHere.gameObject.SetActive (false);
 	}
 	void OnLevelWasLoaded () {
-		Debug.Log ("loadedyo");
 		highlights = GameObject.FindGameObjectsWithTag ("Highlightable");
 		Cam1 = null;
 		Cam1 = GameObject.Find ("Map Camera");

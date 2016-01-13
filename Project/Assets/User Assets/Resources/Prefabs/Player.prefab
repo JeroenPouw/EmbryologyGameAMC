@@ -332,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   maxSpeed: 250
+  tilt: 0
 --- !u!114 &11445170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,7 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c56e0c4a425e04b90c3f48deec903b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelSlider: {fileID: 11434258, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
 --- !u!114 &11482414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1647bda20fd92f4faa98552568e39cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 453544}
+  _target: {fileID: 484508}
   _distance: 30
   _height: 5
   _damping: 50
