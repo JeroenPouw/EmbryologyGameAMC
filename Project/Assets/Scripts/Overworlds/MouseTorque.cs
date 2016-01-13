@@ -23,13 +23,13 @@ using System.Collections;
  */
 public class MouseTorque : MonoBehaviour {
 	/** Controls how sensitive the horizontal axis is. */
-	public float horizontalSensitivity = 30;
+	public float horizontalSensitivity;
 	
 	/** Controls how sensitive the vertical axis is. */
-	public float verticalSensitivity = 30;
-	
+	public float verticalSensitivity ;
+
 	/** Controls how strongly the camera tries to keep itself upright. */
-	public float correctiveStrength = 20;
+	public float correctiveStrength;
 	void Start(){
 	}
 	void FixedUpdate () {

@@ -337,6 +337,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22479392}
   - 114: {fileID: 11434258}
+  - 114: {fileID: 11439020}
   m_Layer: 5
   m_Name: FuelSlider
   m_TagString: Untagged
@@ -466,7 +467,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: LevelHighlight
         m_Mode: 3
         m_Arguments:
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: Levelconfirm
         m_Mode: 1
         m_Arguments:
@@ -709,9 +710,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 22494640}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 90
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -796,6 +797,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11439020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e643faf135d914bb841c2c4909bcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11443944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -958,7 +970,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: LevelHighlight
         m_Mode: 3
         m_Arguments:
@@ -1015,7 +1027,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: LevelHighlight
         m_Mode: 3
         m_Arguments:
@@ -1346,7 +1358,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 434, y: 122}
+  m_AnchoredPosition: {x: 351, y: 115}
   m_SizeDelta: {x: 124, y: 79}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22441338
@@ -1566,7 +1578,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 369, y: -134}
+  m_AnchoredPosition: {x: 351, y: -134}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22486912
@@ -1584,7 +1596,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -455, y: 129}
+  m_AnchoredPosition: {x: -365, y: 122}
   m_SizeDelta: {x: 106, y: 65}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22487504
@@ -1670,7 +1682,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 381, y: -120}
+  m_AnchoredPosition: {x: 361.5, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
