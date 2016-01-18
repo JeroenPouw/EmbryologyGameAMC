@@ -7,4 +7,8 @@ public class MainMenuScript : MonoBehaviour {
 		Application.LoadLevel(sceneToChangeTo);
 	}
 
+	public void CloseGame(){
+		Application.Quit ();
+	}
+
 }

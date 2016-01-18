@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MovementScript : MonoBehaviour {
 	public float speed;
+	public float tiltspeed;
 	public float maxSpeed;
-	public float tilt;
 	// Use this for initialization
 	void Start () {
 
@@ -26,10 +26,10 @@ public class MovementScript : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
 		}
 		if (Input.GetKey(KeyCode.D)) {
-			GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0.0f,0.0f,-0.1f)* speed);
+			GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0.0f,0.0f,-0.1f)* tiltspeed);
 		}
 		if (Input.GetKey(KeyCode.A)) {
-			GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0.0f,0.0f,0.1f)* speed);
+			GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0.0f,0.0f,0.1f)* tiltspeed);
 		}
 		//GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(horRotSpeed * Input.GetAxis("Mouse X"), vertRotSpeed * Input.GetAxis("Mouse Y"), 0f));
 		//GetComponent<Rigidbody> ().rotation.SetLookRotation (transform.forward);

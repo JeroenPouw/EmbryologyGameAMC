@@ -19,25 +19,30 @@ public class OpagueScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
+
 	public void MakeTransparent(){
 		Collider[] hitcollider = Physics.OverlapSphere (center, radius);
 		foreach (Collider go in hitcollider) {
 			if (go.gameObject.tag != ("nonTrans") && go.gameObject.tag != ("Player")) {
-				if (go.GetComponent<Renderer>().material.color.a >= 0.7f && go.GetComponent<Renderer>().material.shader == Shader.Find("Standard")) {
-					go.GetComponent<Renderer> ().material.shader = Shader.Find ("Transparent/Diffuse");
-					go.GetComponent<Renderer> ().material.color -= new Color (0, 0, 0, 0.7f);
+				if (go.GetComponent<Renderer>().material.color.a >= 0.8f && go.GetComponent<Renderer>().material.shader == Shader.Find("Standard")) {
+					foreach (Material mat in go.GetComponent<Renderer>().materials) {
+						mat.shader = Shader.Find ("Transparent/Diffuse");
+						mat.color -= new Color (0, 0, 0, 0.8f);
+					}
 				}
 			}
 		}
 	}
 
-	public void MakerOpague(){
+	public void MakeOpague(){
 		Collider[] hitcollider = Physics.OverlapSphere (center, radius);
 		foreach (Collider go in hitcollider) {
 			if (go.gameObject.tag != ("nonTrans") && go.gameObject.tag != ("Player")){
-			if (go.GetComponent<Renderer>().material.color.a <= 0.7f && go.GetComponent<Renderer>().material.shader == Shader.Find("Transparent/Diffuse")) {
-				go.GetComponent<Renderer> ().material.shader = Shader.Find ("Standard");
-				go.GetComponent<Renderer> ().material.color += new Color (0, 0, 0, 0.7f);
+			if (go.GetComponent<Renderer>().material.color.a <= 0.8f && go.GetComponent<Renderer>().material.shader == Shader.Find("Transparent/Diffuse")) {
+				foreach (Material mat in go.GetComponent<Renderer>().materials) {
+					mat.shader = Shader.Find ("Standard");
+					mat.color += new Color (0, 0, 0, 0.8f);
+				}
 				}
 			}
 		}

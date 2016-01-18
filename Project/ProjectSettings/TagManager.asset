@@ -39,6 +39,9 @@ TagManager:
   - North East West Pipe
   - South East West Pipe
   - EndLine
+  - PuzzleObjectFalse
+  - PuzzleObjectCorrect
+  - Traversable
   layers:
   - Default
   - TransparentFX
