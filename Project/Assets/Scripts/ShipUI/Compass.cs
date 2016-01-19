@@ -12,7 +12,7 @@ public class Compass : MonoBehaviour {
 	Transform dorsalicon;
 
 	void Start () {
-		player = GameObject.Find ("Player").transform;
+		player = GameObject.Find ("Player(Clone)").transform;
 	//	ventral8 = GameObject.Find ("Ventral8").transform;
 	//	ventral10 = GameObject.Find ("Ventral10").transform;
 	//	cranial = GameObject.Find ("Cranial").transform;

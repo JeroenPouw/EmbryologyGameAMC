@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3312962}
   - 23: {fileID: 2332174}
   - 114: {fileID: 11494342}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Compas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3323982}
   - 65: {fileID: 6565558}
   - 23: {fileID: 2339064}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Dorsal_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3352378}
   - 136: {fileID: 13678768}
   - 23: {fileID: 2390672}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 33: {fileID: 3314650}
   - 135: {fileID: 13510222}
   - 23: {fileID: 2353364}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - 33: {fileID: 3371130}
   - 136: {fileID: 13648718}
   - 23: {fileID: 2383016}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 33: {fileID: 3333212}
   - 65: {fileID: 6526454}
   - 23: {fileID: 2329086}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Ventral_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - 33: {fileID: 3376686}
   - 136: {fileID: 13648086}
   - 23: {fileID: 2333754}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - 33: {fileID: 3303390}
   - 136: {fileID: 13693722}
   - 23: {fileID: 2343742}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - 33: {fileID: 3333116}
   - 135: {fileID: 13527000}
   - 23: {fileID: 2375540}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Sphere 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,8 +271,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250, y: 200, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 433, y: 129, z: 557}
+  m_LocalScale: {x: 180, y: 180, z: 180}
   m_Children:
   - {fileID: 488654}
   - {fileID: 428774}
