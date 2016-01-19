@@ -8706,10 +8706,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11463494, guid: 9fe35aaf4c27c88469f5f68956ba2f9e, type: 2}
-      propertyPath: tiltspeed
-      value: 1500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fe35aaf4c27c88469f5f68956ba2f9e, type: 2}
   m_IsPrefabParent: 0
