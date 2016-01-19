@@ -107,7 +107,9 @@ public class NeuralTubeMap : MonoBehaviour {
 	 */
 	void Claimed (NeuralTubePlayer _player) {
 		Debug.Log ("claiming");
-		
+		Vector2 start;
+		Vector2 end;
+
 		foreach(Vector2 data in _player.path)
 		{
 			Debug.Log(data);
