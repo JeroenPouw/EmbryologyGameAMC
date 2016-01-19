@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  tiltspeed: 0
+  tiltspeed: 1500
   maxSpeed: 250
 --- !u!114 &11465706
 MonoBehaviour:

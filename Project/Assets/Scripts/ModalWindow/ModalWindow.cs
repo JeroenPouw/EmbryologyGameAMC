@@ -32,6 +32,7 @@ public class ModalWindow : MonoBehaviour {
 
 	// This function gets called when the player triggers a story trigger. Activates all the relevant UI elements.
 	public void Confirm(string message,string title, UnityAction confirmAction){
+		Time.timeScale = 0;
 		modalPanel.SetActive (true);
 		confirmButton.onClick.RemoveAllListeners();
 		confirmButton.onClick.AddListener (confirmAction);
@@ -47,6 +48,7 @@ public class ModalWindow : MonoBehaviour {
 
 	// This functions gets called when the player triggers a puzzle piece. Activates an inputfield where Confirm() activates a confirm button.
 	public void Question(string message, string title, UnityAction questionAction){
+		Time.timeScale = 0;
 		modalPanel.SetActive (true);
 		confirmButton.onClick.RemoveAllListeners();
 		confirmButton.onClick.AddListener (questionAction);
@@ -60,6 +62,7 @@ public class ModalWindow : MonoBehaviour {
 
 	// This functions gets called when the player presses the 'Okay' button.
 	void ClosePanel(){
+		Time.timeScale = 1;
 		confirmButton.gameObject.SetActive (false);
 		modalPanel.SetActive (false);
 		if (Time.timeScale != 1) {
