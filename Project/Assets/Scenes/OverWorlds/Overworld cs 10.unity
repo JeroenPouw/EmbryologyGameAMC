@@ -5477,7 +5477,7 @@ Transform:
   - {fileID: 106550169}
   - {fileID: 1521558808}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1098567219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,7 +5512,7 @@ RectTransform:
   - {fileID: 1152268349}
   - {fileID: 1777021297}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -8700,7 +8700,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 493688, guid: 9fe35aaf4c27c88469f5f68956ba2f9e, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 152416, guid: 9fe35aaf4c27c88469f5f68956ba2f9e, type: 2}
       propertyPath: m_IsActive
