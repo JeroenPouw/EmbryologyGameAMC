@@ -130,7 +130,7 @@ Prefab:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 11488800, guid: 8c812468807d7ed4eb9c160a4006add2, type: 2}
+    - target: {fileID: 11410196, guid: 8c812468807d7ed4eb9c160a4006add2, type: 2}
       propertyPath: opposite
       value: 1
       objectReference: {fileID: 0}
@@ -379,10 +379,6 @@ Prefab:
     - target: {fileID: 128272, guid: 8c812468807d7ed4eb9c160a4006add2, type: 2}
       propertyPath: m_Name
       value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: opposite
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c812468807d7ed4eb9c160a4006add2, type: 2}

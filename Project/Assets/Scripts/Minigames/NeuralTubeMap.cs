@@ -22,38 +22,36 @@ public class NeuralTubeMap : MonoBehaviour {
 	 * 7 = owned			(which the player has successfully chained to become owned)
 	 */
 	private int[,] map = new int[,]
-	{ 	{ 3, 3, 3, 3, 3, 3}, 
-		{ 3, 0, 0, 0, 0, 0},
-		{ 3, 0, 1, 0, 0, 3},
-		{ 3, 0, 0, 2, 3, 0},
-		{ 3, 3, 3, 3, 0, 3}	
+	{ 	{ 3, 3, 3, 3, 3, 3,3,3,3,3,3,3,3,3,3,3,3}, 
+		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
+		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
+		{ 3, 0, 0, 0, 0, 0,2,3,1,0,0,0,0,0,0,0,3},
+		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
+		{ 3, 3, 3, 3, 3, 3,3,3,3,3,3,3,3,3,3,3,3}
 	};
-	
-	void Start () {
-		CreateMap ();
 
+	private Transform[,] tilemap;
+
+	void Start () {
+		tilemap = new Transform[map.GetUpperBound (0)+1, map.GetUpperBound (1)+1];
+		CreateMap ();
 	}
 
 	void Update () {
-		TrackClaim (prefabs[1].position, prefabs[1].GetComponent<NeuralTubePlayer>());
-		TrackClaim (prefabs[2].position, prefabs[2].GetComponent<NeuralTubePlayer>());
+		TrackClaim (prefabs[1]);
+		TrackClaim (prefabs[2]);
 	}
 
 	void TrackEnemy (Vector3 _position) {
 		int _x = Mathf.FloorToInt (_position.x/tilewidth);
 		int _y = -Mathf.FloorToInt (_position.y/tileheight);
-
-		//debug only
-		if (_x > map.GetLowerBound (0) && _x < map.GetUpperBound (0)
-		&& _y > map.GetLowerBound (1) && _y < map.GetUpperBound (1)) {
-
-			if (map[_x,_y] == 6) {
-				if (prefabs[1].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
-					UnClaim(prefabs[1].GetComponent<NeuralTubePlayer>());
-				} else 
-				if (prefabs[2].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
-					UnClaim(prefabs[2].GetComponent<NeuralTubePlayer>());
-				}
+		
+		if (map[_x,_y] == 6) {
+			if (prefabs[1].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
+				UnClaim(prefabs[1].GetComponent<NeuralTubePlayer>());
+			} else 
+			if (prefabs[2].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
+				UnClaim(prefabs[2].GetComponent<NeuralTubePlayer>());
 			}
 		}
 	}
@@ -63,61 +61,90 @@ public class NeuralTubeMap : MonoBehaviour {
 	 * the line is being tracked by start and end position
 	 * when the end is determined all claimed will be send over to Claimed()
 	 */
-	void TrackClaim (Vector3 _position, NeuralTubePlayer _player) {
-		int _x = Mathf.FloorToInt (_position.x/tilewidth);
-		int _y = -Mathf.FloorToInt (_position.y/tileheight);
-
-		//debug only
-		if (_x > map.GetLowerBound (0) && _x < map.GetUpperBound (0)
-		&& 	_y > map.GetLowerBound (1) && _y < map.GetUpperBound (1)) {
-
-			if (map[_x,_y] == 0) {
-				if (_player.tracking)
+	void TrackClaim (Transform _player) {
+		int _x = Mathf.RoundToInt (_player.position.x/tilewidth);
+		int _y = -Mathf.RoundToInt (_player.position.y/tileheight);
+	
+		NeuralTubePlayer player = _player.GetComponent<NeuralTubePlayer> ();
+		if (map[_y,_x] == 0) {
+			if (player.tracking)
+			{
+				map[_y,_x] = 6;
+				player.path.Add(new Vector2(_y,_x));
+				tilemap[_y,_x].GetComponent<NeuralTubeAreaClaim> ().Claim();
+				if (CheckArea(_y,_x) > 0)
 				{
-					map[_x,_y] = 6;
-					_player.path.Add(new Vector2(_x,_y));
-					if (CheckArea(_x, _y) == 1)
-					{
-						map[_x,_y] = 6;
-						_player.path.Add(new Vector2(_x,_y));
-						Claimed (_player);
-						_player.tracking = false;
-					}
-				} else {
-					if (CheckArea(_x, _y) > 1)
-					{
-						map[_x,_y] = 6;
-						_player.path.Add(new Vector2(_x,_y));
-						_player.tracking = true;
-					}
+					Claimed (player);
+					player.tracking = false;
+				}
+			} else {
+				if (CheckArea(_y,_x) > 0)
+				{
+					map[_y,_x] = 6;
+					player.path.Add(new Vector2(_y,_x));
+					tilemap[_y,_x].GetComponent<NeuralTubeAreaClaim> ().Claim();
+					player.tracking = true;
 				}
 			}
 		}
 	}
 
 	/*
-	 * Make a box between the start and end position
-	 * determine which side needs to be filled, if there are inconsistencies
-	 * fill box by going row for row with owned tiles
-	 * set tracking bool to false
+	 *  
 	 * 
 	 * 1	2	3
 	 * 4		6
 	 * 7	8	9
 	 */
 	void Claimed (NeuralTubePlayer _player) {
-		Debug.Log ("claiming");
-		Vector2 start;
-		Vector2 end;
+		Vector2 start = (Vector2)_player.path [0];
+		Vector2 end = (Vector2)_player.path [_player.path.Count-1];
+
+		if (map [(int)start.x, (int)start.y-1] == 0 && map [(int)start.x, (int)start.y+1] == 0) {
+			ArrayList down = AvailableCount(new Vector2(start.x, start.y-1), new Vector2(0,-1));
+			ArrayList top = AvailableCount(new Vector2(start.x, start.y+1), new Vector2(0,1));
+			if (down.Count < top.Count) {
+				foreach (Vector2 data in down) {
+					map[(int)data.x,(int)data.y] = 7;
+					tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
+				}
+			}
+			else {
+				foreach (Vector2 data in top) {
+					map[(int)data.x,(int)data.y] = 7;
+					tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
+				}
+			}
+		} else
+		if (map [(int)start.x-1, (int)start.y] == 0 && map [(int)start.x+1, (int)start.y] == 0) {
+			ArrayList left = AvailableCount(new Vector2(start.x-1, start.y), new Vector2(-1,0));
+			ArrayList right = AvailableCount(new Vector2(start.x+1, start.y), new Vector2(1,0));
+			if (right.Count < left.Count) {
+				foreach (Vector2 data in right) {
+					map[(int)data.x,(int)data.y] = 7;
+					tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
+				}
+			}
+			else {
+				foreach (Vector2 data in left) {
+					map[(int)data.x,(int)data.y] = 7;
+					tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
+				}
+			}
+		}
 
 		foreach(Vector2 data in _player.path)
 		{
-			Debug.Log(data);
-			map[Mathf.RoundToInt(data.x),Mathf.RoundToInt(data.y)] = 7;
+			map[(int)data.x,(int)data.y] = 7;
+			tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
 		}
 		_player.path.Clear ();
 	}
 
+	/*
+	 * When an enemy runs into a player's claim path, 
+	 * the content of the path should be removed
+	 */
 	void UnClaim (NeuralTubePlayer _player) {
 		foreach(Vector2 data in _player.path)
 		{
@@ -156,13 +183,19 @@ public class NeuralTubeMap : MonoBehaviour {
 					break;
 				case 0:
 					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-
+					tilemap[j,i] = (Transform)tile;
 					break;
 				case 1:
 					prefabs[1].transform.position = position;
+					map[j,i] = 0;
+					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = (Transform)tile;
 					break;
 				case 2:
 					prefabs[2].transform.position = position;
+					map[j,i] = 0;
+					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = (Transform)tile;
 					break;
 				case 3:
 					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
@@ -178,11 +211,55 @@ public class NeuralTubeMap : MonoBehaviour {
 					break;
 				case 7:
 					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-
+					tilemap[j,i] = (Transform)tile;
 					break;
 				}
 			}
 		}
+	}
+
+	/*
+	 * 
+	 * 
+	 */
+	private ArrayList AvailableCount (Vector2 _start, Vector2 _direction) {
+		ArrayList toclaim = new ArrayList ();
+		ArrayList jumppoint = new ArrayList ();
+		Vector2[] cardir = new Vector2[4];
+		cardir [0] = Vector2.up;
+		cardir [1] = -Vector2.up;
+		cardir [2] = Vector2.right;
+		cardir [3] = -Vector2.right;
+		Vector2 currentpoint = _start;
+		Vector2 checkpoint;
+
+		while (true) {
+			toclaim.Add (currentpoint);
+
+			for (int i = 0; i < cardir.Length; i++) {
+				if (_direction != cardir[i]) {
+				    if (map [(int)(currentpoint.x + cardir[i].x), (int)(currentpoint.y + cardir[i].y)] == 0) {
+						checkpoint = (currentpoint + cardir[i]);
+						if (!toclaim.Contains(checkpoint) && !jumppoint.Contains(checkpoint)) {
+							jumppoint.Add(checkpoint);
+						}
+					}
+				}
+			}
+
+			if (map [(int)(currentpoint.x + _direction.x), (int)(currentpoint.y + _direction.y)] != 0) {
+				if (jumppoint.Count > 0) {
+					currentpoint = (Vector2)jumppoint [0];
+					jumppoint.RemoveAt (0);
+				} else {
+					return toclaim;
+				}
+			} else {
+				currentpoint += _direction;
+			}
+		}
+
+		return toclaim;
 	}
 }
 

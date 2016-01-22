@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21256786}
   - 61: {fileID: 6147936}
   - 50: {fileID: 5057534}
-  - 114: {fileID: 11488800}
+  - 114: {fileID: 11410196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -59,7 +59,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .150000006, y: .150000006}
---- !u!114 &11488800
+--- !u!114 &11410196
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -67,11 +67,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 128272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef462f6b0cc88774f9a0d88c88b8b784, type: 3}
+  m_Script: {fileID: 11500000, guid: ea7831bb41ce3ca48850ad9f82663830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   opposite: 0
   speed: 1
+  tracking: 0
 --- !u!212 &21256786
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: .948529422, g: .0209234636, b: .0209234636, a: 1}
 --- !u!1001 &100100000
