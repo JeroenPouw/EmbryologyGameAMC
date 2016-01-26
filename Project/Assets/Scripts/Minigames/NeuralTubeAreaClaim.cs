@@ -10,6 +10,10 @@ public class NeuralTubeAreaClaim : MonoBehaviour {
 		render.color = new Color(1f,1f,1f,0f);
 	}
 
+	public void Lose () {
+		render.color = new Color (1f, 1f, 1f, 0f);
+	}
+
 	public void Claim () {
 		render.color = new Color (1f, 1f, 1f, 1f / 2f);
 	}

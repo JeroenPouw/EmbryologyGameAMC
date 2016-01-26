@@ -13,44 +13,58 @@ public class NeuralTubeMap : MonoBehaviour {
 	 * 0 = empty			(area which needs to be claimed/owned to win)
 	 * 1 = player1			(the non mirrored player)
 	 * 2 = player2			(the mirrored player)
-	 * 3 = unpassable block	(used for map borders)
-	 * 4 = enemy			(the player has to avoid these)
-	 * 5 = trigger			(unknown purpose)
+	 * 3 = mapborder  block	(used for map borders)
+	 * 4 = unpassable block	(used to hinder the player)
+	 * 5 = enemy			(the player has to avoid these)
+	 * 6 = trigger			(unknown purpose)
 	 * 
 	 * The below are for during the play session
 	 * 6 = claimed			(which so far the player is claiming in a chain)
 	 * 7 = owned			(which the player has successfully chained to become owned)
 	 */
 	private int[,] map = new int[,]
-	{ 	{ 3, 3, 3, 3, 3, 3,3,3,3,3,3,3,3,3,3,3,3}, 
-		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
-		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
-		{ 3, 0, 0, 0, 0, 0,2,3,1,0,0,0,0,0,0,0,3},
-		{ 3, 0, 0, 0, 0, 0,0,3,0,0,0,0,0,0,0,0,3},
-		{ 3, 3, 3, 3, 3, 3,3,3,3,3,3,3,3,3,3,3,3}
+	{ 	{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}, 
+		{3,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,3},
+		{3,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,3},
+		{3,0,0,0,0,0,2,4,1,0,0,0,0,5,0,0,3},
+		{3,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,3},
+		{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}
 	};
 
 	private Transform[,] tilemap;
+	private ArrayList enemies;
+
+	/*
+	 * count up how many 0 tiles are there.
+	 * Then during gameplay count it down for those claimed
+	 * when 0, game complete
+	 */
+	private int freetilecount = 0;
 
 	void Start () {
 		tilemap = new Transform[map.GetUpperBound (0)+1, map.GetUpperBound (1)+1];
+		enemies = new ArrayList ();
 		CreateMap ();
 	}
 
 	void Update () {
 		TrackClaim (prefabs[1]);
 		TrackClaim (prefabs[2]);
+	
+		foreach (Transform enemy in enemies) {
+			TrackEnemy(enemy.position);
+		}
 	}
 
 	void TrackEnemy (Vector3 _position) {
-		int _x = Mathf.FloorToInt (_position.x/tilewidth);
-		int _y = -Mathf.FloorToInt (_position.y/tileheight);
+		int _x = Mathf.RoundToInt (_position.x/tilewidth);
+		int _y = -Mathf.RoundToInt (_position.y/tileheight);
 		
-		if (map[_x,_y] == 6) {
-			if (prefabs[1].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
+		if (map[_y,_x] == 6) {
+			if (prefabs[1].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_y,_x))) {
 				UnClaim(prefabs[1].GetComponent<NeuralTubePlayer>());
 			} else 
-			if (prefabs[2].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_x,_y))) {
+			if (prefabs[2].GetComponent<NeuralTubePlayer>().path.Contains(new Vector2(_y,_x))) {
 				UnClaim(prefabs[2].GetComponent<NeuralTubePlayer>());
 			}
 		}
@@ -92,9 +106,6 @@ public class NeuralTubeMap : MonoBehaviour {
 	/*
 	 *  
 	 * 
-	 * 1	2	3
-	 * 4		6
-	 * 7	8	9
 	 */
 	void Claimed (NeuralTubePlayer _player) {
 		Vector2 start = (Vector2)_player.path [0];
@@ -139,6 +150,18 @@ public class NeuralTubeMap : MonoBehaviour {
 			tilemap[(int)data.x, (int)data.y].GetComponent<NeuralTubeAreaClaim> ().Own();
 		}
 		_player.path.Clear ();
+
+		int count = 0;
+		for (int i = map.GetLowerBound(1); i <= map.GetUpperBound(1); ++i) {
+			for (int j = map.GetLowerBound(0); j <= map.GetUpperBound(0); ++j) {
+				if (map [j, i] == 0) {
+					count++;
+				}
+			}
+		}
+		if (count == 0) {
+			Debug.Log("WIN!");
+		}
 	}
 
 	/*
@@ -148,9 +171,11 @@ public class NeuralTubeMap : MonoBehaviour {
 	void UnClaim (NeuralTubePlayer _player) {
 		foreach(Vector2 data in _player.path)
 		{
-			map[Mathf.RoundToInt(data.x),Mathf.RoundToInt(data.y)] = 0;
+			map[(int)data.x,(int)data.y] = 0;
+			tilemap[(int)data.x,(int)data.y].GetComponent<NeuralTubeAreaClaim> ().Lose();
 		}
 		_player.path.Clear ();
+		_player.tracking = false;
 	}
 
 	/*
@@ -160,19 +185,19 @@ public class NeuralTubeMap : MonoBehaviour {
 	 */
 	int CheckArea (int _x, int _y) {
 		int count = 0;
-		if (map [_x - 1, _y] == 3 || map [_x - 1, _y] == 7)
+		if (map [_x - 1, _y] == 3 || map [_x - 1, _y] == 7|| map [_x - 1, _y] == 4)
 			count++;
-		if (map [_x + 1, _y] == 3 || map [_x + 1, _y] == 7)
+		if (map [_x + 1, _y] == 3 || map [_x + 1, _y] == 7|| map [_x + 1, _y] == 4)
 			count++;
-		if (map [_x, _y - 1] == 3 || map [_x, _y - 1] == 7)
+		if (map [_x, _y - 1] == 3 || map [_x, _y - 1] == 7|| map [_x, _y - 1] == 4)
 			count++;
-		if (map [_x, _y + 1] == 3 || map [_x, _y + 1] == 7)
+		if (map [_x, _y + 1] == 3 || map [_x, _y + 1] == 7|| map [_x, _y + 1] == 4)
 			count++;
 		return count;
 	}
 
 	void CreateMap(){
-		Object tile;
+		Transform tile;
 		Vector3 position;
 		for (int i = map.GetLowerBound(1); i <= map.GetUpperBound(1); ++i) {
 			for (int j = map.GetLowerBound(0); j <= map.GetUpperBound(0); ++j) {
@@ -182,39 +207,51 @@ public class NeuralTubeMap : MonoBehaviour {
 
 					break;
 				case 0:
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					tilemap[j,i] = (Transform)tile;
+					freetilecount++;
 					break;
 				case 1:
 					prefabs[1].transform.position = position;
 					map[j,i] = 0;
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-					tilemap[j,i] = (Transform)tile;
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = tile;
 					break;
 				case 2:
 					prefabs[2].transform.position = position;
 					map[j,i] = 0;
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-					tilemap[j,i] = (Transform)tile;
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = tile;
 					break;
 				case 3:
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					break;
 				case 4:
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					break;
 				case 5:
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					enemies.Add(tile);
+					tile.GetComponent<NeuralTubeEnemy> ().SetDestination(position);
+					map[j,i] = 0;
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = tile;
 					break;
 				case 6:
-
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					break;
 				case 7:
-					tile = Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-					tilemap[j,i] = (Transform)tile;
+					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = tile;
 					break;
 				}
 			}
+		}
+		foreach (Transform enemy in enemies) {
+			enemy.GetComponent<NeuralTubeEnemy> ().SetMap (AvailableCount (
+			new Vector2 (-enemy.position.y / tilewidth, enemy.position.x / tilewidth), 
+				Vector2.up));
+			enemy.GetComponent<NeuralTubeEnemy> ().SetSizes(tilewidth, tileheight);
 		}
 	}
 
@@ -222,7 +259,7 @@ public class NeuralTubeMap : MonoBehaviour {
 	 * 
 	 * 
 	 */
-	private ArrayList AvailableCount (Vector2 _start, Vector2 _direction) {
+	public ArrayList AvailableCount (Vector2 _start, Vector2 _direction) {
 		ArrayList toclaim = new ArrayList ();
 		ArrayList jumppoint = new ArrayList ();
 		Vector2[] cardir = new Vector2[4];
@@ -235,7 +272,6 @@ public class NeuralTubeMap : MonoBehaviour {
 
 		while (true) {
 			toclaim.Add (currentpoint);
-
 			for (int i = 0; i < cardir.Length; i++) {
 				if (_direction != cardir[i]) {
 				    if (map [(int)(currentpoint.x + cardir[i].x), (int)(currentpoint.y + cardir[i].y)] == 0) {
@@ -260,6 +296,14 @@ public class NeuralTubeMap : MonoBehaviour {
 		}
 
 		return toclaim;
+	}
+
+	public int GetUpperbound(int _layer){
+		return map.GetUpperBound (_layer);
+	}
+
+	public int GetLowerbound(int _layer){
+		return map.GetLowerBound (_layer);
 	}
 }
 
