@@ -6,17 +6,10 @@ public class Fuel : MonoBehaviour {
 	float maxFuel = 100;
 	float minFuel = 0;
 	public static float currentFuel;
-	Slider fuelSlider;
-	Slider ingameSlider;
+	public Slider fuelSlider;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		currentFuel = maxFuel;
-//		OnLevelWasLoaded ();
-	}
-
-	void OnLevelWasLoaded(){
-//		fuelSlider = GameObject.Find ("FuelSlider").GetComponent<Slider> ();
-//		ingameSlider = GameObject.Find ("ingameslider").GetComponent<Slider> ();
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -26,8 +19,7 @@ public class Fuel : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-//		fuelSlider.value = currentFuel;
-//		ingameSlider.value = currentFuel;
+		fuelSlider.value = currentFuel;
 		if (Input.GetKeyUp(KeyCode.O)) {
 			currentFuel += 10;
 		}

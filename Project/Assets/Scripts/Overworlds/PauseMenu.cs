@@ -4,22 +4,20 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour {
 	GameObject shipUI;
 	bool gamePaused = false;
-	GameObject player;
 
-	void Start(){
-		player = GameObject.Find ("Player(Clone)");
+	void Awake(){
 		shipUI = GameObject.Find ("ShipUIFunc");
 		if (shipUI != null) {
 			shipUI.SetActive (false);
 		}
-	}	
+	}
 	void PauseGame(){
 		if (!gamePaused) {
-			player.SetActive(false);
+			Time.timeScale = 0;
 			gamePaused = true;
 			shipUI.SetActive(true);
-		}else if (gamePaused) {
-			player.SetActive(true);
+		} else {
+			Time.timeScale = 1;
 			gamePaused = false;
 			shipUI.SetActive(false);
 		}
@@ -27,11 +25,8 @@ public class PauseMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyUp(KeyCode.Escape)) {
-				PauseGame();
-			}
-		if (player == null) {
-			player = GameObject.Find ("Player(Clone)");
+	if (Input.GetKeyUp(KeyCode.Escape)) {
+			PauseGame();
 		}
 	}
 }

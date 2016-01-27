@@ -421,23 +421,23 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22475010, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22475010, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22494640, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22494640, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22494640, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472322, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -513,39 +513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 103250, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423302, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1870186622}
-    - target: {fileID: 11423302, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Levelconfirm
-      objectReference: {fileID: 0}
-    - target: {fileID: 11409858, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1870186622}
-    - target: {fileID: 11409858, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelHighlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465352, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1870186622}
-    - target: {fileID: 11465352, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelHighlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 11464886, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1870186622}
-    - target: {fileID: 11464886, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LevelHighlight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13a428529110c6f4b9c925c58da6bb2a, type: 2}
@@ -7066,19 +7034,9 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
-      propertyPath: highlightedlevel
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1870186622 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11449240, guid: 9eb3fe6a99f02904982f92fd7112862f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870186621}
-  m_Script: {fileID: 11500000, guid: 2cb206bc6ff0337479bce994c750b094, type: 3}
 --- !u!1 &1872596865
 GameObject:
   m_ObjectHideFlags: 0

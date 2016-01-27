@@ -6,7 +6,9 @@ using System.Collections;
 
 public class MoveCamera : MonoBehaviour 
 {
-	Transform target;
+	//
+	// VARIABLES
+	//
 	
 	public float turnSpeed = 4.0f;		// Speed of camera turning when mouse moves in along an axis
 	public float panSpeed = 4.0f;		// Speed of the camera when being panned
@@ -23,9 +25,6 @@ public class MoveCamera : MonoBehaviour
 	
 	void Update () 
 	{
-		if (target == null) {
-			target = GameObject.Find("Player(Clone)").transform;
-		}
 		// Get the left mouse button
 		if(Input.GetMouseButtonDown(2))
 		{
@@ -60,8 +59,8 @@ public class MoveCamera : MonoBehaviour
 		{
 			Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-			transform.RotateAround(target.position, transform.right, -pos.y * turnSpeed);
-			transform.RotateAround(target.position, Vector3.up, pos.x * turnSpeed);
+			transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
+			transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
 		}
 		
 		// Move the camera on it's XY plane
