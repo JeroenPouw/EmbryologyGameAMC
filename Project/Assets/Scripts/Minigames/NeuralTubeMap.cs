@@ -16,11 +16,10 @@ public class NeuralTubeMap : MonoBehaviour {
 	 * 3 = mapborder  block	(used for map borders)
 	 * 4 = unpassable block	(used to hinder the player)
 	 * 5 = enemy			(the player has to avoid these)
-	 * 6 = trigger			(unknown purpose)
 	 * 
 	 * The below are for during the play session
-	 * 6 = claimed			(which so far the player is claiming in a chain)
-	 * 7 = owned			(which the player has successfully chained to become owned)
+	 * 6 = claimed (broken)	(which so far the player is claiming in a chain)
+	 * 7 = owned (broken)	(which the player has successfully chained to become owned)
 	 */
 	private int[,] map = new int[,]
 	{ 	{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}, 
@@ -28,7 +27,8 @@ public class NeuralTubeMap : MonoBehaviour {
 		{3,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,3},
 		{3,0,0,0,0,0,2,4,1,0,0,0,0,5,0,0,3},
 		{3,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,3},
-		{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}
+		{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
+		{0,0,0,0,0,3,0,0,0,0,3,0,0,0,3,0,0}
 	};
 
 	private Transform[,] tilemap;
@@ -239,10 +239,13 @@ public class NeuralTubeMap : MonoBehaviour {
 					break;
 				case 6:
 					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
+					tilemap[j,i] = tile;
+					tile.GetComponent<NeuralTubeAreaClaim> ().Claim();
 					break;
 				case 7:
 					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					tilemap[j,i] = tile;
+					tile.GetComponent<NeuralTubeAreaClaim> ().Own();
 					break;
 				}
 			}
