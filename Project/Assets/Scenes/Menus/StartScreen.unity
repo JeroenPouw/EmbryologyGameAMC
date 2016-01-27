@@ -100,7 +100,7 @@ GameObject:
   - 114: {fileID: 44728366}
   - 114: {fileID: 44728369}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,6 +1012,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187739175}
+--- !u!1001 &1393930122
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8.87748718
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 712.976318
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 527.274414
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489714, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dcc6bd2030f955b46a9cac789023e315, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1448221265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,13 +1287,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 44728369}
-        m_MethodName: LevelSwitch
+        m_MethodName: NewGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

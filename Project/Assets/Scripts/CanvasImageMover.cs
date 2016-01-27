@@ -80,8 +80,7 @@ public class CanvasImageMover : MonoBehaviour {
 				stage++;
 				break;
 			case 3:
-
-		//	next scene needs to be loaded
+				Application.LoadLevel(2);
 				break;
 			}
 		}

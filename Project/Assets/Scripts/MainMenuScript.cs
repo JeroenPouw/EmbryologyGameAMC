@@ -18,7 +18,7 @@ public class MainMenuScript : MonoBehaviour {
 		}
 	}
 
-	public void LevelSwitch(int sceneToChangeTo){
+	public void NewGame(int sceneToChangeTo){
 		Application.LoadLevel(sceneToChangeTo);
 	}
 

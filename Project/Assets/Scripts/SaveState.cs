@@ -1,37 +1,37 @@
-﻿//using UnityEngine;
-//using System.Collections;
-//using System.IO;
-//using System;
-//
-//public class SaveState : MonoBehaviour {
-//	
-//	public SaveData loaded_data;
-//	private System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter ();
-//
-//	// Use this for initialization
-//	void Start () {
-//		DontDestroyOnLoad(transform.gameObject);
-//		ReadFile ();
-//		Debug.Log ("Savestate ready");
-//	}
-//	
-//	public void WriteFile() {
-//		var data = loaded_data;
-//		using (Stream filestream = File.Open("Embsave.dat", FileMode.OpenOrCreate)) {
-//			formatter.Serialize(filestream, data);
-//		}
-//	}
-//
-//	public void ReadFile() {
-//		try
-//		{
-//			using (Stream filestream = File.Open("Embsave.dat", FileMode.Open)) {
-//				loaded_data = (SaveData) formatter.Deserialize(filestream);
-//			}
-//		}
-//		catch (FileNotFoundException _exc)
-//		{
-//			loaded_data = new SaveData{
+﻿using UnityEngine;
+using System.Collections;
+using System.IO;
+using System;
+
+public class SaveState : MonoBehaviour {
+
+	public SaveData loaded_data;
+	private System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter ();
+
+	// Use this for initialization
+	void Start () {
+		DontDestroyOnLoad(transform.gameObject);
+		ReadFile ();
+		Debug.Log ("Savestate ready");
+	}
+
+	public void WriteFile() {
+		var data = loaded_data;
+		using (Stream filestream = File.Open("Embsave.dat", FileMode.OpenOrCreate)) {
+			formatter.Serialize(filestream, data);
+		}
+	}
+
+	public void ReadFile() {
+		try
+		{
+			using (Stream filestream = File.Open("Embsave.dat", FileMode.Open)) {
+				loaded_data = (SaveData) formatter.Deserialize(filestream);
+			}
+		}
+		catch (FileNotFoundException _exc)
+		{
+			loaded_data = new SaveData{
 				lvl = 0,
 				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
 				storytrigger = "1"
