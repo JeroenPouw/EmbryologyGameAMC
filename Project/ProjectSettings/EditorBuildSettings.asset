@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/Yolk Sac Level.unity
   - enabled: 1
     path: Assets/Scenes/MiniGames/Mesoderm 1.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/NeuralTube1/NeuralTube1.unity

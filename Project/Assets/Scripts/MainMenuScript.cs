@@ -7,10 +7,15 @@ public class MainMenuScript : MonoBehaviour {
 
 	void Start () {
 		save = GameObject.Find ("SaveState").GetComponent<SaveState> ();
+		if (save.loaded_data.lvl == 0) {
+			GameObject.Find("ContinueButton").SetActive(false);
+		}
 	}
 
 	public void ContinueGame () {
+		if (save.loaded_data.lvl != 0) {
 
+		}
 	}
 
 	public void LevelSwitch(int sceneToChangeTo){

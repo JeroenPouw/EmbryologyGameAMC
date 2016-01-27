@@ -32,7 +32,7 @@ public class SaveState : MonoBehaviour {
 		catch (FileNotFoundException _exc)
 		{
 			loaded_data = new SaveData{
-				mistrack = "1o2o3o4o5o6o",
+				lvl = 0,
 				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
 				storytrigger = "1"
 			};
@@ -41,13 +41,11 @@ public class SaveState : MonoBehaviour {
 	}
 
 	public void SaveVariable(int _missiontracker, int _puzzletracker, string _storytrigger)	{
-		string _x = loaded_data.mistrack;
+		int _x = loaded_data.lvl;
 		string _y = loaded_data.puztrack;
 		string _s = loaded_data.storytrigger;
-		if (_missiontracker != 0 && _missiontracker <= 6) {
-			if (loaded_data.mistrack.Contains (_missiontracker.ToString () + "o")) {
-				_x = loaded_data.mistrack.Replace (_missiontracker.ToString () + "o", _missiontracker.ToString () + "x");
-			}
+		if (_missiontracker != 0) {
+			_x = _missiontracker;
 		} else //this prevents a double save for the reduction of 2 calcuations. Worth it?
 		if (_puzzletracker != 0 && _puzzletracker <= 15) {
 			if (loaded_data.puztrack.Contains (_puzzletracker.ToString () + "o")) {
@@ -59,7 +57,7 @@ public class SaveState : MonoBehaviour {
 		}
 
 		loaded_data = new SaveData{
-			mistrack = _x,
+			lvl = _x,
 			puztrack = _y,
 			storytrigger = _s
 		};
@@ -69,7 +67,7 @@ public class SaveState : MonoBehaviour {
 	[Serializable]
 	public struct SaveData //remember, structs can't change data, a change only copies the struct
 	{
-		public string mistrack;
+		public int lvl;
 		public string puztrack;
 		public string storytrigger;
 	}

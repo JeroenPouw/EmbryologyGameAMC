@@ -237,16 +237,19 @@ public class NeuralTubeMap : MonoBehaviour {
 					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
 					tilemap[j,i] = tile;
 					break;
+				/*
 				case 6:
 					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-					tilemap[j,i] = tile;
-					tile.GetComponent<NeuralTubeAreaClaim> ().Claim();
+					tilemap[j,i] = (Transform)tile;
+					freetilecount++;
 					break;
 				case 7:
 					tile = (Transform)Instantiate (prefabs[map[j,i]], position, Quaternion.identity);
-					tilemap[j,i] = tile;
-					tile.GetComponent<NeuralTubeAreaClaim> ().Own();
+					tilemap[j,i] = (Transform)tile;
+					tilemap[j,i].GetComponent<NeuralTubeAreaClaim> ().Own();
+					freetilecount++;
 					break;
+				*/
 				}
 			}
 		}
