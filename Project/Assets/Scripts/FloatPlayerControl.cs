@@ -7,7 +7,12 @@ public class FloatPlayerControl : MonoBehaviour {
 	public float speedlimit;
 	public float angularspeed;
 	public float angularspeedlimit;
+	public float distancelimit;
 
+	public bool limitteleport;
+	public bool limitbounce;
+
+	private bool warped = false;
 	private Rigidbody2D rb2;
 
 	void Start () {
@@ -15,10 +20,10 @@ public class FloatPlayerControl : MonoBehaviour {
 	}
 
 	void Update () {
-
+		CircleLimit ();
 	}
 
-	void FixedUpdate() {
+	void FixedUpdate () {
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			rb2.AddTorque (-1f * angularspeed * Time.deltaTime);
 		}
@@ -60,6 +65,18 @@ public class FloatPlayerControl : MonoBehaviour {
 		}
 	}
 
-
+	void CircleLimit () {
+		if ((this.transform.position + Vector3.zero).magnitude > distancelimit && !warped) {
+			if (limitteleport) {
+				this.transform.position = new Vector3(-this.transform.position.x, -this.transform.position.y, 0f);
+				this.GetComponent<GutGameHoldBlob> ().Teleport();
+			} else if (limitbounce) {
+				rb2.velocity = -rb2.velocity;
+			}
+			warped = true;
+		} else if (warped) {
+			warped = false;
+		}
+	}
 
 }
