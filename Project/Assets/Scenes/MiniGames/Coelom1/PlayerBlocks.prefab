@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc7f43bca23f4c4193de4f962c65b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timetildrop: 10
+  timetildrop: 2
   buttondelay: .100000001
   blocks:
   - {fileID: 429056}

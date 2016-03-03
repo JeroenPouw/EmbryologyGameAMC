@@ -41,24 +41,29 @@ public class CoelomPlayer : MonoBehaviour {
 	}
 
 	void Update () {
-		timetracker += Time.deltaTime;
-		buttondelaytracker += Time.deltaTime;
+		if (!mapref.won) {
+			timetracker += Time.deltaTime;
+			buttondelaytracker += Time.deltaTime;
+		}
 		if (timetracker > timetildrop) {
 			timetracker = 0f;
-			MoveDown();
+			MoveDown ();
 		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			MoveRight();
-		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			MoveLeft();
-		}
-		if (Input.GetKey (KeyCode.DownArrow)) {
-			MoveDown();
-		}
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			if (buttondelaytracker > buttondelay) {
-				Clockwise();
+		if (buttondelaytracker > buttondelay) {
+			if (Input.GetKey (KeyCode.RightArrow)) {
+				MoveRight ();
+				buttondelaytracker = 0f;
+			}
+			if (Input.GetKey (KeyCode.LeftArrow)) {
+				MoveLeft ();
+				buttondelaytracker = 0f;
+			}
+			if (Input.GetKey (KeyCode.DownArrow)) {
+				MoveDown ();
+				buttondelaytracker = 0f;
+			}
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				Clockwise ();
 				buttondelaytracker = 0f;
 			}
 		}
@@ -66,48 +71,49 @@ public class CoelomPlayer : MonoBehaviour {
 
 	public void ReInstantiate () {
 		status = Mathf.RoundToInt(Random.Range (1, 7));
-		Debug.Log (status);
-		switch (status) {
-		default:
-			Debug.Log("Failure to comply, buggy code is in order");
-			break;
-		case 1:
-			blocks[0].transform.localPosition = (Vector3.up*mapref.tileheight);
-			blocks[2].transform.localPosition = (Vector3.right*mapref.tilewidth);
-			blocks[3].transform.localPosition = (-Vector3.up*mapref.tileheight + Vector3.right*mapref.tilewidth);
-			break;
-		case 2:
-			blocks[0].transform.localPosition = Vector3.up*mapref.tileheight;
-			blocks[2].transform.localPosition = -Vector3.up*mapref.tileheight;
-			blocks[3].transform.localPosition = -(Vector3.up*mapref.tileheight + Vector3.up*mapref.tileheight);
-			break;
-		case 3:
-			blocks[0].transform.localPosition = (Vector3.up*mapref.tileheight);
-			blocks[2].transform.localPosition = (-Vector3.up*mapref.tileheight);
-			blocks[3].transform.localPosition = (-Vector3.up*mapref.tileheight + Vector3.right*mapref.tilewidth);
-			break;
-		case 4:
-			blocks[0].transform.localPosition = Vector3.up*mapref.tileheight;
-			blocks[2].transform.localPosition = (Vector3.up*mapref.tileheight + Vector3.right*mapref.tilewidth);
-			blocks[3].transform.localPosition = Vector3.right*mapref.tilewidth;
-			break;
-		case 5:
-			blocks[0].transform.localPosition = (Vector3.up*mapref.tileheight);
-			blocks[2].transform.localPosition = (-Vector3.up*mapref.tileheight);
-			blocks[3].transform.localPosition = (-Vector3.up*mapref.tileheight + -Vector3.right*mapref.tilewidth);
-			break;
-		case 6:
-			blocks[0].transform.localPosition = (Vector3.up*mapref.tileheight);
-			blocks[2].transform.localPosition = (-Vector3.right*mapref.tilewidth);
-			blocks[3].transform.localPosition = (-Vector3.up*mapref.tileheight + -Vector3.right*mapref.tilewidth);
-			break;
-		case 7:
-			blocks[0].transform.localPosition = Vector3.up*mapref.tileheight;
-			blocks[2].transform.localPosition = Vector3.right*mapref.tilewidth;
-			blocks[3].transform.localPosition = -Vector3.up*mapref.tileheight;
-			break;
+		if (!mapref.won) {
+			switch (status) {
+			default:
+				Debug.Log ("Failure to comply, buggy code is in order");
+				break;
+			case 1:
+				blocks [0].transform.localPosition = (Vector3.up * mapref.tileheight);
+				blocks [2].transform.localPosition = (Vector3.right * mapref.tilewidth);
+				blocks [3].transform.localPosition = (-Vector3.up * mapref.tileheight + Vector3.right * mapref.tilewidth);
+				break;
+			case 2:
+				blocks [0].transform.localPosition = Vector3.up * mapref.tileheight;
+				blocks [2].transform.localPosition = -Vector3.up * mapref.tileheight;
+				blocks [3].transform.localPosition = -(Vector3.up * mapref.tileheight + Vector3.up * mapref.tileheight);
+				break;
+			case 3:
+				blocks [0].transform.localPosition = (Vector3.up * mapref.tileheight);
+				blocks [2].transform.localPosition = (-Vector3.up * mapref.tileheight);
+				blocks [3].transform.localPosition = (-Vector3.up * mapref.tileheight + Vector3.right * mapref.tilewidth);
+				break;
+			case 4:
+				blocks [0].transform.localPosition = Vector3.up * mapref.tileheight;
+				blocks [2].transform.localPosition = (Vector3.up * mapref.tileheight + Vector3.right * mapref.tilewidth);
+				blocks [3].transform.localPosition = Vector3.right * mapref.tilewidth;
+				break;
+			case 5:
+				blocks [0].transform.localPosition = (Vector3.up * mapref.tileheight);
+				blocks [2].transform.localPosition = (-Vector3.up * mapref.tileheight);
+				blocks [3].transform.localPosition = (-Vector3.up * mapref.tileheight + -Vector3.right * mapref.tilewidth);
+				break;
+			case 6:
+				blocks [0].transform.localPosition = (Vector3.up * mapref.tileheight);
+				blocks [2].transform.localPosition = (-Vector3.right * mapref.tilewidth);
+				blocks [3].transform.localPosition = (-Vector3.up * mapref.tileheight + -Vector3.right * mapref.tilewidth);
+				break;
+			case 7:
+				blocks [0].transform.localPosition = Vector3.up * mapref.tileheight;
+				blocks [2].transform.localPosition = Vector3.right * mapref.tilewidth;
+				blocks [3].transform.localPosition = -Vector3.up * mapref.tileheight;
+				break;
+			}
+			this.transform.position = startposition;
 		}
-		this.transform.position = startposition;
 	}
 
 	void MoveDown () {

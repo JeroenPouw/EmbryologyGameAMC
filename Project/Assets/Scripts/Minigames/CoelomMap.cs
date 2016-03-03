@@ -7,6 +7,7 @@ public class CoelomMap : MonoBehaviour {
 	public float tileheight;
 
 	public Transform[] prefabs;
+	public bool won = false;
 
 	/*
 	 * 0 = open space?
@@ -25,8 +26,8 @@ public class CoelomMap : MonoBehaviour {
 		{3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
 		{3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
 		{3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
-		{3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
-		{3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
+		{3,0,0,0,0,0,2,0,0,0,0,0,0,0,0,3},
+		{3,0,0,0,0,2,2,2,0,0,0,0,0,0,0,3},
 		{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}
 	};
 
@@ -131,13 +132,15 @@ public class CoelomMap : MonoBehaviour {
 				goalblocks--;
 				Instantiate (prefabs[4], MapCoToFloatCo((int)_coord.x,(int)_coord.y), Quaternion.identity);
 				if (goalblocks <= 0) {
-					//win condition
+					Debug.Log("MISSION IS A SUCCESS!!!");
+					won = true;
 				}
 			}
 			map[(int)_coord.y,(int)_coord.x] = 4;
 			Instantiate (prefabs[4], MapCoToFloatCo((int)_coord.x,(int)_coord.y), Quaternion.identity);
 		} else if (map[(int)_coord.y,(int)_coord.x] == 4) {
 			Debug.Log("MISSION IS A FAILURE!!!");
+			won = true;
 		}
 	}
 
