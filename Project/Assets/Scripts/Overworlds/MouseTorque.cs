@@ -42,6 +42,5 @@ public class MouseTorque : MonoBehaviour {
 		Vector3 properRight = Quaternion.Euler(0, 0, -transform.localEulerAngles.z) * transform.right;
 		Vector3 uprightCorrection = Vector3.Cross(transform.right, properRight);
 		GetComponent<Rigidbody>().AddRelativeTorque(uprightCorrection * correctiveStrength);
-
 	}
 }

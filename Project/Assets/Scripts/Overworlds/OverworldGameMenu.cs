@@ -5,21 +5,19 @@ public class OverworldGameMenu : MonoBehaviour {
 
 	public Transform player;
 
-	public Transform stage8spawn;
-	public Transform stage10spawn;
-
-	void Start () {
+	private PlayerAttributeAdjustment playeratt;
+	private int stageselect = 0;
 	
+	void Start () {
+		playeratt = player.GetComponent<PlayerAttributeAdjustment> ();
 	}
 
 	public void Stage8Press () {
-		Debug.Log ("registered");
-		player.position = stage8spawn.position;
+		stageselect = 8;
 	}
 
 	public void Stage10Press () {
-		Debug.Log ("registered");
-		player.position = stage10spawn.position;
+		stageselect = 10;
 	}
 
 	public void Stage13Press () {
@@ -31,11 +29,22 @@ public class OverworldGameMenu : MonoBehaviour {
 	}*/
 
 	public void ConfirmStage () {
-
+		if (stageselect != 0) {
+			playeratt.ChangeStage (stageselect);
+			playeratt.ChangeScale (stageselect);
+			this.gameObject.SetActive (!this.gameObject.activeSelf);
+		}
 	}
 	/*
 	public void PuzzleInventoryButton () {
 
 	}*/
-	
+
+	void OnEnable() {
+		player.gameObject.SetActive (false);
+	}
+
+	void OnDisable () {
+		player.gameObject.SetActive (true);
+	}
 }

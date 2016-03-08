@@ -9,6 +9,7 @@ public class MovementScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidref = GetComponent<Rigidbody> ();
+
 	}
 
 	void FixedUpdate() {

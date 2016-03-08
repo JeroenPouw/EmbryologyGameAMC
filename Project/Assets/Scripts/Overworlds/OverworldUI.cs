@@ -9,6 +9,7 @@ public class OverworldUI : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Z)) {
 			components[1].gameObject.SetActive(!components[1].gameObject.activeSelf);
 		}
+		components[0].gameObject.SetActive(!components [1].gameObject.activeSelf);
 	}
 
 	public void ClickedCompass () {
