@@ -40,8 +40,6 @@ public class Inventory : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.A)) {
 			PuzzlePiece1 = true;
 			OnEnable();
-			Debug.Log("button pressed");
 		}
-		Debug.Log (PuzzlePiece1);
 	}
 }

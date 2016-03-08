@@ -8,17 +8,10 @@ public class Fuel : MonoBehaviour {
 	float minFuel = 0;
 	public static float currentFuel;
 
-	// Use this for initialization
 	void Awake () {
 		currentFuel = maxFuel;
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Fuel") {
-			currentFuel += 25;
-		}
-	}
-	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKeyUp(KeyCode.O)) {

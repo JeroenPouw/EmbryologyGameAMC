@@ -4739,7 +4739,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1110771878}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!124 &1110771880
 Behaviour:
   m_ObjectHideFlags: 0
@@ -7207,7 +7207,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1893701902}
---- !u!1 &1919569231 stripped
+--- !u!1 &1919569231
 GameObject:
   m_PrefabParentObject: {fileID: 176568, guid: 9eb3fe6a99f02904982f92fd7112862f, type: 2}
   m_PrefabInternal: {fileID: 1870186621}
