@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour {
+	public Slider fuelline;
 	float maxFuel = 100;
 	float minFuel = 0;
 	public static float currentFuel;
-	public Slider fuelSlider;
+
 	// Use this for initialization
 	void Awake () {
 		currentFuel = maxFuel;
@@ -19,7 +20,7 @@ public class Fuel : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		fuelSlider.value = currentFuel;
+
 		if (Input.GetKeyUp(KeyCode.O)) {
 			currentFuel += 10;
 		}
@@ -32,5 +33,10 @@ public class Fuel : MonoBehaviour {
 		if (currentFuel < minFuel) {
 			currentFuel = minFuel;
 		}
-	}	
+		fuelline.value = currentFuel;
+	}
+
+	public void Refuel () {
+		currentFuel = maxFuel;
+	}
 }

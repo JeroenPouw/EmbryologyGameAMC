@@ -31,7 +31,7 @@ public class OpagueScript : MonoBehaviour {
 		}
 	}
 
-	public void MakerOpague(){
+	public void MakeOpague(){
 		Collider[] hitcollider = Physics.OverlapSphere (center, radius);
 		foreach (Collider go in hitcollider) {
 			if (go.gameObject.tag != ("nonTrans") && go.gameObject.tag != ("Player")){

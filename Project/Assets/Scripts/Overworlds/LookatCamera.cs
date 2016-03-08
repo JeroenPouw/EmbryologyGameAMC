@@ -9,7 +9,7 @@ public class LookatCamera : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(){
-		mapCam = GameObject.Find ("Map Camera").transform;
+		mapCam = GameObject.Find ("Outer Camera").transform;
 	}
 	// Update is called once per frame
 	void Update () {

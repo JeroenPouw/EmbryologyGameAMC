@@ -41,15 +41,13 @@ public class CameraSwitch : MonoBehaviour {
 				script.gameObject.layer = 23;
 			}
 		}else if (!TPSView) {
-			transSwitch.MakerOpague();
+			transSwitch.MakeOpague();
 			YouAreHere.SetActive (false);
 			foreach (GameObject go in highlights) {
 				GameObject script = go.transform.parent.gameObject;
 				script.gameObject.layer = 2;
 			}
 		}
-
-
 	}
 
 	// Update is called once per frame
@@ -57,6 +55,6 @@ public class CameraSwitch : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			SwitchCameras();
 			TPSView = !TPSView;
-				}
+		}
 	}
 }

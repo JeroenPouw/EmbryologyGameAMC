@@ -3,36 +3,40 @@ using System.Collections;
 
 public class MovementScript : MonoBehaviour {
 	public float speed;
+	public float turnspeed;
 	public float maxSpeed;
+	private Rigidbody rigidref;
 	// Use this for initialization
 	void Start () {
-
+		rigidref = GetComponent<Rigidbody> ();
 	}
 
 	void FixedUpdate() {
 		if (speed>maxSpeed) {
 			float brakeSpeed = speed - maxSpeed;
-			Vector3 normalisedVelocity = GetComponent<Rigidbody>().velocity.normalized;
+			Vector3 normalisedVelocity = rigidref.velocity.normalized;
 			Vector3 brakeVelocity = normalisedVelocity * brakeSpeed;
 
-			GetComponent<Rigidbody>().AddForce(-brakeVelocity);
+			rigidref.AddForce(-brakeVelocity);
 		}
 
 		if (Input.GetKey(KeyCode.W)) {
-			GetComponent<Rigidbody>().AddForce(transform.forward* speed);
+			rigidref.AddForce(transform.forward * speed);
 		}
 		if (Input.GetKey(KeyCode.S)) {
-			GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
+			rigidref.AddForce(-transform.forward * speed);
 		}
 		if (Input.GetKey(KeyCode.D)) {
-			GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.rotation.z) * speed);
+			rigidref.AddTorque(transform.up * turnspeed);
 		}
 		if (Input.GetKey(KeyCode.A)) {
-			//GetComponent<Rigidbody>().AddForce(-transform.right * speed);
-			//GetComponent<Rigidbody>().AddTorque(-transform.up * 50);
+			rigidref.AddTorque(-transform.up * turnspeed);
 		}
-		//GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(horRotSpeed * Input.GetAxis("Mouse X"), vertRotSpeed * Input.GetAxis("Mouse Y"), 0f));
-		//GetComponent<Rigidbody> ().rotation.SetLookRotation (transform.forward);
-
+		if (Input.GetKey(KeyCode.Q)) {
+			rigidref.AddTorque(transform.forward * turnspeed);
+		}
+		if (Input.GetKey(KeyCode.E)) {
+			rigidref.AddTorque(-transform.forward * turnspeed);
+		}
 	}
 }
