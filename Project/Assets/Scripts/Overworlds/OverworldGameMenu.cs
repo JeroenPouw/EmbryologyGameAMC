@@ -13,10 +13,12 @@ public class OverworldGameMenu : MonoBehaviour {
 	}
 
 	public void Stage8Press () {
+		Debug.Log ("8");
 		stageselect = 8;
 	}
 
 	public void Stage10Press () {
+		Debug.Log ("10");
 		stageselect = 10;
 	}
 
@@ -29,6 +31,7 @@ public class OverworldGameMenu : MonoBehaviour {
 	}*/
 
 	public void ConfirmStage () {
+		Debug.Log ("confirmed");
 		if (stageselect != 0) {
 			playeratt.ChangeStage (stageselect);
 			playeratt.ChangeScale (stageselect);

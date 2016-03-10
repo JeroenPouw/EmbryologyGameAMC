@@ -11,7 +11,7 @@ public class TeleportScript : MonoBehaviour {
 	int currentDerm = 3; // default state being Mesoderm
 
 	void Start () {
-		player = GameObject.Find ("Player(Clone)");
+		player = GameObject.Find ("Player");
 		DermSelect(currentDermTracker.currentDerm);
 	}
 	// 1 = connecting stalk
@@ -20,7 +20,7 @@ public class TeleportScript : MonoBehaviour {
 	// 4 = Ectoderm
 	public void DermSelect(int derm){
 		Debug.Log ("gettriggered");
-	switch (derm) {
+		switch (derm) {
 		case 1:
 			player.transform.position = primitiveDestination.transform.position;
 			currentDermTracker.currentDerm = 1;
