@@ -5,25 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menus/StartScreen.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menus/StoryScreen.unity
-  - enabled: 0
-    path: Assets/Scenes/OverWorlds/Overworld cs 10.unity
-  - enabled: 0
-    path: Assets/Scenes/OverWorlds/Overworld cs 08.unity
-  - enabled: 0
-    path: Assets/Scenes/OverWorlds/Puzzel.unity
-  - enabled: 0
-    path: Assets/Scenes/MiniGames/Ectoderm Level.unity
-  - enabled: 0
-    path: Assets/Scenes/Obsolete/Endoderm Level.unity
-  - enabled: 0
-    path: Assets/Scenes/Obsolete/Yolk Sac Level.unity
-  - enabled: 0
-    path: Assets/Scenes/MiniGames/Mesoderm 1.unity
-  - enabled: 0
-    path: Assets/Scenes/MiniGames/NeuralTube1/NeuralTube1.unity
   - enabled: 1
     path: Assets/Scenes/CreateScenes/SuperOverworld.unity
+  - enabled: 1
+    path: Assets/Scenes/OverWorlds/Puzzel.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/Ectoderm Level.unity
+  - enabled: 1
+    path: Assets/Scenes/Obsolete/Endoderm Level.unity
+  - enabled: 1
+    path: Assets/Scenes/Obsolete/Yolk Sac Level.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/Mesoderm 1.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/NeuralTube1/NeuralTube1.unity

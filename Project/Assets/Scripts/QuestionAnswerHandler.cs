@@ -7,9 +7,12 @@ public class QuestionAnswerHandler : MonoBehaviour {
 	public Text questionref;
 	public Text answerref;
 
-	private string correctanswer;
+	private string correctanswer = "";
 	private string[] hints;
 	private int hintcounter = 0;
+	public GameObject player;
+
+	private GameObject pieceref;
 
 	void Start () {
 		hints = new string[3];
@@ -18,8 +21,14 @@ public class QuestionAnswerHandler : MonoBehaviour {
 		hints [2] = "";
 	}
 
-	void Update () {
+	void OnEnable () {
+		player.GetComponent<MouseTorque> ().enabled = false;
+		player.GetComponent<MovementScript> ().enabled = false;
+	}
 
+	void OnDisable () {
+		player.GetComponent<MouseTorque> ().enabled = true;
+		player.GetComponent<MovementScript> ().enabled = true;
 	}
 
 	public void ConfirmAnswer () {
@@ -28,6 +37,8 @@ public class QuestionAnswerHandler : MonoBehaviour {
 			hintcounter = 0;
 			questionref.text = "";
 			answerref.text = "";
+//			GameObject.Find("SaveState").GetComponent<SaveState> ().SaveVariable(0,pieceref.GetComponent<PuzzlePiecePickup>().piecenumber, "");
+			pieceref.SetActive(false);
 			this.gameObject.SetActive (!this.gameObject.activeSelf);
 		} else {
 			if (hintcounter < hints.Length) {
@@ -37,14 +48,19 @@ public class QuestionAnswerHandler : MonoBehaviour {
 		}
 	}
 
-	void Question () {
+	public void Cancel () {
+		this.gameObject.SetActive (!this.gameObject.activeSelf);
+	}
+
+	public void Question () {
 
 
 
 	}
 
-	void Question (string _question, string _answer) {
+	public void Question (string _question, string _answer, GameObject _pieceref) {
 		questionref.text = _question;
 		correctanswer = _answer;
+		pieceref = _pieceref;
 	}
 }

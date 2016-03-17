@@ -20,14 +20,6 @@ public class CanvasImageMover : MonoBehaviour {
 	 */
 	void Start () {
 		RectTransform parent = this.GetComponentInParent<RectTransform> ();
-		for(int i = 0; i < originalposition.Length; i++) {
-
-			storyimages[i].localScale = parent.localScale;
-		//	storyimages[i]
-
-
-			originalposition[i] = storyimages[i].localPosition; //delete if previous slide is not implemented
-		}
 	}
 
 	/*
@@ -72,17 +64,7 @@ public class CanvasImageMover : MonoBehaviour {
 	public void ProgressStory()
 	{
 		if (!movingimage) {
-			switch (stage) {
-			default:
-				moveable = storyimages [stage];
-				goal = new Vector3 (0f, 0f, 0f);
-				movingimage = true;
-				stage++;
-				break;
-			case 3:
-				Application.LoadLevel(2);
-				break;
-			}
+			Application.LoadLevel(2);
 		}
 		else if (clickspamskip) {
 			TeleportRect(moveable, goal);

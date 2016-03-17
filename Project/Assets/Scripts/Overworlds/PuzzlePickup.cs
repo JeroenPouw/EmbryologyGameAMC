@@ -72,7 +72,6 @@ public class PuzzlePickup : MonoBehaviour {
 		}
 		Time.timeScale = 0;
 		Destroy (this.gameObject);
-
 	}
 
 	void TestConfirmFunction(){

@@ -83,12 +83,9 @@ public class CameraSwitch : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.M) && tabpress != true) {
+		if (Input.GetKeyDown(KeyCode.M) && !tabpress) {
 			SwitchCameras();
 			Debug.Log("cameraswitch");
-				}
-		if (player == null) {
-			player = GameObject.Find("Player(Clone)");
 		}
 	}
 }

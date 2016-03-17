@@ -6,19 +6,17 @@ public class OverworldGameMenu : MonoBehaviour {
 	public Transform player;
 
 	private PlayerAttributeAdjustment playeratt;
-	private int stageselect = 0;
+	private int stageselect = 8;
 	
 	void Start () {
 		playeratt = player.GetComponent<PlayerAttributeAdjustment> ();
 	}
 
 	public void Stage8Press () {
-		Debug.Log ("8");
 		stageselect = 8;
 	}
 
 	public void Stage10Press () {
-		Debug.Log ("10");
 		stageselect = 10;
 	}
 
@@ -31,10 +29,10 @@ public class OverworldGameMenu : MonoBehaviour {
 	}*/
 
 	public void ConfirmStage () {
-		Debug.Log ("confirmed");
 		if (stageselect != 0) {
 			playeratt.ChangeStage (stageselect);
 			playeratt.ChangeScale (stageselect);
+			playeratt.Stage = stageselect;
 			this.gameObject.SetActive (!this.gameObject.activeSelf);
 		}
 	}

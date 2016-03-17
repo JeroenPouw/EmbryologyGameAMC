@@ -33,14 +33,18 @@ public class MouseTorque : MonoBehaviour {
 	void Start(){
 	}
 	void FixedUpdate () {
+		MouseToTorque ();
+	}
+
+	void MouseToTorque () {
 		GetComponent<Rigidbody>().AddRelativeTorque(0, Input.GetAxis("Mouse X") * horizontalSensitivity, 0);
 		GetComponent<Rigidbody>().AddRelativeTorque(-Input.GetAxis("Mouse Y") * verticalSensitivity, 0, 0);
 		
 		// Adding the two forces above creates some wobble that causes the camera to become
 		// less than perfectly upright.  Set the corrective strength to zero to see what I'm
 		// talking about.  The following lines help keep the camera upright.
-		Vector3 properRight = Quaternion.Euler(0, 0, -transform.localEulerAngles.z) * transform.right;
-		Vector3 uprightCorrection = Vector3.Cross(transform.right, properRight);
-		GetComponent<Rigidbody>().AddRelativeTorque(uprightCorrection * correctiveStrength);
+	//	Vector3 properRight = Quaternion.Euler(0, 0, -transform.localEulerAngles.z) * transform.right;
+	//	Vector3 uprightCorrection = Vector3.Cross(transform.right, properRight);
+	//	GetComponent<Rigidbody>().AddRelativeTorque(uprightCorrection * correctiveStrength);
 	}
 }

@@ -10,6 +10,7 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 	public Vector3 stage10scale;
 
 	private MovementScript moveref;
+	private int stage;
 
 	void Start () {
 		moveref = this.GetComponent<MovementScript> ();
@@ -26,10 +27,12 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 
 	public void ChangeStage(int _stage) {
 		if (_stage == 8) {
+			GetComponent<Rigidbody> ().mass = 2;
 			this.transform.position = stage8spawn.position;
 			ChangeScale (_stage);
 		}
 		if (_stage == 10) {
+			GetComponent<Rigidbody> ().mass = 1;
 			this.transform.position = stage10spawn.position;
 			ChangeScale (_stage);
 		}
@@ -38,4 +41,12 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 
 
 
+	public int Stage {
+		get {
+			return stage;
+		}
+		set {
+			stage = value;
+		}
+	}
 }

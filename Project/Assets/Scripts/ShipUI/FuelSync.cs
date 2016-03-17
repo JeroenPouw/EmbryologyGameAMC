@@ -11,6 +11,6 @@ public class FuelSync : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Slider> ().value = Fuel.currentFuel;
+	//	GetComponent<Slider> ().value = Fuel.currentFuel;
 	}
 }

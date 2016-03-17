@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 9020bd299f48f2541abcd954fd774887
+timeCreated: 1458029805
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Alimentary canal
+    100002: Alimentary system
+    100004: Allantois
+    100006: Amnion wall
+    100008: Arteries
+    100010: Cardiac Jelly
+    100012: Cardiovascular system
+    100014: Central nervous system
+    100016: Coelemic vesicles
+    100018: Coelom
+    100020: //RootNode
+    100022: CS10 6330
+    100024: CS10 6330 Additional structures
+    100026: Extra-embryonic structures
+    100028: First pharyngeal arch arteries
+    100030: Foregut
+    100032: Forming dorsal aortae
+    100034: Forming midgut
+    100036: Forming notochord
+    100038: Forming vitelline arteries
+    100040: Heart
+    100042: Heart lumen
+    100044: Hindgut
+    100046: Intergumentary system
+    100048: Lumen gut and yolk sac
+    100050: Mesoderm outer layer
+    100052: Myocardium
+    100054: Nervous system
+    100056: Neural plate
+    100058: Neural tube
+    100060: Notochordal plate
+    100062: Notochordal process
+    100064: Pericardial cavity
+    100066: Pericardioperitoneal canals
+    100068: Pharyngeal arch arteries
+    100070: Skeletal and muscular system
+    100072: Skin
+    100074: Somites
+    100076: Somitocoel
+    100078: Umbilical arteries
+    100080: Umbilical veins
+    100082: Urogenital system
+    100084: Veins
+    100086: Yolk sac wall
+    400000: Alimentary canal
+    400002: Alimentary system
+    400004: Allantois
+    400006: Amnion wall
+    400008: Arteries
+    400010: Cardiac Jelly
+    400012: Cardiovascular system
+    400014: Central nervous system
+    400016: Coelemic vesicles
+    400018: Coelom
+    400020: //RootNode
+    400022: CS10 6330
+    400024: CS10 6330 Additional structures
+    400026: Extra-embryonic structures
+    400028: First pharyngeal arch arteries
+    400030: Foregut
+    400032: Forming dorsal aortae
+    400034: Forming midgut
+    400036: Forming notochord
+    400038: Forming vitelline arteries
+    400040: Heart
+    400042: Heart lumen
+    400044: Hindgut
+    400046: Intergumentary system
+    400048: Lumen gut and yolk sac
+    400050: Mesoderm outer layer
+    400052: Myocardium
+    400054: Nervous system
+    400056: Neural plate
+    400058: Neural tube
+    400060: Notochordal plate
+    400062: Notochordal process
+    400064: Pericardial cavity
+    400066: Pericardioperitoneal canals
+    400068: Pharyngeal arch arteries
+    400070: Skeletal and muscular system
+    400072: Skin
+    400074: Somites
+    400076: Somitocoel
+    400078: Umbilical arteries
+    400080: Umbilical veins
+    400082: Urogenital system
+    400084: Veins
+    400086: Yolk sac wall
+    2300000: Allantois
+    2300002: Amnion wall
+    2300004: Cardiac Jelly
+    2300006: Coelemic vesicles
+    2300008: First pharyngeal arch arteries
+    2300010: Foregut
+    2300012: Forming dorsal aortae
+    2300014: Forming midgut
+    2300016: Forming vitelline arteries
+    2300018: Heart lumen
+    2300020: Hindgut
+    2300022: Lumen gut and yolk sac
+    2300024: Mesoderm outer layer
+    2300026: Myocardium
+    2300028: Neural plate
+    2300030: Neural tube
+    2300032: Notochordal plate
+    2300034: Notochordal process
+    2300036: Pericardial cavity
+    2300038: Pericardioperitoneal canals
+    2300040: Skin
+    2300042: Somites
+    2300044: Somitocoel
+    2300046: Umbilical arteries
+    2300048: Umbilical veins
+    2300050: Yolk sac wall
+    3300000: Allantois
+    3300002: Amnion wall
+    3300004: Cardiac Jelly
+    3300006: Coelemic vesicles
+    3300008: First pharyngeal arch arteries
+    3300010: Foregut
+    3300012: Forming dorsal aortae
+    3300014: Forming midgut
+    3300016: Forming vitelline arteries
+    3300018: Heart lumen
+    3300020: Hindgut
+    3300022: Lumen gut and yolk sac
+    3300024: Mesoderm outer layer
+    3300026: Myocardium
+    3300028: Neural plate
+    3300030: Neural tube
+    3300032: Notochordal plate
+    3300034: Notochordal process
+    3300036: Pericardial cavity
+    3300038: Pericardioperitoneal canals
+    3300040: Skin
+    3300042: Somites
+    3300044: Somitocoel
+    3300046: Umbilical arteries
+    3300048: Umbilical veins
+    3300050: Yolk sac wall
+    4300000: Lumen gut and yolk sac
+    4300002: Mesoderm outer layer
+    4300004: Skin
+    4300006: Notochordal plate
+    4300008: Notochordal process
+    4300010: Somites
+    4300012: Somitocoel
+    4300014: Neural plate
+    4300016: Neural tube
+    4300018: Foregut
+    4300020: Forming midgut
+    4300022: Hindgut
+    4300024: Coelemic vesicles
+    4300026: Pericardial cavity
+    4300028: Pericardioperitoneal canals
+    4300030: Forming vitelline arteries
+    4300032: First pharyngeal arch arteries
+    4300034: Forming dorsal aortae
+    4300036: Umbilical arteries
+    4300038: Cardiac Jelly
+    4300040: Heart lumen
+    4300042: Myocardium
+    4300044: Umbilical veins
+    4300046: Allantois
+    4300048: Amnion wall
+    4300050: Yolk sac wall
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

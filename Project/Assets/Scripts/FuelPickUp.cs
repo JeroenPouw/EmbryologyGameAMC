@@ -9,7 +9,7 @@ public class FuelPickUp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other){
-		Fuel.currentFuel = 100;
+
 		this.gameObject.SetActive (false);
 	}
 
