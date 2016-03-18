@@ -9,8 +9,10 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 	public Vector3 stage8scale;
 	public Vector3 stage10scale;
 
+	public CutoutStageFilter filter;
+
 	private MovementScript moveref;
-	private int stage;
+	private int stage = 10;
 
 	void Start () {
 		moveref = this.GetComponent<MovementScript> ();
@@ -26,15 +28,17 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 	}
 
 	public void ChangeStage(int _stage) {
-		if (_stage == 8) {
+		if (_stage == 8 && _stage != stage) {
 			GetComponent<Rigidbody> ().mass = 2;
 			this.transform.position = stage8spawn.position;
 			ChangeScale (_stage);
+			filter.ToggleStage();
 		}
-		if (_stage == 10) {
+		if (_stage == 10 && _stage != stage) {
 			GetComponent<Rigidbody> ().mass = 1;
 			this.transform.position = stage10spawn.position;
 			ChangeScale (_stage);
+			filter.ToggleStage();
 		}
 	}
 

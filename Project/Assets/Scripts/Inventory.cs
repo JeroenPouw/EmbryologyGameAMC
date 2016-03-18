@@ -42,4 +42,9 @@ public class Inventory : MonoBehaviour {
 			OnEnable();
 		}
 	}
+
+	void ReadSaveState () {
+	//	if (
+	//	GameObject.Find("SaveState")
+	}
 }

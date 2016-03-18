@@ -5,6 +5,8 @@ public class StageCenterCamera : MonoBehaviour {
 
 	public Transform stage8center;
 	public Transform stage10center;
+	public StageTransparancy stage8;
+	public StageTransparancy stage10;
 
 	private bool isonstage8;
 	private Vector3 prevmousepos = Vector3.zero;
@@ -71,6 +73,10 @@ public class StageCenterCamera : MonoBehaviour {
 	}
 
 	void OnDisable () {
-
+		if (isonstage8) {
+			stage8.MakeStageOpaque ();
+		} else {
+			stage10.MakeStageOpaque ();
+		}
 	}
 }
