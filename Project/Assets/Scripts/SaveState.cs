@@ -61,7 +61,7 @@ public class SaveState : MonoBehaviour {
 			puztrack = _y,
 			storytrigger = _s
 		};
-		WriteFile (); //maybe decided to not put this here.
+		WriteFile (); //maybe decide to not put this here.
 	}
 
 	[Serializable]

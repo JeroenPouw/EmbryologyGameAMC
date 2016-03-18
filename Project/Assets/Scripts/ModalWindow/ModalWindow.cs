@@ -14,10 +14,10 @@ public class ModalWindow : MonoBehaviour {
 	string answer;
 
 	private static ModalWindow modalWindow;
-	PuzzlePickup pickUp;
+//	PuzzlePickup pickUp;
 
 	void Awake(){
-		pickUp = GetComponent<PuzzlePickup> ();
+//		pickUp = GetComponent<PuzzlePickup> ();
 	}
 	
 	public static ModalWindow Instance(){
@@ -52,7 +52,7 @@ public class ModalWindow : MonoBehaviour {
 		confirmButton.onClick.AddListener (questionAction);
 		confirmButton.onClick.AddListener (ClosePanel);
 
-		this.answer = PuzzlePickup.answer;
+//		this.answer = PuzzlePickup.answer;
 		this.message.text = message;
 		this.titletext.text = title;
 		input.gameObject.SetActive (true);

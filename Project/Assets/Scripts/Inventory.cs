@@ -3,48 +3,51 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-	public static bool PuzzlePiece1;
-	public static bool PuzzlePiece2;
-	public static bool PuzzlePiece3;
-	public static bool PuzzlePiece4;
-	public static bool PuzzlePiece5;
-	public static bool PuzzlePiece6;
-	public static bool PuzzlePiece7;
-	public static bool PuzzlePiece8;
-	public static bool PuzzlePiece9;
-	public static bool PuzzlePiece10;
-	public static bool PuzzlePiece11;
-	public static bool PuzzlePiece12;
-	public static bool PuzzlePiece13;
-	public static bool PuzzlePiece14;
-	public static bool PuzzlePiece15;
+	public static bool[] puzzlepiece;
 	private GameObject UIButton;
-	// Use this for initialization
+
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	public void OnEnable () {
-		if (PuzzlePiece1 == true) {
-			UIButton = GameObject.Find ("Slot 1");
-			UIButton.GetComponent<Button> ().interactable = true;
-		} else {
-			UIButton = GameObject.Find ("Slot 1");
-			UIButton.GetComponent<Button> ().interactable = false;
+		puzzlepiece = new bool[16];
+		for (int i = 1; i < puzzlepiece.Length; i++) {
+			puzzlepiece[i] = true;
 		}
+		OnEnable ();
+		ReadSaveState ();
+	}
+
+	void Update () {
 
 	}
 
-	void Update(){
-		if (Input.GetKeyUp(KeyCode.A)) {
-			PuzzlePiece1 = true;
-			OnEnable();
+	public void OnEnable () {
+		for (int i = 1; i < puzzlepiece.Length; i++) {
+			if (puzzlepiece[i]) {
+				UIButton = GameObject.Find ("Slot " + i.ToString());
+				UIButton.GetComponent<Button> ().interactable = true;
+			} else {
+				UIButton = GameObject.Find ("Slot " + i.ToString());
+				UIButton.GetComponent<Button> ().interactable = false;
+			}
 		}
 	}
 
 	void ReadSaveState () {
-	//	if (
-	//	GameObject.Find("SaveState")
+		try {
+			SaveState save = GameObject.Find ("SaveState").GetComponent<SaveState> ();
+			if (save != null) {
+				for (int i = 1; i <= 15; i++) {
+					if (save.loaded_data.puztrack.Substring(save.loaded_data.puztrack.IndexOf(i.ToString()+1,1)) == "x") {
+						puzzlepiece[i] = true;
+					}
+				}
+			}
+		}
+		catch (UnityException e) {
+
+		}
+	}
+
+	public void PiecePlaced (int _piecenumber) {
+		puzzlepiece [_piecenumber] = false;
 	}
 }

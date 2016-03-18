@@ -16,7 +16,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11419612}
   m_Layer: 0
-  m_Name: Liver_Size3
+  m_Name: Liver_size3
   m_TagString: PuzzleObjectFalse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

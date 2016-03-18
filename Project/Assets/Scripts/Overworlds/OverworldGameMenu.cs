@@ -21,7 +21,7 @@ public class OverworldGameMenu : MonoBehaviour {
 	}
 
 	public void Stage13Press () {
-
+		Application.LoadLevel ("Puzzel");
 	}
 	/*
 	public void Encyclopedia () {
