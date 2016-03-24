@@ -16,7 +16,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11458934}
   m_Layer: 0
-  m_Name: LensPlacodeOpticVesicle_size1
+  m_Name: LensPlacodeOpticVesicle_Size1
   m_TagString: PuzzleObjectCorrect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

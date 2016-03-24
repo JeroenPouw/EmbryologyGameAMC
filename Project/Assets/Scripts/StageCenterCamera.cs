@@ -55,7 +55,7 @@ public class StageCenterCamera : MonoBehaviour {
 		if (!isonstage8) {
 			this.transform.position = new Vector3 (0, 0, 15000);
 			this.transform.rotation = new Quaternion (0f,180f,0f,1f);
-			this.GetComponent<Camera> ().farClipPlane = 20000;
+			this.GetComponent<Camera> ().farClipPlane = 25000;
 		}
 	}
 

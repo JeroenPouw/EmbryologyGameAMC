@@ -45,7 +45,7 @@ public class SaveState : MonoBehaviour {
 		string _y = loaded_data.puztrack;
 		string _s = loaded_data.storytrigger;
 		if (_missiontracker != 0) {
-			_x = _missiontracker;
+			if (loaded_data.lvl < _missiontracker) _x = _missiontracker;
 		} else //this prevents a double save for the reduction of 2 calcuations. Worth it?
 		if (_puzzletracker != 0 && _puzzletracker <= 15) {
 			if (loaded_data.puztrack.Contains (_puzzletracker.ToString () + "o")) {
@@ -62,6 +62,15 @@ public class SaveState : MonoBehaviour {
 			storytrigger = _s
 		};
 		WriteFile (); //maybe decide to not put this here.
+	}
+
+	public void ResetFile () {
+		loaded_data = new SaveData{
+			lvl = 0,
+			puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
+			storytrigger = "1"
+		};
+		WriteFile();
 	}
 
 	[Serializable]
