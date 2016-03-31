@@ -8,11 +8,9 @@ public class SaveState : MonoBehaviour {
 	public SaveData loaded_data;
 	private System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter ();
 
-	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad(transform.gameObject);
 		ReadFile ();
-		Debug.Log ("Savestate ready");
 	}
 
 	public void WriteFile() {
@@ -34,7 +32,7 @@ public class SaveState : MonoBehaviour {
 			loaded_data = new SaveData{
 				lvl = 0,
 				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
-				storytrigger = "1"
+				storytrigger = "0"
 			};
 			WriteFile();
 		}
@@ -45,7 +43,7 @@ public class SaveState : MonoBehaviour {
 		string _y = loaded_data.puztrack;
 		string _s = loaded_data.storytrigger;
 		if (_missiontracker != 0) {
-			_x = _missiontracker;
+			if (loaded_data.lvl < _missiontracker) _x = _missiontracker;
 		} else //this prevents a double save for the reduction of 2 calcuations. Worth it?
 		if (_puzzletracker != 0 && _puzzletracker <= 15) {
 			if (loaded_data.puztrack.Contains (_puzzletracker.ToString () + "o")) {
@@ -61,7 +59,33 @@ public class SaveState : MonoBehaviour {
 			puztrack = _y,
 			storytrigger = _s
 		};
-		WriteFile (); //maybe decided to not put this here.
+		WriteFile (); //maybe decide to not put this here.
+	}
+
+	public void ResetFile () {
+		loaded_data = new SaveData{
+			lvl = 0,
+			puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
+			storytrigger = "0"
+		};
+		WriteFile();
+	}
+
+	public void PuzzlePiecePlaced (int _piecenumber) {
+		loaded_data = new SaveData{
+			lvl = loaded_data.lvl,
+			puztrack = loaded_data.puztrack.Replace (_piecenumber.ToString () + "x", _piecenumber.ToString () + "p"),
+			storytrigger = loaded_data.storytrigger
+		};
+		WriteFile ();
+	}
+
+	public string GetPuzzleStatus(int _piecenumber) {
+		int startindex = loaded_data.puztrack.IndexOf (_piecenumber.ToString ());
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("o")) return "o";
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("x")) return "x";
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("p")) return "p";
+		return "nodata";
 	}
 
 	[Serializable]

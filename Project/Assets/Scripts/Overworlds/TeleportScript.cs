@@ -3,15 +3,15 @@ using System.Collections;
 
 public class TeleportScript : MonoBehaviour {
 	public GameObject dermSelect;
-	GameObject player;
 	public Transform primitiveDestination;
 	public Transform endoDestination;
 	public Transform mesoDestination;
 	public Transform ectoDestination;
-	int currentDerm = 3; // default state being Mesoderm
+	private int currentDerm = 3; // default state being Mesoderm
+	private GameObject player;
 
 	void Start () {
-		player = GameObject.Find ("Player(Clone)");
+		player = GameObject.Find ("Player");
 		DermSelect(currentDermTracker.currentDerm);
 	}
 	// 1 = connecting stalk
@@ -19,8 +19,7 @@ public class TeleportScript : MonoBehaviour {
 	// 3 = Mesoderm
 	// 4 = Ectoderm
 	public void DermSelect(int derm){
-		Debug.Log ("gettriggered");
-	switch (derm) {
+		switch (derm) {
 		case 1:
 			player.transform.position = primitiveDestination.transform.position;
 			currentDermTracker.currentDerm = 1;
@@ -42,10 +41,15 @@ public class TeleportScript : MonoBehaviour {
 			currentDerm = 4;
 			break;
 		}
-		dermSelect.SetActive (false);
+		player.GetComponent<MouseTorque> ().enabled = true;
+		player.GetComponent<MovementScript> ().enabled = true;
+		this.gameObject.SetActive (false);
 	}
+
 	void OnTriggerEnter(Collider other){
 		dermSelect.SetActive (true);
+		player.GetComponent<MouseTorque> ().enabled = false;
+		player.GetComponent<MovementScript> ().enabled = false;
 	}
 
 }

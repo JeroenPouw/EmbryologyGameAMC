@@ -5,8 +5,13 @@ public class InfoManager : MonoBehaviour {
 
 	public TextAsset infoMessage;
 	public static TextAsset s;
+	public TextAsset questLog;
+	public static TextAsset q;
 
-	void OnTriggerEnter(){
-		s = infoMessage;
+	void Start()
+	{
+
+	}
+	void Update(){
 	}
 }

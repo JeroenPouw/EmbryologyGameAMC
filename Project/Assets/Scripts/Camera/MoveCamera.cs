@@ -57,10 +57,7 @@ public class MoveCamera : MonoBehaviour
 		// Rotate camera along X and Y axis
 		if (isRotating)
 		{
-			Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-			transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
-			transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
 		}
 		
 		// Move the camera on it's XY plane

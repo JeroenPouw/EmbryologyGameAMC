@@ -11,6 +11,7 @@ public class PuzzleInfoManager : MonoBehaviour {
 //		while (text == null) {
 //
 //		}
+
 	}
 
 	public void SpawnInfo(int piecenumber){

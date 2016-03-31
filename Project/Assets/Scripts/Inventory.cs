@@ -3,45 +3,52 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-	public static bool PuzzlePiece1;
-	public static bool PuzzlePiece2;
-	public static bool PuzzlePiece3;
-	public static bool PuzzlePiece4;
-	public static bool PuzzlePiece5;
-	public static bool PuzzlePiece6;
-	public static bool PuzzlePiece7;
-	public static bool PuzzlePiece8;
-	public static bool PuzzlePiece9;
-	public static bool PuzzlePiece10;
-	public static bool PuzzlePiece11;
-	public static bool PuzzlePiece12;
-	public static bool PuzzlePiece13;
-	public static bool PuzzlePiece14;
-	public static bool PuzzlePiece15;
+	public bool[] puzzlepiece;
 	private GameObject UIButton;
-	// Use this for initialization
+	private SaveState save;
+
 	void Start () {
-	
+		save = GameObject.Find ("SaveState").GetComponent<SaveState> ();
+
+		puzzlepiece = new bool[16];
+		for (int i = 1; i < puzzlepiece.Length; i++) {
+			puzzlepiece[i] = false;
+		}
+		ReadSaveState ();
+		OnEnable ();
 	}
-	
-	// Update is called once per frame
+
+	void Update () {
+
+	}
+
 	public void OnEnable () {
-		if (PuzzlePiece1 == true) {
-			UIButton = GameObject.Find ("Slot 1");
-			UIButton.GetComponent<Button> ().interactable = true;
-		} else {
-			UIButton = GameObject.Find ("Slot 1");
-			UIButton.GetComponent<Button> ().interactable = false;
+		for (int i = 1; i < puzzlepiece.Length; i++) {
+			if (puzzlepiece[i]) {
+				UIButton = GameObject.Find ("Slot " + i.ToString());
+				UIButton.GetComponent<Button> ().interactable = true;
+			} else {
+				UIButton = GameObject.Find ("Slot " + i.ToString());
+				UIButton.GetComponent<Button> ().interactable = false;
+			}
 		}
-
 	}
 
-	void Update(){
-		if (Input.GetKeyUp(KeyCode.A)) {
-			PuzzlePiece1 = true;
-			OnEnable();
-			Debug.Log("button pressed");
+	void ReadSaveState () {
+		try {
+			for (int i = 1; i <= 15; i++) {
+				if (save.GetPuzzleStatus(i) == "x") {
+					puzzlepiece[i] = true;
+				}
+			}
 		}
-		Debug.Log (PuzzlePiece1);
+		catch (UnityException e) {
+
+		}
+	}
+
+	public void PiecePlaced (int _piecenumber) {
+		puzzlepiece [_piecenumber+1] = false;
+		save.PuzzlePiecePlaced (_piecenumber+1);
 	}
 }

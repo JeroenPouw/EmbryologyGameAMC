@@ -29,7 +29,7 @@ public class PuzzelItem : MonoBehaviour {
 	}
 	
 	public void SpawnObjects (int pieceNumber){
-		pieceNumber = count;
+		count = pieceNumber - 1;
 		InvSlots.SetActive (false);
 		infoPanel.SetActive (true);
 		slotsPanel.SetActive (true);

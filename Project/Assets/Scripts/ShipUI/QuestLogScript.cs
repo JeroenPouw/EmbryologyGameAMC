@@ -10,9 +10,10 @@ public class QuestLogScript : MonoBehaviour {
 		questLog = gameObject.GetComponent<Text> ();
 		text = Resources.Load ("MyTexts/QuestLog") as TextAsset;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		questLog.text = "" + text;
 	}
+
+
 }

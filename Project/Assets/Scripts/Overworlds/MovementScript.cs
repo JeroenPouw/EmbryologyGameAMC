@@ -3,36 +3,54 @@ using System.Collections;
 
 public class MovementScript : MonoBehaviour {
 	public float speed;
-	public float maxSpeed;
-	// Use this for initialization
-	void Start () {
+	public float turnspeed;
+	public float maxspeed;
+	public float penalizedmaxspeed;
+	private float currentmaxspeed;
+	private Rigidbody rigidref;
 
+	void Start () {
+		rigidref = GetComponent<Rigidbody> ();
+		RestoreMaxSpeed ();
 	}
 
 	void FixedUpdate() {
-		if (speed>maxSpeed) {
-			float brakeSpeed = speed - maxSpeed;
-			Vector3 normalisedVelocity = GetComponent<Rigidbody>().velocity.normalized;
-			Vector3 brakeVelocity = normalisedVelocity * brakeSpeed;
+		if (speed>currentmaxspeed && speed < 1f) {
+			float brakeSpeed = speed - currentmaxspeed;
+			Vector3 brakeVelocity = rigidref.velocity.normalized * brakeSpeed;
 
-			GetComponent<Rigidbody>().AddForce(-brakeVelocity);
+			rigidref.AddForce(-brakeVelocity);
 		}
 
 		if (Input.GetKey(KeyCode.W)) {
-			GetComponent<Rigidbody>().AddForce(transform.forward* speed);
+			rigidref.AddForce(transform.forward * speed);
+			GetComponent<Fuel>().ConsumeFuel();
 		}
 		if (Input.GetKey(KeyCode.S)) {
-			GetComponent<Rigidbody>().AddForce(-transform.forward * speed);
+			rigidref.AddForce(-transform.forward * speed);
+			GetComponent<Fuel>().ConsumeFuel();
 		}
 		if (Input.GetKey(KeyCode.D)) {
-			GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.rotation.z) * speed);
+			rigidref.AddTorque(transform.up * turnspeed);
+			GetComponent<Fuel>().ConsumeFuel();
 		}
 		if (Input.GetKey(KeyCode.A)) {
-			//GetComponent<Rigidbody>().AddForce(-transform.right * speed);
-			//GetComponent<Rigidbody>().AddTorque(-transform.up * 50);
+			rigidref.AddTorque(-transform.up * turnspeed);
+			GetComponent<Fuel>().ConsumeFuel();
 		}
-		//GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(horRotSpeed * Input.GetAxis("Mouse X"), vertRotSpeed * Input.GetAxis("Mouse Y"), 0f));
-		//GetComponent<Rigidbody> ().rotation.SetLookRotation (transform.forward);
+		if (Input.GetKey(KeyCode.Q)) {
+			rigidref.AddTorque(transform.forward * turnspeed);
+		}
+		if (Input.GetKey(KeyCode.E)) {
+			rigidref.AddTorque(-transform.forward * turnspeed);
+		}
+	}
 
+	public void PenalizeMaxSpeed () {
+		currentmaxspeed = penalizedmaxspeed;
+	}
+
+	public void RestoreMaxSpeed () {
+		currentmaxspeed = maxspeed;
 	}
 }

@@ -93,7 +93,7 @@ public class DragObjects : MonoBehaviour {
 					spawnerScript.InvSlots.SetActive(true);
 					spawnerScript.infoPanel.SetActive(false);
 					spawnerScript.slotsPanel.SetActive(false);
-					Inventory.PuzzlePiece1 = false;
+					inventory.PiecePlaced(PuzzelItem.count);
 					inventory.OnEnable();
 				}
 				else if(Physics.Raycast(ray, out hit, 100, layerMaskWrong) && this.transform.tag == "PuzzleObjectCorrect"){
@@ -160,7 +160,7 @@ public class DragObjects : MonoBehaviour {
 					Destroy(go);
 				} 
 				PuzzelItem.count++;
-				//spawnerScript.SpawnObjects();
+			//	spawnerScript.SpawnObjects();
 				count = 5;
 			}
 		}
@@ -190,7 +190,6 @@ public class DragObjects : MonoBehaviour {
 	}
 	
 	 IEnumerator  WaitTime (float waitTime){
-		Debug.Log ("waiting");
 		yield return new WaitForSeconds(waitTime);
 		CorrectSizeWrongPlace = false;
 		WrongSizeCorrectPlace = false;

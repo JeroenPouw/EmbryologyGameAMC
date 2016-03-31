@@ -2,20 +2,25 @@
 using System.Collections;
 
 public class LookatCamera : MonoBehaviour {
-	Transform mapCam;
-	// Use this for initialization
-	void Start () {
-		OnLevelWasLoaded (); // Because Unity does not call OnLevelWasLoaded when starting a scene.
+	public Transform mapCam;
+
+	double timer = 0.0f;
+	bool onoff = false;
+
+	void Update () {
+		if (mapCam.gameObject.activeSelf) {
+			transform.LookAt (mapCam);
+			IndicatorBlink ();
+		} else {
+			this.gameObject.GetComponent<Renderer>().enabled = false;
+		}
 	}
 
-	void OnLevelWasLoaded(){
-		mapCam = GameObject.Find ("Map Camera").transform;
-	}
-	// Update is called once per frame
-	void Update () {
-		if (mapCam == null) {
-			OnLevelWasLoaded();
+	void IndicatorBlink(){
+		if (Time.time > timer) {
+			timer = Time.time + .4;
+			onoff = !onoff;
+			this.gameObject.GetComponent<Renderer>().enabled = onoff;
 		}
-		transform.LookAt (mapCam);
 	}
 }

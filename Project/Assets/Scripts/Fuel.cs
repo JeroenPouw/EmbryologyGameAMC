@@ -3,34 +3,41 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour {
-	float maxFuel = 100;
-	float minFuel = 0;
-	public static float currentFuel;
-	public Slider fuelSlider;
-	// Use this for initialization
-	void Awake () {
-		currentFuel = maxFuel;
+	public Slider fuelline;
+	float maxfuel = 100;
+	float minfuel = 0;
+	public float currentFuel;
+	public float fuelconsumption;
+
+	private MovementScript movref;
+
+	void Start () {
+		movref = this.GetComponent<MovementScript> ();
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Fuel") {
-			currentFuel += 25;
-		}
+	void Awake () {
+		currentFuel = maxfuel;
 	}
-	// Update is called once per frame
+
 	void Update () {
-		fuelSlider.value = currentFuel;
-		if (Input.GetKeyUp(KeyCode.O)) {
-			currentFuel += 10;
+		if (currentFuel > maxfuel) {
+			currentFuel = maxfuel;
 		}
-		if (Input.GetKeyUp(KeyCode.L)) {
-			currentFuel -= 10;
+		if (currentFuel < minfuel) {
+			currentFuel = minfuel;
+			movref.PenalizeMaxSpeed ();
 		}
-		if (currentFuel > maxFuel) {
-			currentFuel = maxFuel;
-		}
-		if (currentFuel < minFuel) {
-			currentFuel = minFuel;
-		}
-	}	
+
+
+		fuelline.value = currentFuel;
+	}
+
+	public void Refuel () {
+		currentFuel = maxfuel;
+		movref.RestoreMaxSpeed ();
+	}
+
+	public void ConsumeFuel () {
+		currentFuel -= fuelconsumption * Time.deltaTime;
+	}
 }

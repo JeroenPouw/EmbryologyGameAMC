@@ -3,11 +3,6 @@ using System.Collections;
 
 public class SceneSwitchScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-
 	void OnTriggerEnter(Collider other)
 	{
 		switch (this.gameObject.tag) {
@@ -30,23 +25,22 @@ public class SceneSwitchScript : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.P)) {
 			switch (this.gameObject.tag) {
 			case "Yolk Sac":
-				Application.LoadLevel("Yolk Sac Level");
+
+			//	Application.LoadLevel("Yolk Sac Level");
 				break;
 			case "Endoderm":
-				Application.LoadLevel("Endoderm Level");
+
+			//	Application.LoadLevel("Endoderm Level");
 				break;
 			case "Ectoderm":
-				Application.LoadLevel("Ectoderm Level");
+
+			//	Application.LoadLevel("Ectoderm Level");
 				break;
 			case "Mesoderm":
-				Application.LoadLevel("Mesoderm 1");
+
+			//	Application.LoadLevel("Mesoderm 1");
 				break;
 			}
 		}
-
-	}
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
