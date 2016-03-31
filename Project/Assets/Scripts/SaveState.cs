@@ -34,7 +34,7 @@ public class SaveState : MonoBehaviour {
 			loaded_data = new SaveData{
 				lvl = 0,
 				puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
-				storytrigger = "1"
+				storytrigger = "0"
 			};
 			WriteFile();
 		}
@@ -68,9 +68,18 @@ public class SaveState : MonoBehaviour {
 		loaded_data = new SaveData{
 			lvl = 0,
 			puztrack = "1o2o3o4o5o6o7o8o9o10o11o12o13o14o15o",
-			storytrigger = "1"
+			storytrigger = "0"
 		};
 		WriteFile();
+	}
+
+	public void PuzzlePiecePlaced (int _piecenumber) {
+		loaded_data = new SaveData{
+			lvl = loaded_data.lvl,
+			puztrack = loaded_data.puztrack.Replace (_piecenumber.ToString () + "x", _piecenumber.ToString () + "p"),
+			storytrigger = loaded_data.storytrigger
+		};
+		WriteFile ();
 	}
 
 	[Serializable]

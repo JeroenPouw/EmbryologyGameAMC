@@ -93,7 +93,7 @@ public class DragObjects : MonoBehaviour {
 					spawnerScript.InvSlots.SetActive(true);
 					spawnerScript.infoPanel.SetActive(false);
 					spawnerScript.slotsPanel.SetActive(false);
-//					inventory.PiecePlaced();
+					inventory.PiecePlaced(PuzzelItem.count);
 					inventory.OnEnable();
 				}
 				else if(Physics.Raycast(ray, out hit, 100, layerMaskWrong) && this.transform.tag == "PuzzleObjectCorrect"){

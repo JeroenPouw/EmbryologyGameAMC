@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b92a2580302c8e344a034d7062606e79, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4021,7 +4021,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269648328}
   m_LocalRotation: {x: .000608732458, y: .00870527886, z: .0697538182, w: .997526109}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .800000012, y: 1, z: 1}
   m_Children:
   - {fileID: 290033319}
@@ -10143,14 +10143,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 697823203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .100000001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1974585487}
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.2999992, y: -104.599998}
+  m_AnchoredPosition: {x: -23, y: -104}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &697823205
@@ -12468,7 +12468,7 @@ Transform:
   m_PrefabParentObject: {fileID: 465436, guid: c43a0b36b69ded346b825f4b0aa04015, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1140273995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
   m_LocalPosition: {x: 3, y: 24, z: 0}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
@@ -12572,7 +12572,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 880066313}
   m_LocalRotation: {x: 0, y: -.913018346, z: 0, w: .407918662}
-  m_LocalPosition: {x: 2074.28882, y: -10000, z: -10364.0234}
+  m_LocalPosition: {x: 2204, y: -10000, z: -10646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13787,7 +13787,7 @@ Transform:
   m_PrefabParentObject: {fileID: 493688, guid: a54ca4e3b4ade054dbe32073395a6b49, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1284061200}
-  m_LocalRotation: {x: 0, y: -.913018346, z: 0, w: .407918662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 305.700012, y: -97.5, z: -9072.09961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14045,14 +14045,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991941336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .200000003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 2011673399}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 136.300003, y: 49.5}
+  m_AnchoredPosition: {x: 136, y: 49}
   m_SizeDelta: {x: 28, y: 28}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &991941338
@@ -17002,6 +17002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafa9371ab0775049bc6683409266445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerref: {fileID: 961541844}
 --- !u!23 &1140273997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18627,7 +18628,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -26316,7 +26317,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 404090837
-  m_SortingOrder: 10000
+  m_SortingOrder: 0
 --- !u!1001 &1864057817
 Prefab:
   m_ObjectHideFlags: 0

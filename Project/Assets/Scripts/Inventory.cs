@@ -3,13 +3,16 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
-	public static bool[] puzzlepiece;
+	public bool[] puzzlepiece;
 	private GameObject UIButton;
+	private SaveState save;
 
 	void Start () {
+		save = GameObject.Find ("SaveState").GetComponent<SaveState> ();
+
 		puzzlepiece = new bool[16];
 		for (int i = 1; i < puzzlepiece.Length; i++) {
-			puzzlepiece[i] = true;
+			puzzlepiece[i] = false;
 		}
 		OnEnable ();
 		ReadSaveState ();
@@ -48,6 +51,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void PiecePlaced (int _piecenumber) {
-		puzzlepiece [_piecenumber] = false;
+		puzzlepiece [_piecenumber+1] = false;
+		save.PuzzlePiecePlaced (_piecenumber);
 	}
 }

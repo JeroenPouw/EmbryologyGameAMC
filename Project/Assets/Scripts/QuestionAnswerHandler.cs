@@ -37,7 +37,7 @@ public class QuestionAnswerHandler : MonoBehaviour {
 			hintcounter = 0;
 			questionref.text = "";
 			answerref.text = "";
-//			GameObject.Find("SaveState").GetComponent<SaveState> ().SaveVariable(0,pieceref.GetComponent<PuzzlePiecePickup>().piecenumber, "");
+			GameObject.Find("SaveState").GetComponent<SaveState> ().SaveVariable(0,pieceref.GetComponent<PuzzlePiecePickup>().piecenumber, "");
 			pieceref.SetActive(false);
 			this.gameObject.SetActive (!this.gameObject.activeSelf);
 		} else {
