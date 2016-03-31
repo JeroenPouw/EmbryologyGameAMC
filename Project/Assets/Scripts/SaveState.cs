@@ -8,11 +8,9 @@ public class SaveState : MonoBehaviour {
 	public SaveData loaded_data;
 	private System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter ();
 
-	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad(transform.gameObject);
 		ReadFile ();
-		Debug.Log ("Savestate ready");
 	}
 
 	public void WriteFile() {
@@ -80,6 +78,14 @@ public class SaveState : MonoBehaviour {
 			storytrigger = loaded_data.storytrigger
 		};
 		WriteFile ();
+	}
+
+	public string GetPuzzleStatus(int _piecenumber) {
+		int startindex = loaded_data.puztrack.IndexOf (_piecenumber.ToString ());
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("o")) return "o";
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("x")) return "x";
+		if (loaded_data.puztrack.Substring(startindex,3).Contains("p")) return "p";
+		return "nodata";
 	}
 
 	[Serializable]

@@ -15,9 +15,7 @@ public class QuestManager : MonoBehaviour {
 		loadedpoint = GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl;
 		foreach (QuestUpdate update in GetComponentsInChildren<QuestUpdate> ()) {
 			if (update.orderlocation <= loadedpoint) {
-				Debug.Log("Check spawn");
 				if (update.spawnpoint && update.orderlocation > currentpoint) {
-					Debug.Log("Spawn changed");
 					spawnpoint = update.transform.position;
 					currentpoint = update.orderlocation;
 					if (update.isstage8) {

@@ -14,8 +14,8 @@ public class Inventory : MonoBehaviour {
 		for (int i = 1; i < puzzlepiece.Length; i++) {
 			puzzlepiece[i] = false;
 		}
-		OnEnable ();
 		ReadSaveState ();
+		OnEnable ();
 	}
 
 	void Update () {
@@ -36,12 +36,9 @@ public class Inventory : MonoBehaviour {
 
 	void ReadSaveState () {
 		try {
-			SaveState save = GameObject.Find ("SaveState").GetComponent<SaveState> ();
-			if (save != null) {
-				for (int i = 1; i <= 15; i++) {
-					if (save.loaded_data.puztrack.Substring(save.loaded_data.puztrack.IndexOf(i.ToString()+1,1)) == "x") {
-						puzzlepiece[i] = true;
-					}
+			for (int i = 1; i <= 15; i++) {
+				if (save.GetPuzzleStatus(i) == "x") {
+					puzzlepiece[i] = true;
 				}
 			}
 		}
@@ -52,6 +49,6 @@ public class Inventory : MonoBehaviour {
 
 	public void PiecePlaced (int _piecenumber) {
 		puzzlepiece [_piecenumber+1] = false;
-		save.PuzzlePiecePlaced (_piecenumber);
+		save.PuzzlePiecePlaced (_piecenumber+1);
 	}
 }

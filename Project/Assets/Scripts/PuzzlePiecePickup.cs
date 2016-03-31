@@ -10,7 +10,9 @@ public class PuzzlePiecePickup : MonoBehaviour {
 	public QuestionAnswerHandler boxref;
 
 	void Start () {
-	//	boxref = GameObject.Find ("Dialog Panel");
+		if (GameObject.Find ("SaveState").GetComponent<SaveState> ().GetPuzzleStatus (piecenumber) != "o") {
+			this.gameObject.SetActive(false);
+		}
 	}
 	
 	void OnTriggerEnter(Collider _collision) {
