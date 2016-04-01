@@ -6,11 +6,11 @@ public class GutGameHoldBlob : MonoBehaviour {
 	private Transform blob;
 
 	void OnTriggerEnter2D (Collider2D _collision) {
-		if (_collision.name == "Blob" && blob == null) {
+		if (_collision.name.Contains("Blob") && blob == null) {
 			blob = _collision.transform;
 			_collision.transform.GetComponent<GutFollowPlayer> ().SetDestination(this.transform, 1);
 		}
-		if (_collision.name == "Goal" && blob != null) {
+		if (_collision.name.Contains("Goal") && blob != null) {
 			blob.transform.GetComponent<GutFollowPlayer> ().SetDestination(_collision.transform, 0);
 			blob = null;
 		}
