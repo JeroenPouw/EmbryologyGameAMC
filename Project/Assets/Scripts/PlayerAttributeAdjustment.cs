@@ -12,7 +12,7 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 	public CutoutStageFilter filter;
 
 	private MovementScript moveref;
-	private int stage = 10;
+	public int stage = 10;
 
 	void Start () {
 		moveref = this.GetComponent<MovementScript> ();
