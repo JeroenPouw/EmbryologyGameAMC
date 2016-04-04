@@ -23,3 +23,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/Mesoderm 1.unity
   - enabled: 1
     path: Assets/Scenes/MiniGames/NeuralTube1/NeuralTube1.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/Gut1/Gut1.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/Coelom1/CoelomMinigame.unity
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/Mesoderm 2.unity

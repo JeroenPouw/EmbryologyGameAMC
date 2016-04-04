@@ -8,6 +8,7 @@ public class TriggerLevelLoader : MonoBehaviour {
 	void OntriggerEnter (Collider _other) {
 		if (_other.name == "Player") {
 			Application.LoadLevel(levelinteger);
+			System.Console.WriteLine("Collision with LevelLoader");
 		}
 	}
 }
