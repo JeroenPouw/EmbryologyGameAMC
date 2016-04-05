@@ -169,7 +169,8 @@ public class NeuralTubeMap : MonoBehaviour {
 			}
 		}
 		if (count == 0) {
-			Debug.Log("WIN!");
+			GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+			Application.LoadLevel(2);
 		}
 	}
 

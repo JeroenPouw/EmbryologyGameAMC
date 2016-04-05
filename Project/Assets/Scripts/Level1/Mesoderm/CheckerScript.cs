@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -30,7 +30,8 @@ public class CheckerScript : MonoBehaviour {
 						ScoreScript.score += 100;
 						ScoreScript.score += bonusPoints;
 						GameOver = true;
-						Application.LoadLevel("Overworld");
+						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+						Application.LoadLevel(2);
 					}
 					break;
 				case "Mesoderm 2":
@@ -38,7 +39,8 @@ public class CheckerScript : MonoBehaviour {
 						ScoreScript.score += 100;
 						ScoreScript.score += bonusPoints;
 						GameOver = true;
-						Application.LoadLevel("Overworld");
+						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+						Application.LoadLevel(2);
 					}
 					break;
 				case "Mesoderm 3":
@@ -46,7 +48,8 @@ public class CheckerScript : MonoBehaviour {
 						ScoreScript.score += 100;
 						ScoreScript.score += bonusPoints;
 						GameOver = true;
-						Application.LoadLevel("Overworld");
+						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+						Application.LoadLevel(2);
 					}
 					break;
 				}

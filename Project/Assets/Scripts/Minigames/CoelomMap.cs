@@ -136,14 +136,14 @@ public class CoelomMap : MonoBehaviour {
 				goalblocks--;
 				Instantiate (prefabs[4], MapCoToFloatCo((int)_coord.x,(int)_coord.y), Quaternion.identity);
 				if (goalblocks <= 0) {
-					Debug.Log("MISSION IS A SUCCESS!!!");
+					GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+					Application.LoadLevel(2);
 					won = true;
 				}
 			}
 			map[(int)_coord.y,(int)_coord.x] = 4;
 			Instantiate (prefabs[4], MapCoToFloatCo((int)_coord.x,(int)_coord.y), Quaternion.identity);
 		} else if (map[(int)_coord.y,(int)_coord.x] == 4) {
-			Debug.Log("MISSION IS A FAILURE!!!");
 			won = true;
 		}
 	}

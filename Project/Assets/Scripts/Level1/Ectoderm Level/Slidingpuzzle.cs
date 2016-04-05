@@ -45,7 +45,8 @@ public class Slidingpuzzle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (correctTiles == 15) { // if all tiles are in the correct position:
-			Application.LoadLevel("Overworld"); // Lvl complete! back to overworld.
+			GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
+			Application.LoadLevel(2);
 		}
 	
 	}
