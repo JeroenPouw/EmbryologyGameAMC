@@ -48,9 +48,9 @@ public class StageCenterCamera : MonoBehaviour {
 	public void ChangeStage (bool _stage8) {
 		isonstage8 = _stage8;
 		if (isonstage8) {
-			this.transform.position = new Vector3 (0, 0, -28500);
+			this.transform.position = new Vector3 (0, 0, -22500);
 			this.transform.rotation = new Quaternion (0f,180f,0f,1f);
-			this.GetComponent<Camera> ().farClipPlane = 2500;
+			this.GetComponent<Camera> ().farClipPlane = 18000;
 		}
 		if (!isonstage8) {
 			this.transform.position = new Vector3 (0, 0, 15000);

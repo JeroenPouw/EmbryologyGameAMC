@@ -18,12 +18,16 @@ public class OverworldUI : MonoBehaviour {
 		}
 	}
 
-	public void ClickedCompass () {
-	//	switch camera
+	public void TurnOnQuest (string _message, string _title) {
+		components [3].gameObject.SetActive (true);
+		components [3].FindChild("MissionDescription").GetComponent<Text> ().text = _message;
+		components [3].FindChild("MissionTitle").GetComponent<Text> ().text = _title;
 	}
 
-	public void TurnOnQuest () {
-		components [3].gameObject.SetActive (true);
+	public void TurnOnBigQuest (string _message, string _title) {
+		components [4].gameObject.SetActive (true);
+		components [4].FindChild("MissionDescription").GetComponent<Text> ().text = _message;
+		components [4].FindChild("MissionTitle").GetComponent<Text> ().text = _title;
 	}
 
 	public void ReturnToMainMenu () {
