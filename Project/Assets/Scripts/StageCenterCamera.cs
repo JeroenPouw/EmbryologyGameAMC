@@ -5,8 +5,8 @@ public class StageCenterCamera : MonoBehaviour {
 
 	public Transform stage8center;
 	public Transform stage10center;
-	public StageTransparancy stage8;
-	public StageTransparancy stage10;
+
+	public float zoomspeed = 2;
 
 	private bool isonstage8;
 	private Vector3 prevmousepos = Vector3.zero;
@@ -40,7 +40,7 @@ public class StageCenterCamera : MonoBehaviour {
 			prevmousepos = Input.mousePosition;
 		}
 		if (Input.GetMouseButton (1)) {
-			this.transform.Translate(new Vector3(0f,0f,-(prevmousepos.y - Input.mousePosition.y)*2));
+			this.transform.Translate(new Vector3(0f,0f,-(prevmousepos.y - Input.mousePosition.y)*zoomspeed));
 			prevmousepos = Input.mousePosition;
 		}
 	}
@@ -73,10 +73,6 @@ public class StageCenterCamera : MonoBehaviour {
 	}
 
 	void OnDisable () {
-		if (isonstage8) {
-			stage8.MakeStageOpaque ();
-		} else {
-			stage10.MakeStageOpaque ();
-		}
+
 	}
 }
