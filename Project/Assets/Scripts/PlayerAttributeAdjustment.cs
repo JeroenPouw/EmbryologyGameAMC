@@ -29,7 +29,7 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 
 	public void ChangeStage(int _stage) {
 		if (_stage == 8 && _stage != stage) {
-			GetComponent<Rigidbody> ().mass = 2;
+			GetComponent<Rigidbody> ().mass = 1;
 			this.transform.position = stage8spawn.position;
 			ChangeScale (_stage);
 			filter.ToggleStage();
