@@ -15,7 +15,7 @@ public class StageTransparancy : MonoBehaviour {
 
 	public void MakeStageOpaque () {
 		for (int i = 0; i < meshes.GetLength(0); i++) {
-			MakeOrganTransparant (i);
+			MakeOrganOrigional (i);
 		}
 	}
 
