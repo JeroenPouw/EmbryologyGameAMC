@@ -21,6 +21,6 @@ public class QuestUpdate : MonoBehaviour {
 			GameObject.Find ("GameUI").GetComponent<OverworldUI> ().TurnOnQuest (message, title);
 
 		}
-		GameObject.Find ("SaveState").GetComponent<SaveState> ().SaveVariable (orderlocation, 0, "");
+//		GameObject.Find ("SaveState").GetComponent<SaveState> ().SaveVariable (orderlocation, 0, "");
 	}
 }

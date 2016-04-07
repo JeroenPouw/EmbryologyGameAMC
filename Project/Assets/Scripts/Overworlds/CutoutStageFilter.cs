@@ -11,6 +11,11 @@ public class CutoutStageFilter : MonoBehaviour {
 		ToggleStage8 ();
 	}
 
+//	public void ToggleStage () {
+//		foreach (Button button in buttons) {
+//			button.gameObject.SetActive(!button.gameObject.activeSelf);
+//		}
+//	}
 	public void ToggleStage8 () {
 		foreach (Button button in buttons) {
 			if (button.gameObject.name.StartsWith("Stage8")) {
