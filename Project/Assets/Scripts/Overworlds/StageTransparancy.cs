@@ -13,9 +13,21 @@ public class StageTransparancy : MonoBehaviour {
 		}
 	}
 
+	public void MakeStageTransparant () {
+		for (int i = 0; i < meshes.GetLength(0); i++) {
+			foreach (Material mat in meshes[i].GetComponent<Renderer>().materials) {
+				mat.shader = Shader.Find ("Transparent/Diffuse");
+				mat.color -= new Color (0, 0, 0, 0.8f);
+			}
+		}
+	}
+
 	public void MakeStageOpaque () {
 		for (int i = 0; i < meshes.GetLength(0); i++) {
-			MakeOrganOrigional (i);
+			foreach (Material mat in meshes[i].GetComponent<Renderer>().materials) {
+				mat.shader = Shader.Find ("Standard");
+				mat.color += new Color (0, 0, 0, 0.8f);
+			}
 		}
 	}
 

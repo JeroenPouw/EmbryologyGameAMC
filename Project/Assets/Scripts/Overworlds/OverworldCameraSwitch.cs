@@ -8,6 +8,9 @@ public class OverworldCameraSwitch : MonoBehaviour {
 	public Camera playercam;
 	public Camera outercam;
 
+	public StageTransparancy stage10;
+	public StageTransparancy stage8;
+
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.M)) {
 			SwitchCameras();
@@ -19,6 +22,8 @@ public class OverworldCameraSwitch : MonoBehaviour {
 		uiref.gameObject.SetActive (!uiref.gameObject.activeSelf);
 		playercam.gameObject.SetActive (!playercam.gameObject.activeSelf);
 		outercam.gameObject.SetActive (!outercam.gameObject.activeSelf);
+		stage10.MakeStageTransparant ();
+		stage8.MakeStageTransparant ();
 	}
 
 	public void ButtonSwitch () {
