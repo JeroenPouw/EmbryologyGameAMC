@@ -11,6 +11,8 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 
 	public CutoutStageFilter filter;
 
+	public MeshRenderer playership;
+
 	private MovementScript moveref;
 	public int stage = 10;
 
@@ -40,7 +42,9 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 		}
 	}
 
-
+	public void ToggleShip () {
+		playership.enabled = !playership.enabled;
+	}
 
 
 	public int Stage {

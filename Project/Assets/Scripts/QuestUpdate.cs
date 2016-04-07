@@ -16,6 +16,7 @@ public class QuestUpdate : MonoBehaviour {
 			GameObject.Find ("GameUI").GetComponent<OverworldUI> ().TurnOnBigQuest (message, title);
 			_collider.GetComponent<MouseTorque>().enabled = false;
 			_collider.GetComponent<MovementScript>().enabled = false;
+			_collider.GetComponent<PlayerAttributeAdjustment>().ToggleShip();
 		} else {
 			GameObject.Find ("GameUI").GetComponent<OverworldUI> ().TurnOnQuest (message, title);
 
