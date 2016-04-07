@@ -31,13 +31,11 @@ public class PlayerAttributeAdjustment : MonoBehaviour {
 		if (_stage == 8 && _stage != stage) {
 			GetComponent<Rigidbody> ().mass = 1;
 			this.transform.position = stage8spawn.position;
-			ChangeScale (_stage);
 			filter.ToggleStage();
 		}
 		if (_stage == 10 && _stage != stage) {
 			GetComponent<Rigidbody> ().mass = 1;
 			this.transform.position = stage10spawn.position;
-			ChangeScale (_stage);
 			filter.ToggleStage();
 		}
 	}
