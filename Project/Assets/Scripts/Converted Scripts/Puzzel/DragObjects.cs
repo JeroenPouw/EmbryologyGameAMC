@@ -13,7 +13,6 @@ public class DragObjects : MonoBehaviour {
 	
 	public PuzzelItem spawnerScript;
 	public RotateObjects rotatePuzzel;
-	Scores scoreScript;
 	public SelectObject selectScript;
 	public CameraShaking shakeScript;
 	Inventory inventory;
@@ -30,18 +29,14 @@ public class DragObjects : MonoBehaviour {
 	public static int count = 5;
 	public GameObject correctParticle;
 	
-	void  Start (){	
+	void  Start (){
 		spawnerScript = FindObjectOfType<PuzzelItem>();
 		rotatePuzzel = FindObjectOfType<RotateObjects>();
 		selectScript = FindObjectOfType<SelectObject>();
 		shakeScript = FindObjectOfType<CameraShaking>();
-		scoreScript = FindObjectOfType<Scores> ();
 		inventory = FindObjectOfType<Inventory> ();
-		Debug.Log (startPosition);
 		startPosition = transform.position;
-		Debug.Log (startPosition);
 	}
-	
 	
 	void  OnMouseDown (){
 		if(Time.timeScale != 0){
@@ -160,7 +155,7 @@ public class DragObjects : MonoBehaviour {
 					Destroy(go);
 				} 
 				PuzzelItem.count++;
-			//	spawnerScript.SpawnObjects();
+//				spawnerScript.SpawnObjects();
 				count = 5;
 			}
 		}
