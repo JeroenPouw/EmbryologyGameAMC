@@ -4091,7 +4091,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!114 &176485001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7264,7 +7264,6 @@ Transform:
   - {fileID: 333972957}
   - {fileID: 1374012245}
   - {fileID: 1139500024}
-  - {fileID: 2072980218}
   - {fileID: 657803842}
   - {fileID: 567756410}
   - {fileID: 1090968672}
@@ -7322,7 +7321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 21
+  m_RootOrder: 20
 --- !u!114 &305075686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7381,7 +7380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!114 &306743173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7398,7 +7397,7 @@ MonoBehaviour:
     Neural Tube and close it to ensure the safety of the embryo.
   bigupdate: 1
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 10
 --- !u!135 &306743174
 SphereCollider:
@@ -7549,7 +7548,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!114 &311286215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7566,7 +7565,7 @@ MonoBehaviour:
     the spirit! Very well, student. Let's see if you can reach the heart on your own.
   bigupdate: 1
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 13
 --- !u!135 &311286216
 SphereCollider:
@@ -14368,7 +14367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &567756411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16147,7 +16146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &657803843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16560,7 +16559,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 20
+  m_RootOrder: 19
 --- !u!114 &680451020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16578,7 +16577,7 @@ MonoBehaviour:
     are developing properly?
   bigupdate: 1
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 14
 --- !u!135 &680451021
 SphereCollider:
@@ -17610,7 +17609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 19
+  m_RootOrder: 18
 --- !u!114 &750007269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17626,7 +17625,7 @@ MonoBehaviour:
   message: Make your way to the heart
   bigupdate: 0
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 13
 --- !u!135 &750007270
 SphereCollider:
@@ -23742,7 +23741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 17
+  m_RootOrder: 16
 --- !u!114 &1058530194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23758,7 +23757,7 @@ MonoBehaviour:
   message: Thank you for playing
   bigupdate: 0
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 12
 --- !u!135 &1058530195
 SphereCollider:
@@ -24216,7 +24215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!114 &1090968673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24902,7 +24901,7 @@ MonoBehaviour:
   message: Reach the Ectoderm
   bigupdate: 0
   spawnpoint: 0
-  isstage8: 0
+  isstage8: 1
   orderlocation: 6
 --- !u!135 &1139500026
 SphereCollider:
@@ -25408,7 +25407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 15
+  m_RootOrder: 14
 --- !u!114 &1158213523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25426,7 +25425,7 @@ MonoBehaviour:
     It will put your knowledge to the test.
   bigupdate: 1
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 11
 --- !u!135 &1158213524
 SphereCollider:
@@ -27363,7 +27362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!114 &1249776559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30938,7 +30937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &1352350127
 GameObject:
   m_ObjectHideFlags: 0
@@ -34277,7 +34276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!114 &1481445932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34296,7 +34295,7 @@ MonoBehaviour:
     properly..
   bigupdate: 1
   spawnpoint: 1
-  isstage8: 1
+  isstage8: 0
   orderlocation: 12
 --- !u!135 &1481445933
 SphereCollider:
@@ -38467,7 +38466,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293911819}
-  m_RootOrder: 22
+  m_RootOrder: 21
 --- !u!114 &1685640434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49327,64 +49326,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067631516}
---- !u!1 &2072980217
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2072980218}
-  - 135: {fileID: 2072980220}
-  - 114: {fileID: 2072980219}
-  m_Layer: 0
-  m_Name: Questupdate 7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2072980218
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2072980217}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12802, y: 4319, z: 4619}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 293911819}
-  m_RootOrder: 7
---- !u!114 &2072980219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2072980217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0a7cbbb41c1164bb150c17b0a0689b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: spawn
-  message: changed again
-  bigupdate: 0
-  spawnpoint: 1
-  isstage8: 0
-  orderlocation: 7
---- !u!135 &2072980220
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2072980217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2074695526
 GameObject:
   m_ObjectHideFlags: 0
