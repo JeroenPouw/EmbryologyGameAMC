@@ -43,7 +43,6 @@ public class TeleportScript : MonoBehaviour {
 		}
 		player.GetComponent<MouseTorque> ().enabled = true;
 		player.GetComponent<MovementScript> ().enabled = true;
-		this.gameObject.SetActive (false);
 	}
 
 	void OnTriggerEnter(Collider other){
