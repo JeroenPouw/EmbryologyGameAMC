@@ -337,6 +337,10 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 175096, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11495140, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
@@ -658,6 +662,10 @@ Prefab:
     - target: {fileID: 175096, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 175096, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11495140, guid: ca82f33e1deebca438b228b03c2ae8a3, type: 2}
@@ -1490,7 +1498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
   child1: {fileID: 646860083}
   child2: {fileID: 0}
 --- !u!23 &646860085
@@ -3030,7 +3037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
   child1: {fileID: 312480489}
   child2: {fileID: 0}
 --- !u!1001 &1341893298
@@ -4800,7 +4806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e2f71152dfea446ad1272c4a4c7df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
   child1: {fileID: 1970942316}
   child2: {fileID: 0}
 --- !u!1001 &1971267959

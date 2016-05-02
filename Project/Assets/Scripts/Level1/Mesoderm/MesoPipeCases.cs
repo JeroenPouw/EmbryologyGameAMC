@@ -76,6 +76,7 @@ public class MesoPipeCases : MonoBehaviour {
 
 	public void LSouthWest(){
 		Debug.Log("LSouthWest function");
+		Debug.Log (CheckerScript.direction);
 		if (CheckerScript.direction == "E") {
 			GoSouth();
 			if (Sempty == true) {
@@ -307,9 +308,13 @@ public class MesoPipeCases : MonoBehaviour {
 		if (Physics.Raycast (checker.transform.position, checker.transform.forward, out hit)) {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log (tempHitObj);
-			if (MesoLists.Northlist.Contains (tempHitObj)) {
+			if (MesoLists.Southlist.Contains (tempHitObj)) {
 				Debug.Log ("apparently it's in northlist");
+
+				Debug.Log(CheckerScript.direction);
 				CheckerScript.direction = "N";
+				Debug.Log(CheckerScript.direction);
+
 				tempHitObj.GetComponent<ColorChange> ().IsCorrect();
 			} else {
 				Debug.Log ("woops, not this time");
@@ -334,9 +339,13 @@ public class MesoPipeCases : MonoBehaviour {
 		if (Physics.Raycast(checker.transform.position,checker.transform.forward,out hit)) {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
-			if (MesoLists.Southlist.Contains(tempHitObj)) {
+			if (MesoLists.Northlist.Contains(tempHitObj)) {
 				Debug.Log ("apparently it's in southlist");
+
+				Debug.Log(CheckerScript.direction);
 				CheckerScript.direction = "S";
+				Debug.Log(CheckerScript.direction);
+
 				if (tempHitObj.gameObject.name != "EndPipe") {
 					tempHitObj.GetComponent<ColorChange>().IsCorrect();
 				}
@@ -364,17 +373,21 @@ public class MesoPipeCases : MonoBehaviour {
 		if (Physics.Raycast(checker.transform.position,checker.transform.forward,out hit)) {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
-			if (MesoLists.Westlist.Contains(tempHitObj)) {
+			if (MesoLists.Eastlist.Contains(tempHitObj)) {
 				Debug.Log ("apparently it's in westlist");
+
+				Debug.Log(CheckerScript.direction);
 				CheckerScript.direction = "W";
+				Debug.Log(CheckerScript.direction);
+
 				tempHitObj.GetComponent<ColorChange>().IsCorrect();
 			}else{
 				Debug.Log ("woops, not this time");
 
 				if (hit.transform.tag.Contains("North")) {
-					//	CheckerScript.direction = "E";
+				//	CheckerScript.direction = "N";
 				} else if (hit.transform.tag.Contains("South")) {
-					//	CheckerScript.direction = "W";
+				//	CheckerScript.direction = "S";
 				} else {
 					checker.transform.position += new Vector3(distance,0,0);
 					Nempty = false;
@@ -392,16 +405,20 @@ public class MesoPipeCases : MonoBehaviour {
 		if (Physics.Raycast(checker.transform.position,checker.transform.forward,out hit)) {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
-			if (MesoLists.Eastlist.Contains(tempHitObj)) {
+			if (MesoLists.Westlist.Contains(tempHitObj)) {
 				Debug.Log ("apparently it's in eastlist");
+
+				Debug.Log(CheckerScript.direction);
 				CheckerScript.direction = "E";
+				Debug.Log(CheckerScript.direction);
+
 				tempHitObj.GetComponent<ColorChange>().IsCorrect();
 			}else{
 				Debug.Log ("woops, not this time");
 				if (hit.transform.tag.Contains("North")) {
-					//	CheckerScript.direction = "E";
+				//	CheckerScript.direction = "N";
 				} else if (hit.transform.tag.Contains("South")) {
-					//	CheckerScript.direction = "W";
+				//	CheckerScript.direction = "S";
 				} else {
 					checker.transform.position -= new Vector3(distance,0,0);
 					Nempty = false;

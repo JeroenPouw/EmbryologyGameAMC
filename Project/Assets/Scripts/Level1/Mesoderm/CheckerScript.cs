@@ -35,6 +35,8 @@ public class CheckerScript : MonoBehaviour {
 						GameOver = true;
 						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
 						Application.LoadLevel(2);
+					} else {
+						Debug.Log("Nope, didn't get the organ.");
 					}
 					break;
 				case "Mesoderm 2":
@@ -44,6 +46,8 @@ public class CheckerScript : MonoBehaviour {
 						GameOver = true;
 						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
 						Application.LoadLevel(2);
+					} else {
+						Debug.Log("Nope, didn't get the organ.");
 					}
 					break;
 				case "Mesoderm 3":
@@ -53,6 +57,8 @@ public class CheckerScript : MonoBehaviour {
 						GameOver = true;
 						GameObject.Find("SaveState").GetComponent<SaveState>().SaveVariable(GameObject.Find("SaveState").GetComponent<SaveState>().loaded_data.lvl+1,0,"");
 						Application.LoadLevel(2);
+					} else {
+						Debug.Log("Nope, didn't get the organ.");
 					}
 					break;
 				}
@@ -115,10 +121,10 @@ public class CheckerScript : MonoBehaviour {
 				break;
 			}
 		}
-		MesoPipeCases.Nempty = false;
-		MesoPipeCases.Sempty = false;
-		MesoPipeCases.Eempty = false;
-		MesoPipeCases.Wempty = false;
+	//	MesoPipeCases.Nempty = false;
+	//	MesoPipeCases.Sempty = false;
+	//	MesoPipeCases.Eempty = false;
+	//	MesoPipeCases.Wempty = false;
 	}
 	
 	public IEnumerator Solving(){
@@ -130,6 +136,6 @@ public class CheckerScript : MonoBehaviour {
 	}
 
 	void Update () {
-		//Debug.Log (direction);
+
 	}
 }
