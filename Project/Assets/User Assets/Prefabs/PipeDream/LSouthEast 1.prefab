@@ -52,7 +52,7 @@ GameObject:
   - 114: {fileID: 11450966}
   m_Layer: 0
   m_Name: LSouthEast 1
-  m_TagString: North West Pipe
+  m_TagString: South East Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199510}
   m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
-  m_LocalPosition: {x: -2.48000002, y: 6.01000023, z: .5}
+  m_LocalPosition: {x: -2.52064919, y: .833522558, z: -.671195984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478788}

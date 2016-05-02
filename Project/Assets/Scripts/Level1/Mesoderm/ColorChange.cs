@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ColorChange : MonoBehaviour {
-	public bool isCorrect;
+	bool isCorrect;
 	public GameObject child1;
 	public GameObject child2;
 	float closeVPDist= 0.5f;
@@ -17,27 +17,32 @@ public class ColorChange : MonoBehaviour {
 	}
 
 	void OnMouseDrag(){
-		child1.GetComponent<Renderer>().material.color = Color.red;
-		if (child2 != null) {
-			child2.GetComponent<Renderer>().material.color = Color.red;
+		foreach (Renderer render in GetComponentsInChildren<Renderer>()) {
+			render.material.color = Color.red;
 		}
 	}
 	void OnMouseUp(){
 			if (snap.snap == true) {
-			child1.GetComponent<Renderer> ().material.color = Color.yellow;
-			if (child2 != null) {
-				child2.GetComponent<Renderer> ().material.color = Color.yellow;
+			foreach (Renderer render in GetComponentsInChildren<Renderer>()) {
+				render.material.color = Color.yellow;
 			}
+		}
+	}
+
+	public void IsCorrect() {
+		isCorrect = true;
+		foreach (Renderer render in GetComponentsInChildren<Renderer>()) {
+			render.material.color = Color.green;
 		}
 	}
 	// Update is called once per frame
-	void Update () {
-	if (isCorrect) {
-			child1.GetComponent<Renderer>().material.color = Color.green;
-			if (child2 != null) {
-				child2.GetComponent<Renderer>().material.color = Color.green;
-			}
-			isCorrect = false;
-		}
-	}
+//	void Update () {
+//	if (isCorrect) {
+//			child1.GetComponent<Renderer>().material.color = Color.green;
+//			if (child2 != null) {
+//				child2.GetComponent<Renderer>().material.color = Color.green;
+//			}
+//			isCorrect = false;
+//		}
+//	}
 }

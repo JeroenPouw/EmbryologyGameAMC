@@ -13,11 +13,13 @@ public class MesoGameController : MonoBehaviour {
 		mesoObj2 = GameObject.Find ("OpeningChecker");
 		mesoScript2 = mesoObj2.GetComponent<OpeningChecker> ();
 	}
-	void Reset(){
+
+	public void Reset(){
+		CheckerScript.placedpipes = 0;
 		Application.LoadLevel(Application.loadedLevelName);
 	}
 
-	 void Solve(){
+	public void Solve(){
 		mesoScript.StartCoroutine (mesoScript.Solving());
 		mesoScript2.Solve ();
 	}

@@ -17,14 +17,17 @@ public class MesoPipeCases : MonoBehaviour {
 	}
 
 	public void StartPipe(){
-	if (CheckerScript.direction == "S" || CheckerScript.direction == "N") {
+		Debug.Log("StartPipe function");
+		if (CheckerScript.direction == "S" || CheckerScript.direction == "N") {
 			StraightVert();
 		}
 		if (CheckerScript.direction == "E" || CheckerScript.direction == "W") {
 			StraightHor();
 		}
 	}
+
 	public void LNorthWest(){
+		Debug.Log("LNorthWest function");
 		if (CheckerScript.direction == "S") {
 			GoWest();
 			if (Wempty == true) {
@@ -38,7 +41,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void LNorthEast(){
+		Debug.Log("LNorthEast function");
 		if (CheckerScript.direction == "S") {
 			GoEast();
 			if (Eempty == true) {
@@ -52,7 +57,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void LSouthEast(){
+		Debug.Log("LSouthEast function");
 		if (CheckerScript.direction == "W") {
 			GoSouth();
 			if (Sempty == true) {
@@ -66,7 +73,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void LSouthWest(){
+		Debug.Log("LSouthWest function");
 		if (CheckerScript.direction == "E") {
 			GoSouth();
 			if (Sempty == true) {
@@ -81,6 +90,7 @@ public class MesoPipeCases : MonoBehaviour {
 		}
 	}
 	public void StraightVert(){
+		Debug.Log("StraightVert function");
 		if (CheckerScript.direction == "S") {
 			GoSouth();
 			if (Sempty == true) {
@@ -95,6 +105,7 @@ public class MesoPipeCases : MonoBehaviour {
 		}
 	}
 	public void StraightHor(){
+		Debug.Log("StraightHor function");
 		if (CheckerScript.direction == "W") {
 			GoWest();
 			if (Wempty == true) {
@@ -108,7 +119,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void TNorth(){
+		Debug.Log("TNorth function");
 		if (CheckerScript.direction == "E") {
 			GoEast();
 			if (Eempty == true) {
@@ -137,7 +150,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void TSouth(){
+		Debug.Log("TSouth function");
 		if (CheckerScript.direction == "E") {
 			GoSouth();
 			if (Sempty == true) {
@@ -166,7 +181,9 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	public void TWest(){
+		Debug.Log("TWest function");
 		if (CheckerScript.direction == "S") { // go west and then south
 			GoWest();
 			if (Wempty == true) {
@@ -198,6 +215,7 @@ public class MesoPipeCases : MonoBehaviour {
 		}
 	}
 	public void TEast(){
+		Debug.Log("TEast function");
 		if (CheckerScript.direction == "S") { // go south and east
 			GoSouth();
 			if (Sempty == true) {
@@ -229,7 +247,9 @@ public class MesoPipeCases : MonoBehaviour {
 		
 		}
 	}
+
 	public void Cross(){
+		Debug.Log("Cross function");
 		if (CheckerScript.direction == "N") { // go east,north and then west
 			GoEast();
 			if (Eempty == true) {
@@ -241,8 +261,6 @@ public class MesoPipeCases : MonoBehaviour {
 					}
 				}
 			}
-
-
 		}
 		if (CheckerScript.direction == "S") {
 			// go west,south and then east
@@ -268,8 +286,6 @@ public class MesoPipeCases : MonoBehaviour {
 					}
 				}
 			}
-
-
 		}
 		if (CheckerScript.direction == "W") { // go north,west and then south
 			GoNorth();
@@ -284,21 +300,34 @@ public class MesoPipeCases : MonoBehaviour {
 			}
 		}
 	}
+
 	void GoNorth(){
 		checker.transform.position += new Vector3(0,distance,0); // go north
 		Debug.DrawRay (checker.transform.position, checker.transform.forward*500, Color.red);
-		if (Physics.Raycast(checker.transform.position,checker.transform.forward,out hit)) {
+		if (Physics.Raycast (checker.transform.position, checker.transform.forward, out hit)) {
 			tempHitObj = hit.transform.gameObject;
-			Debug.Log(tempHitObj);
-			if (MesoLists.Northlist.Contains(tempHitObj)) {
+			Debug.Log (tempHitObj);
+			if (MesoLists.Northlist.Contains (tempHitObj)) {
+				Debug.Log ("apparently it's in northlist");
 				CheckerScript.direction = "N";
-				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
-			}else{
-				checker.transform.position -= new Vector3(0,distance,0);
-				Nempty = true;
+				tempHitObj.GetComponent<ColorChange> ().IsCorrect();
+			} else {
+				Debug.Log ("woops, not this time");
+				if (hit.transform.tag.Contains("East")) {
+				//	CheckerScript.direction = "E";
+				} else if (hit.transform.tag.Contains("West")) {
+				//	CheckerScript.direction = "W";
+				} else {
+					checker.transform.position -= new Vector3(0,distance,0);
+					Nempty = true;
+					Sempty = false;
+					Wempty = false;
+					Eempty = false;
+				}
 			}
 		}
 	}
+
 	void GoSouth(){
 		checker.transform.position -= new Vector3(0,distance,0); // go South
 		Debug.DrawRay (checker.transform.position, checker.transform.forward*500, Color.red);
@@ -306,16 +335,29 @@ public class MesoPipeCases : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
 			if (MesoLists.Southlist.Contains(tempHitObj)) {
+				Debug.Log ("apparently it's in southlist");
 				CheckerScript.direction = "S";
 				if (tempHitObj.gameObject.name != "EndPipe") {
-					tempHitObj.GetComponent<ColorChange>().isCorrect = true;
+					tempHitObj.GetComponent<ColorChange>().IsCorrect();
 				}
 			}else{
-				checker.transform.position += new Vector3(0,distance,0);
-				Sempty = true;
+				Debug.Log ("woops, not this time");
+
+				if (hit.transform.tag.Contains("East")) {
+				//	CheckerScript.direction = "E";
+				} else if (hit.transform.tag.Contains("West")) {
+				//	CheckerScript.direction = "W";
+				} else {
+					checker.transform.position += new Vector3(0,distance,0);
+					Nempty = false;
+					Sempty = true;
+					Wempty = false;
+					Eempty = false;
+				}
 			}
 		}
 	}
+
 	void GoWest(){
 		checker.transform.position -= new Vector3(distance,0,0); // go west
 		Debug.DrawRay (checker.transform.position, checker.transform.forward*500, Color.red);
@@ -323,14 +365,27 @@ public class MesoPipeCases : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
 			if (MesoLists.Westlist.Contains(tempHitObj)) {
+				Debug.Log ("apparently it's in westlist");
 				CheckerScript.direction = "W";
-				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
+				tempHitObj.GetComponent<ColorChange>().IsCorrect();
 			}else{
-				checker.transform.position += new Vector3(distance,0,0);
-				Wempty = true;
+				Debug.Log ("woops, not this time");
+
+				if (hit.transform.tag.Contains("North")) {
+					//	CheckerScript.direction = "E";
+				} else if (hit.transform.tag.Contains("South")) {
+					//	CheckerScript.direction = "W";
+				} else {
+					checker.transform.position += new Vector3(distance,0,0);
+					Nempty = false;
+					Sempty = false;
+					Wempty = true;
+					Eempty = false;
+				}
 			}
 		}
 	}
+
 	void GoEast(){
 		checker.transform.position += new Vector3(distance,0,0); // go east
 		Debug.DrawRay (checker.transform.position, checker.transform.forward*500, Color.red);
@@ -338,16 +393,23 @@ public class MesoPipeCases : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			Debug.Log(tempHitObj);
 			if (MesoLists.Eastlist.Contains(tempHitObj)) {
+				Debug.Log ("apparently it's in eastlist");
 				CheckerScript.direction = "E";
-				tempHitObj.GetComponent<ColorChange>().isCorrect = true;
+				tempHitObj.GetComponent<ColorChange>().IsCorrect();
 			}else{
-				checker.transform.position -= new Vector3(distance,0,0);
-				Eempty = true;
+				Debug.Log ("woops, not this time");
+				if (hit.transform.tag.Contains("North")) {
+					//	CheckerScript.direction = "E";
+				} else if (hit.transform.tag.Contains("South")) {
+					//	CheckerScript.direction = "W";
+				} else {
+					checker.transform.position -= new Vector3(distance,0,0);
+					Nempty = false;
+					Sempty = false;
+					Wempty = false;
+					Eempty = true;
+				}
 			}
 		}
-	}
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

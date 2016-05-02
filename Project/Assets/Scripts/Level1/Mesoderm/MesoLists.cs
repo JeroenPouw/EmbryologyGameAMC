@@ -20,19 +20,25 @@ public class MesoLists : MonoBehaviour {
 	void Start () {
 		GameObject[] allList = GameObject.FindObjectsOfType (typeof(GameObject)) as GameObject[];
 		for (int i = 0; i < allList.Length; i++) {
+			Debug.Log("Object " + allList[i].name);
 			if (allList[i].gameObject.tag.Contains("East")) {
+				Debug.Log("East");
 				Eastlist.Add(allList[i]);
 			}
 			if (allList[i].gameObject.tag.Contains("West")) {
+				Debug.Log("West");
 				Westlist.Add(allList[i]);
 			}
 			if (allList[i].gameObject.tag.Contains("North")) {
+				Debug.Log("North");
 				Northlist.Add(allList[i]);
 			}
 			if (allList[i].gameObject.tag.Contains("South")) {
+				Debug.Log("South");
 				Southlist.Add(allList[i]);
 			}
 			if (allList[i].gameObject.tag.Contains("Pipe")) {
+				Debug.Log("Pipe");
 				PipeList.Add(allList[i]);
 			}
 			if (allList[i].gameObject.name == "Tile") {
@@ -52,6 +58,10 @@ public class MesoLists : MonoBehaviour {
 		listE = Eastlist;
 		listS = Southlist;
 		listW = Westlist;
+		Debug.Log (Eastlist);
+		Debug.Log (Southlist);
+		Debug.Log (Northlist);
+		Debug.Log (Westlist);
 	}
 	
 	// Update is called once per frame

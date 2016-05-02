@@ -63,7 +63,6 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Northlist.Contains(tempHitObj)) {
 			}else{
-				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -75,7 +74,6 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Southlist.Contains(tempHitObj)) {
 			}else{
-				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -87,7 +85,6 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Westlist.Contains(tempHitObj)) {	
 			}else{
-				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}
@@ -99,7 +96,6 @@ public class OpeningChecker : MonoBehaviour {
 			tempHitObj = hit.transform.gameObject;
 			if (MesoLists.Eastlist.Contains(tempHitObj)) {
 			}else{
-				ScoreScript.score -= 10;
 				openings += 1;
 			}
 		}

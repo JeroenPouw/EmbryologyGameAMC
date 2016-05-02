@@ -47,18 +47,23 @@ public class ObjectSnapScript : MonoBehaviour {
 
 	void  OnMouseUp (){
 		if (dist < closeVPDist) {
-			snap = true;
+			if (!snap)
+				CheckerScript.placedpipes++;
 			transform.position = partnerGO.transform.position;
+			snap = true;
 			//InstallPart();
-		}else
-		snap = false;
+		} else {
+			if (snap) 
+				CheckerScript.placedpipes--;
+			snap = false;
+		}
+
 	}
 
 	void  InstallPart (){
 		while (transform.localPosition != Vector3.zero || transform.localRotation != Quaternion.identity) {
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * moveSpeed);
 			transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.identity, Time.deltaTime * rotateSpeed);
-			//yield return 2;
 		}
 	}
 }
